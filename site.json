@@ -1,9 +1,9 @@
 {
- "built": "2026-10-29T13:55:14.953Z",
+ "built": "2026-10-29T16:33:32.886Z",
  "export_dir": "/Users/sc3623/Library/CloudStorage/OneDrive-DrexelUniversity/Class/ENVE 460 560 A/Winter 2027/export",
  "n_files": 115,
- "bytes": 52330883,
- "gzip_bytes": 32690044,
+ "bytes": 52354952,
+ "gzip_bytes": 32697700,
  "unit_field_tiles": 40,
  "road_files": 60,
  "largest": {
@@ -31,34 +31,34 @@
    "sha256": "4af7ecdede0fef75c189d7109fa737e31f85adf1092e556389aca30524f457f4"
   },
   {
-   "path": "assets/index-BHPVnuSY.js",
-   "bytes": 111849,
-   "gzip_bytes": 39047,
-   "sha256": "5687c9afb756cc789c7b0b14d4038184befa69815c0a183a4ea556ae03226a8d"
+   "path": "assets/index-BRjvjH5a.js",
+   "bytes": 116978,
+   "gzip_bytes": 40897,
+   "sha256": "2ad419abcf468b252ba5402a9dd891d41023fa230be6bad01d009e421f049fe3"
   },
   {
-   "path": "assets/index-BHPVnuSY.js.map",
-   "bytes": 308332,
-   "gzip_bytes": 89360,
-   "sha256": "47f0e041af142ac03d5711d3806dd24c1398aa9b4566a093d10c3c3f1e7b2b7f"
+   "path": "assets/index-BRjvjH5a.js.map",
+   "bytes": 321186,
+   "gzip_bytes": 93346,
+   "sha256": "729db74040e5c405b3b46bf9e0ef38925a00c76ca320cde492076955bde8b4a2"
   },
   {
-   "path": "assets/index-BSIYml-N.css",
-   "bytes": 17325,
-   "gzip_bytes": 4232,
-   "sha256": "3b3a8a9ececaa4a5739f84d2b3b7e0336e949517bb7caca29840c0b7400efff0"
+   "path": "assets/index-D9WGf-DE.css",
+   "bytes": 17362,
+   "gzip_bytes": 4240,
+   "sha256": "5db5d49c65842b1561431f3171776128c7e4aadf81fce96f1fc3fdec1a15c329"
   },
   {
-   "path": "assets/linearity-BXQIPEbt.js",
-   "bytes": 87134,
-   "gzip_bytes": 29093,
-   "sha256": "18cab3c2b64473a3c00327cbf96c32f223eb92f77fe4659748521b5aa0f6188b"
+   "path": "assets/linearity-BBt00GZl.js",
+   "bytes": 88540,
+   "gzip_bytes": 29520,
+   "sha256": "2305efbd7004f1606459819e318f284d4b1a1a1cce2bcb8a7f2809f860b9bc4d"
   },
   {
-   "path": "assets/linearity-BXQIPEbt.js.map",
-   "bytes": 202607,
-   "gzip_bytes": 49243,
-   "sha256": "b67d278ced007b31756109f68f542a8a86153684beef965d17f5834a38ada09d"
+   "path": "assets/linearity-BBt00GZl.js.map",
+   "bytes": 206875,
+   "gzip_bytes": 50435,
+   "sha256": "ce68842da5dd4307840dbc6965867745692a0ce9621042daff7be902129f40dc"
   },
   {
    "path": "data/fields/AREA200__convective_deep.bin",
@@ -92,9 +92,9 @@
   },
   {
    "path": "data/fields/backgrounds.json",
-   "bytes": 53251,
-   "gzip_bytes": 5412,
-   "sha256": "069c7c2cb3266a61ad61e6f1b5116b555ec5ccfcbbf1b41830065b1d515c876a"
+   "bytes": 53234,
+   "gzip_bytes": 5403,
+   "sha256": "03b25858512c2b038d43c9a964236128a3b68269f36248a0a6d6fa48c94ab143"
   },
   {
    "path": "data/fields/controls.json",
@@ -698,9 +698,9 @@
   },
   {
    "path": "index.html",
-   "bytes": 11515,
-   "gzip_bytes": 3592,
-   "sha256": "21d25c3809356823b4956ce7b78517673ecd7c7869a93666570ffa401edff171"
+   "bytes": 11907,
+   "gzip_bytes": 3794,
+   "sha256": "84e82b7472ac15a7a4cb14bd4e65324d25f856aad72738bb3c270e679f8c0d75"
   }
  ]
 }

@@ -9,9 +9,9 @@
  "units": "µg/m³",
  "pollutant_keys": "canonical: upper case without '.', '_', '-' or spaces (PM2.5 -> PM25)",
  "general_caveats": [
-  "Backgrounds are single-hour regional values for the scenario hour, from monitors chosen by the rules in docs/phase2_A_scenarios.md; they are not design values.",
+  "Backgrounds are single-hour regional values for the scenario hour, from monitors upwind of the city where possible; they are not design values.",
   "NAAQS levels are statistical forms over months to years; one modelled hour cannot show compliance or exceedance, so they are reference levels only.",
-  "Conversions use 25 degC and 1 atm (24.45 L/mol)."
+  "Conversions use 25 °C and 1 atm (24.45 L/mol)."
  ],
  "pollutants": {
   "SO2": {
