@@ -772,7 +772,7 @@
    "volume": "Building vents carry little combustion NOx; no add-on control in this model."
   },
   "SO2": {
-   "area": "The area and volume sources emit no SO2 by default; no control is offered.",
+   "area": "The area and volume sources emit no SO₂ by default; no control is offered.",
    "volume": "As for the area source."
   }
  },
