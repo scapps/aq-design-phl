@@ -1,0 +1,706 @@
+{
+ "built": "2026-10-29T13:55:14.953Z",
+ "export_dir": "/Users/sc3623/Library/CloudStorage/OneDrive-DrexelUniversity/Class/ENVE 460 560 A/Winter 2027/export",
+ "n_files": 115,
+ "bytes": 52330883,
+ "gzip_bytes": 32690044,
+ "unit_field_tiles": 40,
+ "road_files": 60,
+ "largest": {
+  "path": "data/fields/AREA200__convective_deep.bin",
+  "bytes": 807840
+ },
+ "manifest_created": "2026-10-29T06:44:50.457019+00:00",
+ "files": [
+  {
+   "path": ".nojekyll",
+   "bytes": 0,
+   "gzip_bytes": 20,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "assets/field.worker-eGIs3U9R.js",
+   "bytes": 7143,
+   "gzip_bytes": 3062,
+   "sha256": "0cd1e31f881271680f300bc594829c609f460caf88683813b70a324c6f662135"
+  },
+  {
+   "path": "assets/field.worker-eGIs3U9R.js.map",
+   "bytes": 34102,
+   "gzip_bytes": 11236,
+   "sha256": "4af7ecdede0fef75c189d7109fa737e31f85adf1092e556389aca30524f457f4"
+  },
+  {
+   "path": "assets/index-BHPVnuSY.js",
+   "bytes": 111849,
+   "gzip_bytes": 39047,
+   "sha256": "5687c9afb756cc789c7b0b14d4038184befa69815c0a183a4ea556ae03226a8d"
+  },
+  {
+   "path": "assets/index-BHPVnuSY.js.map",
+   "bytes": 308332,
+   "gzip_bytes": 89360,
+   "sha256": "47f0e041af142ac03d5711d3806dd24c1398aa9b4566a093d10c3c3f1e7b2b7f"
+  },
+  {
+   "path": "assets/index-BSIYml-N.css",
+   "bytes": 17325,
+   "gzip_bytes": 4232,
+   "sha256": "3b3a8a9ececaa4a5739f84d2b3b7e0336e949517bb7caca29840c0b7400efff0"
+  },
+  {
+   "path": "assets/linearity-BXQIPEbt.js",
+   "bytes": 87134,
+   "gzip_bytes": 29093,
+   "sha256": "18cab3c2b64473a3c00327cbf96c32f223eb92f77fe4659748521b5aa0f6188b"
+  },
+  {
+   "path": "assets/linearity-BXQIPEbt.js.map",
+   "bytes": 202607,
+   "gzip_bytes": 49243,
+   "sha256": "b67d278ced007b31756109f68f542a8a86153684beef965d17f5834a38ada09d"
+  },
+  {
+   "path": "data/fields/AREA200__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 358459,
+   "sha256": "13cbed57406832e0d5f1d0b630aa15838679ccdd5223b885379523b2426fbf54"
+  },
+  {
+   "path": "data/fields/AREA200__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 291787,
+   "sha256": "0d7cd05baeaf5e58315395b74f5d2cb3e907f22baf07f53ddd4528a72d6adc28"
+  },
+  {
+   "path": "data/fields/AREA200__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 265448,
+   "sha256": "beba0f1b813f3d68506eac970e31904f2a1ad7090bd9176e8575c8c0eee8f6d2"
+  },
+  {
+   "path": "data/fields/AREA200__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 231551,
+   "sha256": "97db29afe0a0148dc67aa4fa2bdc50cee76d76ca6979ab21dffd0d9dd0b2fc10"
+  },
+  {
+   "path": "data/fields/AREA200__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 110603,
+   "sha256": "c8c953753b9f5a6a8334e9ce5c1706c8314aa13fa5bb0fa74a2d3d4d27ad781b"
+  },
+  {
+   "path": "data/fields/backgrounds.json",
+   "bytes": 53251,
+   "gzip_bytes": 5412,
+   "sha256": "069c7c2cb3266a61ad61e6f1b5116b555ec5ccfcbbf1b41830065b1d515c876a"
+  },
+  {
+   "path": "data/fields/controls.json",
+   "bytes": 19245,
+   "gzip_bytes": 4369,
+   "sha256": "b07115b8c283e43862df1bdb188ff80e309bad69a44258472825b4ee38d11e3d"
+  },
+  {
+   "path": "data/fields/IND25__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 457665,
+   "sha256": "07a38e8f7bd10ba81cae31c494f4541acc7009382e63bc7d27feac9df92af96d"
+  },
+  {
+   "path": "data/fields/IND25__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 443492,
+   "sha256": "ddf1a35ebe380248d3573dec7b918643f31895d6454f722f38a8fdcea34611ef"
+  },
+  {
+   "path": "data/fields/IND25__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 465884,
+   "sha256": "1a6afaca8b7ed992c415e8ec0e67f0b3ed0ffa217cc778c646166a93a45f4418"
+  },
+  {
+   "path": "data/fields/IND25__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 291609,
+   "sha256": "1d23af915df448e45bea1d4982460474ef30d1251c12b61b1d6afb4027c5f20b"
+  },
+  {
+   "path": "data/fields/IND25__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 279304,
+   "sha256": "01ddcc453d5c293e3eabd795c5c1277a79914aef04097c48ed899d40e1e26f47"
+  },
+  {
+   "path": "data/fields/IND45__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 465775,
+   "sha256": "945a8f7048373682703b1ab1896c306c3ff4f5034dbefc2c2fa350a4e2e18f7f"
+  },
+  {
+   "path": "data/fields/IND45__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 449243,
+   "sha256": "94f6e543108ce8bd296c83a85c0ca933770fb2c8de0a74b85ce8da4d2fe2ec63"
+  },
+  {
+   "path": "data/fields/IND45__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 467712,
+   "sha256": "f4bfa3abd42c875468426e0bb1879aaf12543ab294bf3158aa69342f81637ea8"
+  },
+  {
+   "path": "data/fields/IND45__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 301538,
+   "sha256": "50b9e84830f56580510b6fc742e86f6f6840f1e171ab6055578c2e80f85d7b9c"
+  },
+  {
+   "path": "data/fields/IND45__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 272941,
+   "sha256": "2ae91d5069bf04f87a05bc890adbeb5a8214b63e4b43b04ceab518dc370f6a9f"
+  },
+  {
+   "path": "data/fields/IND65__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 471004,
+   "sha256": "064c38a330a8ae3ca3af541cfc97b2732dff23b50108c1f77d56f56fcbc265ea"
+  },
+  {
+   "path": "data/fields/IND65__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 452600,
+   "sha256": "68b97708626946b6985302ce5602fd74163bb398b9f1ba8d390651065527ffb9"
+  },
+  {
+   "path": "data/fields/IND65__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 468459,
+   "sha256": "c0feebc9384dc60582f8baff10b7adbb3e4ad61b06c8bc863589163f596196fa"
+  },
+  {
+   "path": "data/fields/IND65__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 301289,
+   "sha256": "a9034b3d4d6bea97c5e6d70c25738ae6091b7a3ce801295f78e629d8c41bc744"
+  },
+  {
+   "path": "data/fields/IND65__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 269274,
+   "sha256": "283dea0a1e21665e6346ca62b1ffc04900b7d494ac35a0368f0e30994c08c5db"
+  },
+  {
+   "path": "data/fields/manifest.json",
+   "bytes": 128108,
+   "gzip_bytes": 21953,
+   "sha256": "8485bd0ecc61e755cd07bf250aeebed5a5d10d2932ee5a1cc886295942070710"
+  },
+  {
+   "path": "data/fields/PP100__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 498302,
+   "sha256": "f64cc150947fed542e15d21f20250412f29a844bc31ebaa89d0f513386dd86ea"
+  },
+  {
+   "path": "data/fields/PP100__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 475506,
+   "sha256": "b364279eca283277ee70cafcd4ccd2d2fdadf6cb5973bbd68fd8c32efaf16003"
+  },
+  {
+   "path": "data/fields/PP100__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 517557,
+   "sha256": "ef58c220a4e5511908ae49f062cd96041502b63eec191d07de4c87398cc92275"
+  },
+  {
+   "path": "data/fields/PP100__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 306909,
+   "sha256": "1eed2874e57f727cbe81fcba7c356acf5a19e22e23c1d65dbd0fc75e9b364db8"
+  },
+  {
+   "path": "data/fields/PP100__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 365144,
+   "sha256": "e62c9ed40ac599742190d3a0f2f1548629d8bac29ff3dae568ebb61debd12309"
+  },
+  {
+   "path": "data/fields/PP150__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 499042,
+   "sha256": "1e393c0301a91a4a842e1f2f860ee7a449ad879a4f1c5c268b4dbfab1e3dbac3"
+  },
+  {
+   "path": "data/fields/PP150__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 470529,
+   "sha256": "ee61670fe1f3e00cc49797cb09e6edf69c304ceff271e4f1a4af11e468c0d256"
+  },
+  {
+   "path": "data/fields/PP150__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 513340,
+   "sha256": "339fa79a4080522a5f485177d3f63906268583ca202843ad69b1d27f292a3373"
+  },
+  {
+   "path": "data/fields/PP150__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 303709,
+   "sha256": "48388b189faf6c1545434051922a46b3e62144a4910879dfaf91d0a6f261bf44"
+  },
+  {
+   "path": "data/fields/PP150__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 355584,
+   "sha256": "507d4fae54b31c57975434a1d2a8fbbab39af14007e924d5f9c792765d1de0f4"
+  },
+  {
+   "path": "data/fields/PP200__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 493376,
+   "sha256": "46954053cf96fff1a804815c6df2342a3f75a37cf20e62ce9b35f392987039e6"
+  },
+  {
+   "path": "data/fields/PP200__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 464567,
+   "sha256": "29b8d67398fcfbc3dbc4ba16464bbaaabc5c109543bd6d76fca321c8fdeddd26"
+  },
+  {
+   "path": "data/fields/PP200__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 521833,
+   "sha256": "8a4d4fab184f7a067c6d3c95a00a39ee9ae7ae1562e61e459bda99647c667f3c"
+  },
+  {
+   "path": "data/fields/PP200__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 299990,
+   "sha256": "530f573b7e5e9a87c584946f222df94f901ca2041186a5524d114d70750448d1"
+  },
+  {
+   "path": "data/fields/PP200__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 351402,
+   "sha256": "a2799d5b73e40941c42b668be4f93a74ad1b2ba882f0ac22bc79dccdf329214e"
+  },
+  {
+   "path": "data/fields/roads.json",
+   "bytes": 99778,
+   "gzip_bytes": 19903,
+   "sha256": "9626adb51ad625e41af5b8c9aca309cc027daf8eaffb56ae1d05440642d4d2a3"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 422450,
+   "sha256": "9887a7cc72d2334df4f74e8104e9cb095401e44e8926db8f2dc5609272053bf6"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169486,
+   "sha256": "31af2680ab9ed294f35c71fa13d9cd67c067db6b72dc3ed4cba8d8c56d562a30"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 422128,
+   "sha256": "3bb479884c4b9a6cf971badebc9f27bcb9ebcc1067f95049417cd7c2b238391b"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169472,
+   "sha256": "4da145f8b0783fe546587c48ade00a69bd168dd3320adfa416fb9640951eb0dd"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 422326,
+   "sha256": "e89c69c5417a5964e3823d9569dfc98562ed90f168a621af227f5a55d5f07247"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier1__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169447,
+   "sha256": "80f1851a83c1d4fb555f9e8c813844f17ac989dd7c35160f01c50c61b353d73b"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425105,
+   "sha256": "b2476ce113325813da8308d32593545adbf6238fa5dfc72b818401e7fa6652ef"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 167950,
+   "sha256": "2dc901b83bddaec4d78a72b1340384e64e14211b28f86dc271a64b02bfda3f9e"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425063,
+   "sha256": "c6b14191fa4f739f7bdcf877dff43b266fc1b53c373f507722fe8c61086e9bf4"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 168001,
+   "sha256": "0992963bdffddab88880c6ded2a18a93968b6fa1f195c751adce490a79ba333f"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425006,
+   "sha256": "0b11a9bbfd6ce87dccfa40b8f7c91a52cc0acfbdf1231bfdcc1c5e4972c748d6"
+  },
+  {
+   "path": "data/fields/roads/convective_deep__tier2__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 168031,
+   "sha256": "27b6d2cb102059aed187e65088e10656174de13836cbec8c7c6be645144b1bb2"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 424526,
+   "sha256": "12f04972d26fc963f2f5ad3cf1ee7747c6af69eec7f034625b0cb3af6ea1e9b5"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169002,
+   "sha256": "b8d7f5179f3291c1dc839e8665f175231ecb3a781694b81f2023fb1988a3c1f7"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 424749,
+   "sha256": "9ee8952f3a6d2db808eb0543e8c2c5b18e94ea1fe67302c07691545894e18a10"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169140,
+   "sha256": "46e84d9945c0018f308911de77da3c6bb28cdda8e9fe1cae3e7964103015e46a"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 424512,
+   "sha256": "c9e0aa5441431b0ab0a3033aa3d8e64e164e0c1940c4d64ff55bc8b51d6ff6c5"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier1__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169034,
+   "sha256": "616d3ee395e2dacdb7786a29b8c069e282e6657c50252df3c384148d288df7b5"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 421558,
+   "sha256": "04037a9bd88b528019999f6de83d456a52d2c784de753bb92ba94abe77c722de"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 167157,
+   "sha256": "0384b14a8d5795a9a359f83283a8e5da5d5a4043261ddf41b8e93f14b6ed5f5b"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 421972,
+   "sha256": "9c3e0d39dd9d5dc1f91e15881204efaef162382e95ed2fea74c4091c8b3b8ec6"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 167323,
+   "sha256": "e665b9f50c4cc186a534cd3c45f3b67f04565b25968ae2f2d19832461e99dde7"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 421720,
+   "sha256": "afe32b0a85d94bd06232b266e06ad049ce3f3b8560764d5d365b654968751187"
+  },
+  {
+   "path": "data/fields/roads/convective_winter__tier2__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 167203,
+   "sha256": "7681194c89ecca11f349e615fa74a6ce9283eb298198985a060275411c90afde"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425337,
+   "sha256": "1e13007732e8fc4c86117e08b6cc38fb9fce46c70dbb6ef3dec2993f7fb932a1"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169405,
+   "sha256": "5fe9beaa3a78b61e1f29eba309506782f6decac2a7a20430af5f772c24a97006"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425556,
+   "sha256": "9b756f9ba4c2de9f7021573127004b9751ec0082d917db4a27d2f3c2bfbb1620"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169420,
+   "sha256": "e298b4cec27e30c4ae340cd27b95341606aceeff482b3461bdd8e642392c99e1"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 425565,
+   "sha256": "7ba420b46614b8597ae6d3fd1fbfd83d81f2c4f9b723dff5ec16dbf9ffb9d420"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier1__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169490,
+   "sha256": "d5f1dd4c233381df3e64322f3a82dc24efc417686b7effbdff50b71503bf33db"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 423277,
+   "sha256": "4904e43e2044158a0eae783b7b2fa8e8fad8a0d467a40a3a2ba9de6de194f6a4"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169231,
+   "sha256": "ef47daa43210c5963003d8ce632cf68f2f5f9098c10818ac305eb9baf1fb529c"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 423112,
+   "sha256": "e62603beacb70745519373ef3230cccb82c71c0bff880f5c38a498a94315c873"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169213,
+   "sha256": "27ee4b0dd454c7e60012f62bc80c7889779ab4488ab15edc0cd7cc0640db7980"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 423377,
+   "sha256": "8a6180a2bbcfa84ffade0cad103fba22c55a397be8e8320f5933fd1606b0cee0"
+  },
+  {
+   "path": "data/fields/roads/morning_transition__tier2__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 169169,
+   "sha256": "3b22b2eb9a1f35d589b645caf9424e0f4cf6c6ecfa39dc3cbebb6e714e36aced"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 408159,
+   "sha256": "61d444d03cf3271a9ac584fe9661aafbe5600acab7c92903f228bdb54d5f706f"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164285,
+   "sha256": "b1e9229e336bf1b8021ac9b9be764c10290f369bdf8f32257cd179e98a5278cf"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 409046,
+   "sha256": "78b4d28ddecce8fa3eccdb680c6d6ee893b710b1f05c75f1eb1f14fc538140b4"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164583,
+   "sha256": "6b39fa2d8ed274ca6ee5382f60a54ff3450fc68b01539cc110de6c5a19123ded"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 408814,
+   "sha256": "0a008f86945a3f49b77af61457418ecb97c442681e47dcda83ba65ad98599628"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier1__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164579,
+   "sha256": "058b0db859ebaeb78ef8e8d38662be032f19b8453564904b21973812ba331593"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 404458,
+   "sha256": "78ed2b81c046e43397159b04d24b942f21cb1b5159f98dcba1ef88d7405a9fce"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164971,
+   "sha256": "d5eac6bc6d8dc0519b3452b56857e60a2a4a108404bbafb2e4b20b74a3edde9f"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 405347,
+   "sha256": "0d90d65ce752807b7f3f69921acbc9568522e6cb4bbe00a53bd869fcde3da972"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164997,
+   "sha256": "071e6e81e05a099045ab8cf4af297aae09eb0c182e0579a2c0461fc5fd741052"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 404935,
+   "sha256": "0147d767ad09940338dba178aabb51b53ac1649cd5ff1bc0746ffaecaeee7650"
+  },
+  {
+   "path": "data/fields/roads/neutral_windy__tier2__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 164923,
+   "sha256": "5f5997f9ffcbb6b5ac45ed606ead8193292dd018262990e6846bad8b82ca28cc"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 386137,
+   "sha256": "a8bba58c9686a96f59acba8fcb014e2d167d77d003f69c58e038cf61cd3cacdb"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 166800,
+   "sha256": "3e6d0318e326b622dddabd40aa837e63d3b95a322f348b398b191f9cee9efabb"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 382798,
+   "sha256": "e182abf1187cf3fbf91aad84ae56bcaa0829635f286a9f64bad36d5d67608ff7"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 166731,
+   "sha256": "627c5cb8332aeb89f72175aaa36e05b78775cc696599e278ea046be9b57f4140"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 384098,
+   "sha256": "41fc81a9834d2d2ecaf301728c7b7f893793ea11b28516d42dacf36017599680"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier1__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 166762,
+   "sha256": "d7502dadb53504ba2968082ccea7fc8e533bab0ca3584f9d36f881340dcad1a1"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__CO_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 376765,
+   "sha256": "6529644801296c8b06695544e884a10d8adc32ed7a0a85623f0a78c5f7a6d22b"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__CO.bin",
+   "bytes": 180000,
+   "gzip_bytes": 165726,
+   "sha256": "a5c28dfe079a6eca7dc614fea39b29a13b3cc7d26715ae03398cb281efd49f4d"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__NOx_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 375882,
+   "sha256": "611fb7fe4544fe26b4325bd8d74a4deeb5ef0fc21ff61812004fadac790538c6"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__NOx.bin",
+   "bytes": 180000,
+   "gzip_bytes": 165862,
+   "sha256": "60b72f8d6ba5f2da0fbd7adc43b05511ab223c362f80635a7d15ba004b031542"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__PM25_z.bin",
+   "bytes": 450000,
+   "gzip_bytes": 376231,
+   "sha256": "51e88fdad90ff8f003018c33b7a38ddd2b1bf38f9b40d1892233fa2c94afcf8d"
+  },
+  {
+   "path": "data/fields/roads/stable_night__tier2__PM25.bin",
+   "bytes": 180000,
+   "gzip_bytes": 165784,
+   "sha256": "6105430ebda5efd72e734ca78dcbdb5f772ea777a3605070a010a79525c345ce"
+  },
+  {
+   "path": "data/fields/sources.json",
+   "bytes": 6952,
+   "gzip_bytes": 1429,
+   "sha256": "a19bc499111ea26eb3f44d3752e858ebabd67a57c44c8fbe8464e3a8a5843e6b"
+  },
+  {
+   "path": "data/fields/VOL30__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 409464,
+   "sha256": "b239f26a3a30340e91baed5be9e937c5ccd24b75a02569ce2dc31c1316ce5c26"
+  },
+  {
+   "path": "data/fields/VOL30__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 339887,
+   "sha256": "8f02a5cfe0c9d169b788d9228648664916f1b004c4884936c01b36f93342cf8b"
+  },
+  {
+   "path": "data/fields/VOL30__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 284567,
+   "sha256": "e36a49b4796be0b333bc63232b888b24b4392d547df7db1f1711344b3c5244ed"
+  },
+  {
+   "path": "data/fields/VOL30__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 290048,
+   "sha256": "add47089399baaad7dd61331cbbf6dcb4f5e626c732c93eb732f710f4dc261fa"
+  },
+  {
+   "path": "data/fields/VOL30__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 148494,
+   "sha256": "06b25aa30598fa9b1c47b2b120b65634fcebbbb930d1bae375b4edc5c9979d80"
+  },
+  {
+   "path": "fallback/aqdata.json",
+   "bytes": 29942,
+   "gzip_bytes": 10020,
+   "sha256": "b73ce60b8fe52ca3b3338e54458f0af61d31b106183d39e3f9b74dee6c11593a"
+  },
+  {
+   "path": "index.html",
+   "bytes": 11515,
+   "gzip_bytes": 3592,
+   "sha256": "21d25c3809356823b4956ce7b78517673ecd7c7869a93666570ffa401edff171"
+  }
+ ]
+}

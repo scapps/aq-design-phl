@@ -1,0 +1,1968 @@
+{
+ "format": "aqsim-backgrounds",
+ "version": 1,
+ "created": "2026-10-29T06:44:53.420316+00:00",
+ "source": "config/backgrounds.yaml",
+ "source_sha256": "e6628f3378d053e09c0063443ba9850693c229c70f511df7ad74a333ef571a19",
+ "backgrounds_version": "a1",
+ "reference_conditions": "25 degC, 1 atm (molar volume 24.45 L/mol)",
+ "units": "µg/m³",
+ "pollutant_keys": "canonical: upper case without '.', '_', '-' or spaces (PM2.5 -> PM25)",
+ "general_caveats": [
+  "Backgrounds are single-hour regional values for the scenario hour, from monitors chosen by the rules in docs/phase2_A_scenarios.md; they are not design values.",
+  "NAAQS levels are statistical forms over months to years; one modelled hour cannot show compliance or exceedance, so they are reference levels only.",
+  "Conversions use 25 degC and 1 atm (24.45 L/mol)."
+ ],
+ "pollutants": {
+  "SO2": {
+   "label": "SO₂",
+   "yaml_key": "SO2",
+   "native_units": "ppb",
+   "ug_m3_per_native_unit": 2.6203,
+   "molar_mass_g_mol": 64.066,
+   "conversion": "ug/m3 = ppb x MW / 24.45 (25 degC, 1 atm); MW = 64.066 g/mol",
+   "naaqs": [
+    {
+     "level": 75.0,
+     "units": "ppb",
+     "averaging": "1-hour",
+     "form": "99th percentile of daily maximum 1-hour values, averaged over 3 years",
+     "type": "primary",
+     "level_ug_m3": 196.52
+    }
+   ],
+   "naaqs_text": "75 ppb, 1-hour (99th percentile of daily 1-h maxima, 3-yr average)",
+   "note": "Mostly primary. A stored unit field (conserved tracer) maps directly onto SO2 over a single hour; conversion to sulfate is slow (percent per hour) and is ignored.",
+   "caveats": [],
+   "source_file": "aqs.epa.gov/aqsweb/airdata/hourly_42401_2024.zip",
+   "source_file_sha256": "8d4c2d8c9e5c3e320f7ad398a2bd113da966f28164b655b8bf87b4499bbafe3c"
+  },
+  "CO": {
+   "label": "CO",
+   "yaml_key": "CO",
+   "native_units": "ppm",
+   "ug_m3_per_native_unit": 1145.6033,
+   "molar_mass_g_mol": 28.01,
+   "conversion": "ug/m3 = ppm x 1000 x MW / 24.45 (25 degC, 1 atm); MW = 28.010 g/mol",
+   "naaqs": [
+    {
+     "level": 35.0,
+     "units": "ppm",
+     "averaging": "1-hour",
+     "form": "not to be exceeded more than once per year",
+     "type": "primary",
+     "level_ug_m3": 40096.12
+    },
+    {
+     "level": 9.0,
+     "units": "ppm",
+     "averaging": "8-hour",
+     "form": "not to be exceeded more than once per year",
+     "type": "primary",
+     "level_ug_m3": 10310.43
+    }
+   ],
+   "naaqs_text": "35 ppm, 1-hour; 9 ppm, 8-hour (not to be exceeded more than once per year)",
+   "note": "Primary and nearly inert over an hour, so the tracer field applies directly.",
+   "caveats": [
+    "No rural or suburban CO monitor is in range, so CO backgrounds come from urban neighbourhood monitors and include local traffic."
+   ],
+   "source_file": "aqs.epa.gov/aqsweb/airdata/hourly_42101_2024.zip",
+   "source_file_sha256": "a32204c694170f2f9e16ac56ac101120e57b453278b2df1e6a661bfabd4e2f66"
+  },
+  "NO2": {
+   "label": "NO₂",
+   "yaml_key": "NO2",
+   "native_units": "ppb",
+   "ug_m3_per_native_unit": 1.8816,
+   "molar_mass_g_mol": 46.0055,
+   "conversion": "ug/m3 = ppb x MW / 24.45 (25 degC, 1 atm); MW = 46.005 g/mol",
+   "naaqs": [
+    {
+     "level": 100.0,
+     "units": "ppb",
+     "averaging": "1-hour",
+     "form": "98th percentile of daily maximum 1-hour values, averaged over 3 years",
+     "type": "primary",
+     "level_ug_m3": 188.16
+    },
+    {
+     "level": 53.0,
+     "units": "ppb",
+     "averaging": "annual",
+     "form": "annual mean",
+     "type": "primary and secondary",
+     "level_ug_m3": 99.72
+    }
+   ],
+   "naaqs_text": "100 ppb, 1-hour (98th percentile of daily 1-h maxima, 3-yr average); 53 ppb annual",
+   "note": "Partly secondary: sources emit mostly NO, which ozone converts to NO2. The unit field is a conserved tracer, so a student's NOx plume is not an NO2 plume; adding the tracer to this NO2 background overstates NO2 near sources unless a conversion (for example a fixed NO2/NOx ratio such as Appendix W's ARM2 range 0.5-0.9) is applied. The background itself already includes secondary NO2 formed upwind.",
+   "caveats": [
+    "The app counts all emitted NOx as NO2 (the tracer upper limit); real near-source NO2 is lower because sources emit mostly NO.",
+    "Partly secondary: the background already includes NO2 formed upwind."
+   ],
+   "source_file": "aqs.epa.gov/aqsweb/airdata/hourly_42602_2024.zip",
+   "source_file_sha256": "638bb4a4500b07fa8b139615ce6534aad66aa3fc75ba0cc58ba1f10d95eae5f0"
+  },
+  "PM25": {
+   "label": "PM₂.₅",
+   "yaml_key": "PM2.5",
+   "native_units": "ug/m3",
+   "ug_m3_per_native_unit": 1.0,
+   "molar_mass_g_mol": null,
+   "conversion": "measured in ug/m3 (local conditions); no conversion",
+   "naaqs": [
+    {
+     "level": 35.0,
+     "units": "ug/m3",
+     "averaging": "24-hour",
+     "form": "98th percentile, averaged over 3 years",
+     "type": "primary and secondary",
+     "level_ug_m3": 35.0
+    },
+    {
+     "level": 9.0,
+     "units": "ug/m3",
+     "averaging": "annual",
+     "form": "annual mean, averaged over 3 years (2024 revision)",
+     "type": "primary",
+     "level_ug_m3": 9.0
+    }
+   ],
+   "naaqs_text": "35 ug/m3, 24-hour (98th percentile, 3-yr average); 9.0 ug/m3 annual (2024)",
+   "note": "Mixed primary and secondary (sulfate, nitrate, organics formed in the atmosphere). The tracer field represents primary PM2.5 only; the background carries the regional secondary part.",
+   "caveats": [
+    "The tracer represents primary PM2.5 only; the background carries the regional secondary part (sulfate, nitrate, organics)."
+   ],
+   "source_file": "aqs.epa.gov/aqsweb/airdata/hourly_88101_2024.zip",
+   "source_file_sha256": "d5cae2dc878c6b97c2d80e7583bc6c930562012ff129df9db604262fda465c38"
+  },
+  "O3": {
+   "label": "O₃",
+   "yaml_key": "O3",
+   "native_units": "ppb",
+   "ug_m3_per_native_unit": 1.9631,
+   "molar_mass_g_mol": 47.997,
+   "conversion": "ug/m3 = ppb x MW / 24.45 (25 degC, 1 atm); MW = 47.998 g/mol",
+   "naaqs": [
+    {
+     "level": 0.07,
+     "units": "ppm",
+     "averaging": "8-hour",
+     "form": "annual fourth-highest daily maximum 8-hour value, averaged over 3 years",
+     "type": "primary and secondary",
+     "level_ug_m3": 137.42
+    }
+   ],
+   "naaqs_text": "70 ppb, 8-hour (annual fourth-highest daily maximum 8-h average, 3-yr average)",
+   "note": "Entirely secondary: formed from NOx and VOC in sunlight and destroyed by fresh NO near sources (titration). No catalogue source emits ozone, and the linear unit fields cannot represent its chemistry; the value is the regional background for the linearity module (Agent G). At night and in the morning, ozone inside the city is usually lower than this upwind regional value because of titration (hypothesis to keep in mind when comparing).",
+   "caveats": [
+    "Secondary pollutant: ozone is not emitted, so it is not a tracer and the linear engine does not apply (see the linearity module)."
+   ],
+   "source_file": "aqs.epa.gov/aqsweb/airdata/hourly_44201_2024.zip",
+   "source_file_sha256": "14052565e3a062bea04e01d761b9daefd4077fa9ed50485d46ea1b776d48d7c9"
+  }
+ },
+ "scenarios": {
+  "stable_night": {
+   "SO2": {
+    "value_ug_m3": 1.05,
+    "value_native": 0.4,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-10-11 04:00-05:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.4
+     },
+     {
+      "aqs_site_id": "42-011-0011",
+      "name": "Reading Airport",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 83.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.3
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.4
+     }
+    ]
+   },
+   "CO": {
+    "value_ug_m3": 343.68,
+    "value_native": 0.3,
+    "native_units": "ppm",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-10-11 04:00-05:00 LST",
+    "method": "class B, tier 3: all candidates; median of monitors, same hour",
+    "monitor_class": "B",
+    "flags": [
+     "urban_monitor"
+    ],
+    "monitors": [
+     {
+      "aqs_site_id": "42-101-0048",
+      "name": "North East Waste (NEW)",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "distance_km": 8.3,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "B",
+      "value": 0.3
+     }
+    ]
+   },
+   "NO2": {
+    "value_ug_m3": 23.43,
+    "value_native": 12.45,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-10-11 04:00-05:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 12.1
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 12.8
+     }
+    ]
+   },
+   "PM25": {
+    "value_ug_m3": 2.8,
+    "value_native": 2.8,
+    "native_units": "ug/m3",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-10-11 04:00-05:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-091-0013",
+      "name": "Norristown",
+      "city": "Norristown",
+      "state": "Pennsylvania",
+      "distance_km": 21.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.5
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 2.5
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 2.6
+     },
+     {
+      "aqs_site_id": "10-003-1012",
+      "name": "Newark  PARKING LOT LAIRD CAMPUS",
+      "city": "Newark",
+      "state": "Delaware",
+      "distance_km": 58.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.9
+     },
+     {
+      "aqs_site_id": "24-015-0003",
+      "name": "Fair Hill Natural Resource Management Area",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 7.0
+     },
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.0
+     },
+     {
+      "aqs_site_id": "42-077-0004",
+      "name": "Allentown",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "distance_km": 76.8,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.9
+     },
+     {
+      "aqs_site_id": "42-077-0004",
+      "name": "Allentown",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "distance_km": 76.8,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.8
+     },
+     {
+      "aqs_site_id": "42-071-0012",
+      "name": "Lancaster Downwind",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 81.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 7.3
+     },
+     {
+      "aqs_site_id": "42-011-0011",
+      "name": "Reading Airport",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 83.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.7
+     },
+     {
+      "aqs_site_id": "42-075-0101",
+      "name": "Lebanon",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 113.1,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 3.6
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 6.1
+     },
+     {
+      "aqs_site_id": "24-005-1007",
+      "name": "Padonia",
+      "city": "Cockeysville",
+      "state": "Maryland",
+      "distance_km": 137.1,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 9.0
+     },
+     {
+      "aqs_site_id": "42-043-0401",
+      "name": "Harrisburg",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 146.9,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 4.2
+     }
+    ]
+   },
+   "O3": {
+    "value_ug_m3": 11.78,
+    "value_native": 6.0,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-10-11 04:00-05:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-091-0013",
+      "name": "Norristown",
+      "city": "Norristown",
+      "state": "Pennsylvania",
+      "distance_km": 21.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 6.0
+     },
+     {
+      "aqs_site_id": "10-003-1010",
+      "name": "BCSP",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 39.1,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 11.0
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 12.0
+     },
+     {
+      "aqs_site_id": "24-015-0003",
+      "name": "Fair Hill Natural Resource Management Area",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 9.0
+     },
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 6.0
+     },
+     {
+      "aqs_site_id": "42-077-0004",
+      "name": "Allentown",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "distance_km": 76.8,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 6.0
+     },
+     {
+      "aqs_site_id": "42-071-0012",
+      "name": "Lancaster Downwind",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 81.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "42-011-0006",
+      "name": "Kutztown",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 82.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "42-011-0011",
+      "name": "Reading Airport",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 83.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.0
+     },
+     {
+      "aqs_site_id": "24-025-9001",
+      "name": "Aldino",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 98.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 9.0
+     },
+     {
+      "aqs_site_id": "42-133-0011",
+      "name": "York DW",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 111.2,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 13.0
+     },
+     {
+      "aqs_site_id": "42-075-0101",
+      "name": "Lebanon",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 113.1,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.0
+     },
+     {
+      "aqs_site_id": "24-025-1001",
+      "name": "Edgewood",
+      "city": "Edgewood",
+      "state": "Maryland",
+      "distance_km": 114.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 4.0
+     },
+     {
+      "aqs_site_id": "42-089-0002",
+      "name": "SWIFTWATER",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 126.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 12.0
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "24-005-1007",
+      "name": "Padonia",
+      "city": "Cockeysville",
+      "state": "Maryland",
+      "distance_km": 137.1,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "42-043-0401",
+      "name": "Harrisburg",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 146.9,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.0
+     }
+    ]
+   }
+  },
+  "neutral_windy": {
+   "SO2": {
+    "value_ug_m3": 0.26,
+    "value_native": 0.1,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-01-09 19:00-20:00 LST",
+    "method": "class A, tier 2: upwind +/-90 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "10-003-1013",
+      "name": "BELLEVUE STATE PARK, FIELD IN SE PORTION OF PARK",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 34.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "10-003-1007",
+      "name": "Lums Pond",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.3
+     },
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "24-005-3001",
+      "name": "Essex",
+      "city": "Essex",
+      "state": "Maryland",
+      "distance_km": 133.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.2
+     }
+    ]
+   },
+   "CO": {
+    "value_ug_m3": 343.68,
+    "value_native": 0.3,
+    "native_units": "ppm",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-01-09 19:00-20:00 LST",
+    "method": "class B, tier 4: +/-1 h mean, all candidates; median over monitors of the 3-hour mean",
+    "monitor_class": "B",
+    "flags": [
+     "urban_monitor"
+    ],
+    "monitors": [
+     {
+      "aqs_site_id": "42-101-0048",
+      "name": "North East Waste (NEW)",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "distance_km": 8.3,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "B",
+      "value": 0.3
+     }
+    ]
+   },
+   "NO2": {
+    "value_ug_m3": 3.95,
+    "value_native": 2.1,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-01-09 19:00-20:00 LST",
+    "method": "class A, tier 3: all candidates; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.6
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.5
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 2.1
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.6
+     },
+     {
+      "aqs_site_id": "24-005-3001",
+      "name": "Essex",
+      "city": "Essex",
+      "state": "Maryland",
+      "distance_km": 133.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.5
+     }
+    ]
+   },
+   "PM25": {
+    "value_ug_m3": 6.35,
+    "value_native": 6.35,
+    "native_units": "ug/m3",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-01-09 19:00-20:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-015-0002",
+      "name": "Clarksboro",
+      "city": "East Greenwich (Township of)",
+      "state": "New Jersey",
+      "distance_km": 17.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 4.5
+     },
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 10.7
+     },
+     {
+      "aqs_site_id": "24-029-0002",
+      "name": "Millington",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 90.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": -1.0
+     },
+     {
+      "aqs_site_id": "10-005-1002",
+      "name": "Seaford Shipley State Service Center",
+      "city": "Seaford",
+      "state": "Delaware",
+      "distance_km": 149.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 8.2
+     }
+    ]
+   },
+   "O3": {
+    "value_ug_m3": 82.45,
+    "value_native": 42.0,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-01-09 19:00-20:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 34.0
+     },
+     {
+      "aqs_site_id": "10-005-1003",
+      "name": "Lewes SPM SITE, NEAR UD ACID RAIN/MERCURY COLLECTORS",
+      "city": "Lewes",
+      "state": "Delaware",
+      "distance_km": 130.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 42.0
+     },
+     {
+      "aqs_site_id": "10-005-1002",
+      "name": "Seaford Shipley State Service Center",
+      "city": "Seaford",
+      "state": "Delaware",
+      "distance_km": 149.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 43.0
+     }
+    ]
+   }
+  },
+  "convective_deep": {
+   "SO2": {
+    "value_ug_m3": 0.52,
+    "value_native": 0.2,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-23 14:00-15:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "10-003-1013",
+      "name": "BELLEVUE STATE PARK, FIELD IN SE PORTION OF PARK",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 34.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.1
+     },
+     {
+      "aqs_site_id": "10-003-1007",
+      "name": "Lums Pond",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.4
+     },
+     {
+      "aqs_site_id": "10-005-1003",
+      "name": "Lewes SPM SITE, NEAR UD ACID RAIN/MERCURY COLLECTORS",
+      "city": "Lewes",
+      "state": "Delaware",
+      "distance_km": 130.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.2
+     },
+     {
+      "aqs_site_id": "24-005-3001",
+      "name": "Essex",
+      "city": "Essex",
+      "state": "Maryland",
+      "distance_km": 133.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.2
+     }
+    ]
+   },
+   "CO": {
+    "value_ug_m3": 286.4,
+    "value_native": 0.25,
+    "native_units": "ppm",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-23 14:00-15:00 LST",
+    "method": "class B, tier 3: all candidates; median of monitors, same hour",
+    "monitor_class": "B",
+    "flags": [
+     "urban_monitor"
+    ],
+    "monitors": [
+     {
+      "aqs_site_id": "34-007-0010",
+      "name": "South Camden",
+      "city": "Camden",
+      "state": "New Jersey",
+      "distance_km": 4.7,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "B",
+      "value": 0.2
+     },
+     {
+      "aqs_site_id": "42-101-0048",
+      "name": "North East Waste (NEW)",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "distance_km": 8.3,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "B",
+      "value": 0.3
+     }
+    ]
+   },
+   "NO2": {
+    "value_ug_m3": 1.69,
+    "value_native": 0.9,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-23 14:00-15:00 LST",
+    "method": "class A, tier 3: all candidates; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 1.7
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.9
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.7
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "24-005-3001",
+      "name": "Essex",
+      "city": "Essex",
+      "state": "Maryland",
+      "distance_km": 133.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 4.4
+     }
+    ]
+   },
+   "PM25": {
+    "value_ug_m3": 7.3,
+    "value_native": 7.3,
+    "native_units": "ug/m3",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-23 14:00-15:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-015-0002",
+      "name": "Clarksboro",
+      "city": "East Greenwich (Township of)",
+      "state": "New Jersey",
+      "distance_km": 17.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 9.5
+     },
+     {
+      "aqs_site_id": "10-003-1003",
+      "name": "Bellefonte River Road Park",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 35.2,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 7.5
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 9.1
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 9.3
+     },
+     {
+      "aqs_site_id": "10-003-1012",
+      "name": "Newark  PARKING LOT LAIRD CAMPUS",
+      "city": "Newark",
+      "state": "Delaware",
+      "distance_km": 58.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 7.1
+     },
+     {
+      "aqs_site_id": "10-003-1007",
+      "name": "Lums Pond",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 6.0
+     },
+     {
+      "aqs_site_id": "24-015-0003",
+      "name": "Fair Hill Natural Resource Management Area",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 13.0
+     },
+     {
+      "aqs_site_id": "42-071-0012",
+      "name": "Lancaster Downwind",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 81.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 9.8
+     },
+     {
+      "aqs_site_id": "24-029-0002",
+      "name": "Millington",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 90.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 6.0
+     },
+     {
+      "aqs_site_id": "10-001-0003",
+      "name": "PLATFORM IN FIELD BEHIND DELAWARE FED. CREDIT UNION BLDG",
+      "city": "Dover",
+      "state": "Delaware",
+      "distance_km": 93.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 6.7
+     },
+     {
+      "aqs_site_id": "10-001-0002",
+      "name": "PROPERTY OF KILLENS POND STATE PARK; BEHIND FARM BUILDINGS",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 112.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 6.3
+     },
+     {
+      "aqs_site_id": "10-001-0002",
+      "name": "PROPERTY OF KILLENS POND STATE PARK; BEHIND FARM BUILDINGS",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 112.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 7.3
+     },
+     {
+      "aqs_site_id": "24-025-1001",
+      "name": "Edgewood",
+      "city": "Edgewood",
+      "state": "Maryland",
+      "distance_km": 114.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 5.0
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 9.6
+     },
+     {
+      "aqs_site_id": "10-005-1002",
+      "name": "Seaford Shipley State Service Center",
+      "city": "Seaford",
+      "state": "Delaware",
+      "distance_km": 149.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 5.7
+     }
+    ]
+   },
+   "O3": {
+    "value_ug_m3": 100.12,
+    "value_native": 51.0,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-23 14:00-15:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-015-0002",
+      "name": "Clarksboro",
+      "city": "East Greenwich (Township of)",
+      "state": "New Jersey",
+      "distance_km": 17.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 61.0
+     },
+     {
+      "aqs_site_id": "10-003-1013",
+      "name": "BELLEVUE STATE PARK, FIELD IN SE PORTION OF PARK",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 34.7,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 52.0
+     },
+     {
+      "aqs_site_id": "10-003-1010",
+      "name": "BCSP",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 39.1,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 46.0
+     },
+     {
+      "aqs_site_id": "42-029-0100",
+      "name": "New Garden",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 53.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 48.0
+     },
+     {
+      "aqs_site_id": "10-003-1007",
+      "name": "Lums Pond",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 46.0
+     },
+     {
+      "aqs_site_id": "24-015-0003",
+      "name": "Fair Hill Natural Resource Management Area",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 66.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 46.0
+     },
+     {
+      "aqs_site_id": "42-071-0012",
+      "name": "Lancaster Downwind",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 81.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 49.0
+     },
+     {
+      "aqs_site_id": "24-029-0002",
+      "name": "Millington",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 90.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 55.0
+     },
+     {
+      "aqs_site_id": "24-025-9001",
+      "name": "Aldino",
+      "city": "Not in a City",
+      "state": "Maryland",
+      "distance_km": 98.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 51.0
+     },
+     {
+      "aqs_site_id": "42-133-0011",
+      "name": "York DW",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 111.2,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 45.0
+     },
+     {
+      "aqs_site_id": "10-001-0002",
+      "name": "PROPERTY OF KILLENS POND STATE PARK; BEHIND FARM BUILDINGS",
+      "city": "Not in a City",
+      "state": "Delaware",
+      "distance_km": 112.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 54.0
+     },
+     {
+      "aqs_site_id": "24-025-1001",
+      "name": "Edgewood",
+      "city": "Edgewood",
+      "state": "Maryland",
+      "distance_km": 114.2,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 49.0
+     },
+     {
+      "aqs_site_id": "10-005-1003",
+      "name": "Lewes SPM SITE, NEAR UD ACID RAIN/MERCURY COLLECTORS",
+      "city": "Lewes",
+      "state": "Delaware",
+      "distance_km": 130.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 51.0
+     },
+     {
+      "aqs_site_id": "42-133-0008",
+      "name": "York",
+      "city": "York",
+      "state": "Pennsylvania",
+      "distance_km": 130.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 53.0
+     },
+     {
+      "aqs_site_id": "24-005-3001",
+      "name": "Essex",
+      "city": "Essex",
+      "state": "Maryland",
+      "distance_km": 133.0,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 64.0
+     },
+     {
+      "aqs_site_id": "24-005-1007",
+      "name": "Padonia",
+      "city": "Cockeysville",
+      "state": "Maryland",
+      "distance_km": 137.1,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 58.0
+     },
+     {
+      "aqs_site_id": "10-005-1002",
+      "name": "Seaford Shipley State Service Center",
+      "city": "Seaford",
+      "state": "Delaware",
+      "distance_km": 149.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 54.0
+     }
+    ]
+   }
+  },
+  "convective_winter": {
+   "SO2": {
+    "value_ug_m3": 0.52,
+    "value_native": 0.2,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-02-06 11:00-12:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.0
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.2
+     }
+    ]
+   },
+   "CO": {
+    "value_ug_m3": 192.46,
+    "value_native": 0.168,
+    "native_units": "ppm",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-02-06 11:00-12:00 LST",
+    "method": "class C, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "C",
+    "flags": [
+     "urban_monitor"
+    ],
+    "monitors": [
+     {
+      "aqs_site_id": "36-061-0135",
+      "name": "CCNY",
+      "city": "New York",
+      "state": "New York",
+      "distance_km": 141.1,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "C",
+      "value": 0.194
+     },
+     {
+      "aqs_site_id": "36-005-0133",
+      "name": "PFIZER LAB SITE",
+      "city": "New York",
+      "state": "New York",
+      "distance_km": 149.0,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "C",
+      "value": 0.142
+     }
+    ]
+   },
+   "NO2": {
+    "value_ug_m3": 4.14,
+    "value_native": 2.2,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-02-06 11:00-12:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.2
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 8.6
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.9
+     }
+    ]
+   },
+   "PM25": {
+    "value_ug_m3": 2.8,
+    "value_native": 2.8,
+    "native_units": "ug/m3",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-02-06 11:00-12:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-021-0005",
+      "name": "Rider University",
+      "city": "Lawrence (Township of)",
+      "state": "New Jersey",
+      "distance_km": 51.3,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.7
+     },
+     {
+      "aqs_site_id": "34-019-0001",
+      "name": "Flemington",
+      "city": "Flemington",
+      "state": "New Jersey",
+      "distance_km": 69.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.2
+     },
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 2.8
+     },
+     {
+      "aqs_site_id": "42-077-0004",
+      "name": "Allentown",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "distance_km": 76.8,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 3.0
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 3.5
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": -1.5
+     },
+     {
+      "aqs_site_id": "36-047-0118",
+      "name": "PS 274",
+      "city": "New York",
+      "state": "New York",
+      "distance_km": 133.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 3.1
+     }
+    ]
+   },
+   "O3": {
+    "value_ug_m3": 64.78,
+    "value_native": 33.0,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-02-06 11:00-12:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-017-0012",
+      "name": "Bristol",
+      "city": "Bristol",
+      "state": "Pennsylvania",
+      "distance_km": 29.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 31.0
+     },
+     {
+      "aqs_site_id": "42-017-0012",
+      "name": "Bristol",
+      "city": "Bristol",
+      "state": "Pennsylvania",
+      "distance_km": 29.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 29.0
+     },
+     {
+      "aqs_site_id": "34-021-9991",
+      "name": "Wash. Crossing",
+      "city": "Not in a City",
+      "state": "New Jersey",
+      "distance_km": 47.1,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 36.0
+     },
+     {
+      "aqs_site_id": "34-021-0005",
+      "name": "Rider University",
+      "city": "Lawrence (Township of)",
+      "state": "New Jersey",
+      "distance_km": 51.3,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 32.0
+     },
+     {
+      "aqs_site_id": "34-019-0001",
+      "name": "Flemington",
+      "city": "Flemington",
+      "state": "New Jersey",
+      "distance_km": 69.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 37.0
+     },
+     {
+      "aqs_site_id": "42-095-0025",
+      "name": "Freemansburg",
+      "city": "Freemansburg",
+      "state": "Pennsylvania",
+      "distance_km": 76.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 34.0
+     },
+     {
+      "aqs_site_id": "42-077-0004",
+      "name": "Allentown",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "distance_km": 76.8,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 33.0
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 30.0
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 39.0
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 33.0
+     },
+     {
+      "aqs_site_id": "42-089-0002",
+      "name": "SWIFTWATER",
+      "city": "Not in a City",
+      "state": "Pennsylvania",
+      "distance_km": 126.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 40.0
+     }
+    ]
+   }
+  },
+  "morning_transition": {
+   "SO2": {
+    "value_ug_m3": 0.52,
+    "value_native": 0.2,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-27 07:00-08:00 LST",
+    "method": "class A, tier 2: upwind +/-90 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 1.2
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 0.0
+     },
+     {
+      "aqs_site_id": "10-005-1003",
+      "name": "Lewes SPM SITE, NEAR UD ACID RAIN/MERCURY COLLECTORS",
+      "city": "Lewes",
+      "state": "Delaware",
+      "distance_km": 130.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 0.4
+     }
+    ]
+   },
+   "CO": {
+    "value_ug_m3": 458.24,
+    "value_native": 0.4,
+    "native_units": "ppm",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-27 07:00-08:00 LST",
+    "method": "class B, tier 3: all candidates; median of monitors, same hour",
+    "monitor_class": "B",
+    "flags": [
+     "urban_monitor"
+    ],
+    "monitors": [
+     {
+      "aqs_site_id": "34-007-0010",
+      "name": "South Camden",
+      "city": "Camden",
+      "state": "New Jersey",
+      "distance_km": 4.7,
+      "location_setting": "URBAN AND CENTER CITY",
+      "monitor_class": "B",
+      "value": 0.4
+     }
+    ]
+   },
+   "NO2": {
+    "value_ug_m3": 17.12,
+    "value_native": 9.1,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-27 07:00-08:00 LST",
+    "method": "class A, tier 2: upwind +/-90 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 21.3
+     },
+     {
+      "aqs_site_id": "34-027-3001",
+      "name": "Chester",
+      "city": "Chester",
+      "state": "New Jersey",
+      "distance_km": 101.6,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 3.9
+     },
+     {
+      "aqs_site_id": "34-041-0007",
+      "name": "Columbia",
+      "city": "Knowlton (Township of)",
+      "state": "New Jersey",
+      "distance_km": 108.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 9.1
+     }
+    ]
+   },
+   "PM25": {
+    "value_ug_m3": 7.05,
+    "value_native": 7.05,
+    "native_units": "ug/m3",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-27 07:00-08:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "34-021-0005",
+      "name": "Rider University",
+      "city": "Lawrence (Township of)",
+      "state": "New Jersey",
+      "distance_km": 51.3,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 4.4
+     },
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 6.1
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 8.0
+     },
+     {
+      "aqs_site_id": "36-047-0118",
+      "name": "PS 274",
+      "city": "New York",
+      "state": "New York",
+      "distance_km": 133.4,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 13.0
+     }
+    ]
+   },
+   "O3": {
+    "value_ug_m3": 44.17,
+    "value_native": 22.5,
+    "native_units": "ppb",
+    "averaging": "1-hour",
+    "aqs_hour": "2024-08-27 07:00-08:00 LST",
+    "method": "class A, tier 1: upwind +/-60 deg; median of monitors, same hour",
+    "monitor_class": "A",
+    "flags": [],
+    "monitors": [
+     {
+      "aqs_site_id": "42-017-0012",
+      "name": "Bristol",
+      "city": "Bristol",
+      "state": "Pennsylvania",
+      "distance_km": 29.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 27.0
+     },
+     {
+      "aqs_site_id": "42-017-0012",
+      "name": "Bristol",
+      "city": "Bristol",
+      "state": "Pennsylvania",
+      "distance_km": 29.5,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 26.0
+     },
+     {
+      "aqs_site_id": "34-007-1001",
+      "name": "Ancora State Hospital",
+      "city": "Winslow (Township of)",
+      "state": "New Jersey",
+      "distance_km": 39.4,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 24.0
+     },
+     {
+      "aqs_site_id": "34-021-9991",
+      "name": "Wash. Crossing",
+      "city": "Not in a City",
+      "state": "New Jersey",
+      "distance_km": 47.1,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 16.0
+     },
+     {
+      "aqs_site_id": "34-021-0005",
+      "name": "Rider University",
+      "city": "Lawrence (Township of)",
+      "state": "New Jersey",
+      "distance_km": 51.3,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 26.0
+     },
+     {
+      "aqs_site_id": "34-029-0006",
+      "name": "Colliers Mills",
+      "city": "Jackson (Township of)",
+      "state": "New Jersey",
+      "distance_km": 62.5,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 22.0
+     },
+     {
+      "aqs_site_id": "34-001-0006",
+      "name": "Brigantine",
+      "city": "Galloway (Township of)",
+      "state": "New Jersey",
+      "distance_km": 81.7,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 20.0
+     },
+     {
+      "aqs_site_id": "34-023-0011",
+      "name": "Rutgers University",
+      "city": "East Brunswick (Township of)",
+      "state": "New Jersey",
+      "distance_km": 84.3,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 16.0
+     },
+     {
+      "aqs_site_id": "34-025-0005",
+      "name": "Monmouth University",
+      "city": "West Long Branch",
+      "state": "New Jersey",
+      "distance_km": 104.9,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 23.0
+     },
+     {
+      "aqs_site_id": "36-085-0111",
+      "name": "FRESHKILLS WEST",
+      "city": "New York",
+      "state": "New York",
+      "distance_km": 107.6,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 5.0
+     },
+     {
+      "aqs_site_id": "34-003-0006",
+      "name": "Leonia",
+      "city": "Leonia",
+      "state": "New Jersey",
+      "distance_km": 142.3,
+      "location_setting": "SUBURBAN",
+      "monitor_class": "A",
+      "value": 10.0
+     },
+     {
+      "aqs_site_id": "34-031-5001",
+      "name": "Ramapo",
+      "city": "Wanaque (Wanaque-Midvale)",
+      "state": "New Jersey",
+      "distance_km": 145.0,
+      "location_setting": "RURAL",
+      "monitor_class": "A",
+      "value": 42.0
+     }
+    ]
+   }
+  }
+ }
+}

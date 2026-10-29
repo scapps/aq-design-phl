@@ -1,0 +1,5813 @@
+{
+ "format": "aqsim-fields",
+ "format_version": 2,
+ "created": "2026-10-29T06:44:50.457019+00:00",
+ "units": "µg/m³ per g/s of total emission (1-hour average)",
+ "frames": {
+  "polar": {
+   "dims": [
+    "z",
+    "r",
+    "phi"
+   ],
+   "description": "source-centred polar frame relative to the downwind axis",
+   "coords": {
+    "r": "horizontal distance from the source centre (m)",
+    "phi": "angle from the downwind bearing b = wd + 180 (deg), clockwise positive viewed from above",
+    "z": "height above ground (m, flagpole)"
+   },
+   "to_map": "x = x_src + r sin(b + phi), y = y_src + r cos(b + phi); x east, y north"
+  },
+  "road": {
+   "dims": [
+    "z",
+    "s",
+    "d"
+   ],
+   "description": "road-aligned Cartesian frame of a line source (segment centred on the source point)",
+   "coords": {
+    "s": "distance along the road axis (m); the axis bearing is a = wd + 180 + orientation_deg",
+    "d": "distance across the road axis (m), positive to the right of the axis direction",
+    "z": "height above ground (m, flagpole)"
+   },
+   "to_map": "x = x_src + s sin a + d cos a, y = y_src + s cos a - d sin a"
+  }
+ },
+ "grids": {
+  "polar": {
+   "z_m": [
+    0,
+    2.5,
+    5,
+    7.5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170,
+    180,
+    190,
+    200,
+    210,
+    220,
+    230,
+    240,
+    250,
+    260,
+    270,
+    280,
+    290,
+    300,
+    310,
+    320,
+    330,
+    340,
+    350,
+    375,
+    400,
+    425,
+    450,
+    475,
+    500,
+    525,
+    550,
+    575,
+    600,
+    625,
+    650,
+    675,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1750,
+    2000,
+    2500
+   ],
+   "r_m": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    125,
+    130,
+    140,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300,
+    325,
+    350,
+    375,
+    400,
+    425,
+    450,
+    475,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+    2000,
+    2100,
+    2200,
+    2300,
+    2400,
+    2500,
+    2600,
+    2700,
+    2800,
+    2900,
+    3000,
+    3250,
+    3500,
+    3750,
+    4000,
+    4250,
+    4500,
+    4750,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    8500,
+    9000,
+    9500,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000,
+    15000,
+    16000,
+    17000,
+    18000,
+    19000,
+    20000,
+    22500,
+    25000,
+    27500,
+    30000,
+    35000,
+    40000,
+    45000
+   ],
+   "phi_deg": [
+    -165,
+    -150,
+    -135,
+    -120,
+    -105,
+    -90,
+    -80,
+    -70,
+    -60,
+    -50,
+    -45,
+    -40,
+    -35,
+    -30,
+    -28,
+    -26,
+    -24,
+    -22,
+    -20,
+    -18,
+    -16,
+    -14,
+    -12,
+    -10,
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    35,
+    40,
+    45,
+    50,
+    60,
+    70,
+    80,
+    90,
+    105,
+    120,
+    135,
+    150,
+    165,
+    180
+   ],
+   "dims": [
+    "z",
+    "r",
+    "phi"
+   ],
+   "shape": [
+    66,
+    90,
+    68
+   ],
+   "order": "C order (z, r, phi); phi fastest",
+   "level_bytes": 12240
+  },
+  "road": {
+   "z_m": [
+    0,
+    2.5,
+    5,
+    7.5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140,
+    150,
+    160,
+    170,
+    180,
+    190,
+    200,
+    210,
+    220,
+    230,
+    240,
+    250,
+    260,
+    270,
+    280,
+    290,
+    300,
+    310,
+    320,
+    330,
+    340,
+    350,
+    375,
+    400,
+    425,
+    450,
+    475,
+    500,
+    525,
+    550,
+    575,
+    600,
+    625,
+    650,
+    675,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1750,
+    2000,
+    2500
+   ],
+   "s_m": [
+    -45000,
+    -35000,
+    -30000,
+    -25000,
+    -20000,
+    -15000,
+    -12500,
+    -10000,
+    -8000,
+    -6000,
+    -5000,
+    -4000,
+    -3000,
+    -2500,
+    -2000,
+    -1500,
+    -1250,
+    -1000,
+    -800,
+    -700,
+    -600,
+    -550,
+    -525,
+    -500,
+    -475,
+    -450,
+    -400,
+    -350,
+    -300,
+    -250,
+    -200,
+    -150,
+    -100,
+    -50,
+    0,
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400,
+    450,
+    475,
+    500,
+    525,
+    550,
+    600,
+    700,
+    800,
+    1000,
+    1250,
+    1500,
+    2000,
+    2500,
+    3000,
+    4000,
+    5000,
+    6000,
+    8000,
+    10000,
+    12500,
+    15000,
+    20000,
+    25000,
+    30000,
+    35000,
+    45000
+   ],
+   "d_m": [
+    -45000,
+    -35000,
+    -30000,
+    -25000,
+    -20000,
+    -15000,
+    -12500,
+    -10000,
+    -8000,
+    -6000,
+    -5000,
+    -4000,
+    -3000,
+    -2500,
+    -2000,
+    -1500,
+    -1250,
+    -1000,
+    -800,
+    -600,
+    -500,
+    -400,
+    -300,
+    -250,
+    -200,
+    -150,
+    -125,
+    -100,
+    -75,
+    -60,
+    -50,
+    -40,
+    -35,
+    -30,
+    -25,
+    -20,
+    -17.5,
+    -15,
+    -12.5,
+    -10,
+    -8,
+    -6,
+    -4,
+    -2,
+    -0.25,
+    0,
+    0.25,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12.5,
+    15,
+    17.5,
+    20,
+    25,
+    30,
+    35,
+    40,
+    50,
+    60,
+    75,
+    100,
+    125,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    800,
+    1000,
+    1250,
+    1500,
+    2000,
+    2500,
+    3000,
+    4000,
+    5000,
+    6000,
+    8000,
+    10000,
+    12500,
+    15000,
+    20000,
+    25000,
+    30000,
+    35000,
+    45000
+   ],
+   "dims": [
+    "z",
+    "s",
+    "d"
+   ],
+   "shape": [
+    66,
+    69,
+    91
+   ],
+   "order": "C order (z, s, d); d fastest",
+   "level_bytes": 12558
+  }
+ },
+ "encoding": {
+  "name": "log10-u16",
+  "dtype": "<u2",
+  "endianness": "little",
+  "decades": 12,
+  "zero_code": 0,
+  "decode": "k == 0 ? 0 : 10 ** (log10_min + (k - 1) * log10_step)"
+ },
+ "interpolation": {
+  "scheme": "log-trilinear",
+  "polar": {
+   "weights": "linear in ln r, linear in phi (periodic), linear in z",
+   "inside_r0": "C = (r/r0) C(r0, phi, z) + (1 - r/r0) mean_phi C(r0, z)",
+   "beyond_rmax": "extrapolate ln C in ln r from the last two rings, never increasing"
+  },
+  "road": {
+   "weights": "linear in s, d and z",
+   "outside_box": 0
+  },
+  "values": "interpolate ln C when all 8 corners > 0, otherwise C",
+  "snap_m": 0.001,
+  "above_zmax": 0,
+  "mirror": "reflect the query point across the downwind axis through the source",
+  "reference": "aqsim/fields/interp.py; export/_loadtest/aqfields.js"
+ },
+ "sources": {
+  "AREA200": {
+   "id": "AREA200",
+   "label": "Ground-level area source, 200 m x 200 m",
+   "category": "area",
+   "aermod_type": "AREA",
+   "params": {
+    "release_height": 2,
+    "side": 200,
+    "szinit": 2
+   }
+  },
+  "HW250_00": {
+   "id": "HW250_00",
+   "label": "Highway segment 250 m, 0 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 0
+  },
+  "HW250_11": {
+   "id": "HW250_11",
+   "label": "Highway segment 250 m, 11.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 11.25
+  },
+  "HW250_22": {
+   "id": "HW250_22",
+   "label": "Highway segment 250 m, 22.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 22.5
+  },
+  "HW250_33": {
+   "id": "HW250_33",
+   "label": "Highway segment 250 m, 33.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 33.75
+  },
+  "HW250_45": {
+   "id": "HW250_45",
+   "label": "Highway segment 250 m, 45 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 45
+  },
+  "HW250_56": {
+   "id": "HW250_56",
+   "label": "Highway segment 250 m, 56.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 56.25
+  },
+  "HW250_67": {
+   "id": "HW250_67",
+   "label": "Highway segment 250 m, 67.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 67.5
+  },
+  "HW250_78": {
+   "id": "HW250_78",
+   "label": "Highway segment 250 m, 78.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 78.75
+  },
+  "HW250_90": {
+   "id": "HW250_90",
+   "label": "Highway segment 250 m, 90 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 250,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 90
+  },
+  "HW500_00": {
+   "id": "HW500_00",
+   "label": "Highway segment 500 m, 0 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 0
+  },
+  "HW500_11": {
+   "id": "HW500_11",
+   "label": "Highway segment 500 m, 11.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 11.25
+  },
+  "HW500_22": {
+   "id": "HW500_22",
+   "label": "Highway segment 500 m, 22.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 22.5
+  },
+  "HW500_33": {
+   "id": "HW500_33",
+   "label": "Highway segment 500 m, 33.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 33.75
+  },
+  "HW500_45": {
+   "id": "HW500_45",
+   "label": "Highway segment 500 m, 45 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 45
+  },
+  "HW500_56": {
+   "id": "HW500_56",
+   "label": "Highway segment 500 m, 56.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 56.25
+  },
+  "HW500_67": {
+   "id": "HW500_67",
+   "label": "Highway segment 500 m, 67.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 67.5
+  },
+  "HW500_78": {
+   "id": "HW500_78",
+   "label": "Highway segment 500 m, 78.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 78.75
+  },
+  "HW500_90": {
+   "id": "HW500_90",
+   "label": "Highway segment 500 m, 90 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 500,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 90
+  },
+  "HWY00": {
+   "id": "HWY00",
+   "label": "Highway segment, along the wind (0 deg)",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 0
+  },
+  "HWY11": {
+   "id": "HWY11",
+   "label": "Highway segment 1000 m, 11.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 11.25
+  },
+  "HWY22": {
+   "id": "HWY22",
+   "label": "Highway segment, 22.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 22.5
+  },
+  "HWY33": {
+   "id": "HWY33",
+   "label": "Highway segment 1000 m, 33.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 33.75
+  },
+  "HWY45": {
+   "id": "HWY45",
+   "label": "Highway segment, 45 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 45
+  },
+  "HWY56": {
+   "id": "HWY56",
+   "label": "Highway segment 1000 m, 56.25 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 56.25
+  },
+  "HWY67": {
+   "id": "HWY67",
+   "label": "Highway segment, 67.5 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 67.5
+  },
+  "HWY78": {
+   "id": "HWY78",
+   "label": "Highway segment 1000 m, 78.75 deg to the wind",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 78.75
+  },
+  "HWY90": {
+   "id": "HWY90",
+   "label": "Highway segment, across the wind (90 deg)",
+   "category": "highway",
+   "aermod_type": "RLINE",
+   "params": {
+    "length": 1000,
+    "release_height": 1.3,
+    "szinit": 1.7,
+    "width": 30
+   },
+   "orientation_deg": 90
+  },
+  "IND25": {
+   "id": "IND25",
+   "label": "Industrial stack, 25 m",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 12,
+    "stack_diameter": 2,
+    "stack_height": 25,
+    "stack_temp": 450
+   }
+  },
+  "IND45": {
+   "id": "IND45",
+   "label": "Industrial stack, 45 m",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 12,
+    "stack_diameter": 2,
+    "stack_height": 45,
+    "stack_temp": 450
+   }
+  },
+  "IND65": {
+   "id": "IND65",
+   "label": "Industrial stack, 65 m",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 12,
+    "stack_diameter": 2,
+    "stack_height": 65,
+    "stack_temp": 450
+   }
+  },
+  "PP100": {
+   "id": "PP100",
+   "label": "Power plant stack, 100 m",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 20,
+    "stack_diameter": 6,
+    "stack_height": 100,
+    "stack_temp": 405
+   }
+  },
+  "PP150": {
+   "id": "PP150",
+   "label": "Power plant stack, 150 m",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 20,
+    "stack_diameter": 6,
+    "stack_height": 150,
+    "stack_temp": 405
+   }
+  },
+  "PP200": {
+   "id": "PP200",
+   "label": "Power plant stack, 200 m",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "params": {
+    "exit_velocity": 20,
+    "stack_diameter": 6,
+    "stack_height": 200,
+    "stack_temp": 405
+   }
+  },
+  "VOL30": {
+   "id": "VOL30",
+   "label": "Building fugitive (volume) source, 30 m x 30 m x 15 m",
+   "category": "volume",
+   "aermod_type": "VOLUME",
+   "params": {
+    "release_height": 7.5,
+    "sigma_y0": 6.98,
+    "sigma_z0": 6.98
+   }
+  }
+ },
+ "scenarios": {
+  "convective_deep": {
+   "id": "convective_deep",
+   "label": "Convective summer afternoon (deep mixed layer)",
+   "date": "2024-08-23",
+   "hour": 15,
+   "wd_deg": 220,
+   "ws_m_s": 4.36,
+   "L_m": -47.9,
+   "zi_m": 1934,
+   "stability": "convective",
+   "zi_effective_m": 1934,
+   "ustar_m_s": 0.459,
+   "wstar_m_s": 2.137,
+   "zic_m": 1934,
+   "zim_m": 747,
+   "z0_m": 0.12,
+   "temp_K": 300.9
+  },
+  "convective_winter": {
+   "id": "convective_winter",
+   "label": "Convective winter midday (shallow mixed layer)",
+   "date": "2024-02-06",
+   "hour": 12,
+   "wd_deg": 26,
+   "ws_m_s": 3.86,
+   "L_m": -37,
+   "zi_m": 793,
+   "stability": "convective",
+   "zi_effective_m": 793,
+   "ustar_m_s": 0.374,
+   "wstar_m_s": 1.41,
+   "zic_m": 793,
+   "zim_m": 549,
+   "z0_m": 0.08,
+   "temp_K": 277.5
+  },
+  "morning_transition": {
+   "id": "morning_transition",
+   "label": "Morning transition, shallow growing mixed layer",
+   "date": "2024-08-27",
+   "hour": 8,
+   "wd_deg": 91,
+   "ws_m_s": 2.36,
+   "L_m": -23,
+   "zi_m": 327,
+   "stability": "convective",
+   "zi_urban_m": 378.5,
+   "zi_effective_m": 378.5,
+   "ustar_m_s": 0.265,
+   "wstar_m_s": 0.687,
+   "zic_m": 161,
+   "zim_m": 327,
+   "z0_m": 0.12,
+   "temp_K": 297.5
+  },
+  "neutral_windy": {
+   "id": "neutral_windy",
+   "label": "Near-neutral, windy and overcast",
+   "date": "2024-01-09",
+   "hour": 20,
+   "wd_deg": 161,
+   "ws_m_s": 13.66,
+   "L_m": 2382.1,
+   "zi_m": 3139,
+   "stability": "stable",
+   "zi_urban_m": 378.5,
+   "zi_effective_m": 3139,
+   "ustar_m_s": 1.198,
+   "wstar_m_s": -9,
+   "zic_m": -999,
+   "zim_m": 3139,
+   "z0_m": 0.08,
+   "temp_K": 287.5
+  },
+  "stable_night": {
+   "id": "stable_night",
+   "label": "Stable night, light wind",
+   "date": "2024-10-11",
+   "hour": 5,
+   "wd_deg": 298,
+   "ws_m_s": 1.76,
+   "L_m": 24.8,
+   "zi_m": 139,
+   "stability": "stable",
+   "zi_urban_m": 378.5,
+   "zi_effective_m": 378.5,
+   "ustar_m_s": 0.15,
+   "wstar_m_s": -9,
+   "zic_m": -999,
+   "zim_m": 139,
+   "z0_m": 0.1,
+   "temp_K": 281.4
+  }
+ },
+ "fields": [
+  {
+   "source_id": "AREA200",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "AREA200__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 353265,
+   "sha256": "13cbed57406832e0d5f1d0b630aa15838679ccdd5223b885379523b2426fbf54",
+   "max": 117.15499877929688,
+   "ground_max": 117.15499877929688,
+   "ground_max_at": {
+    "r": 100,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 117.15499877929688
+    },
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 117.15499877929688
+    },
+    {
+     "idx": [
+      21,
+      11,
+      53
+     ],
+     "code": 4,
+     "value": 1.1730327820203001e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "5e37f6d80140ce78",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:12.199-04:00",
+    "converted": "2026-10-20T20:41:18.063032+00:00 converted by aqsim.fields (converter 2) from run 5e37f6d80140ce78"
+   },
+   "log10_min": -9.93123917615836,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "AREA200",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "AREA200__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 287909,
+   "sha256": "0d7cd05baeaf5e58315395b74f5d2cb3e907f22baf07f53ddd4528a72d6adc28",
+   "max": 136.75100708007812,
+   "ground_max": 136.75100708007812,
+   "ground_max_at": {
+    "r": 100,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 136.75100708007812
+    },
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 136.75100708007812
+    },
+    {
+     "idx": [
+      22,
+      10,
+      47
+     ],
+     "code": 3,
+     "value": 1.36866365463284e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "ce9ebc6f4ea52063",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:11.641-04:00",
+    "converted": "2026-10-20T20:41:18.617083+00:00 converted by aqsim.fields (converter 2) from run ce9ebc6f4ea52063"
+   },
+   "log10_min": -9.864069466693177,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "AREA200",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "AREA200__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 261534,
+   "sha256": "beba0f1b813f3d68506eac970e31904f2a1ad7090bd9176e8575c8c0eee8f6d2",
+   "max": 169.16799926757812,
+   "ground_max": 169.16799926757812,
+   "ground_max_at": {
+    "r": 100,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 169.16799926757812
+    },
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 169.16799926757812
+    },
+    {
+     "idx": [
+      28,
+      7,
+      41
+     ],
+     "code": 10,
+     "value": 1.6981115125158652e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "afbdb6c30a3d0102",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:12.426-04:00",
+    "converted": "2026-10-20T20:41:19.160645+00:00 converted by aqsim.fields (converter 2) from run afbdb6c30a3d0102"
+   },
+   "log10_min": -9.771681787017508,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "AREA200",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "AREA200__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 228290,
+   "sha256": "97db29afe0a0148dc67aa4fa2bdc50cee76d76ca6979ab21dffd0d9dd0b2fc10",
+   "max": 52.489498138427734,
+   "ground_max": 52.489498138427734,
+   "ground_max_at": {
+    "r": 100,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 52.489498138427734
+    },
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 52.489498138427734
+    },
+    {
+     "idx": [
+      13,
+      9,
+      24
+     ],
+     "code": 23,
+     "value": 5.2978645775914046e-11
+    }
+   ],
+   "provenance": {
+    "run_id": "aa2c87efe8b10c1a",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:09.019-04:00",
+    "converted": "2026-10-20T20:41:17.491950+00:00 converted by aqsim.fields (converter 2) from run aa2c87efe8b10c1a"
+   },
+   "log10_min": -10.279927579579992,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "AREA200",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "AREA200__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 108526,
+   "sha256": "c8c953753b9f5a6a8334e9ce5c1706c8314aa13fa5bb0fa74a2d3d4d27ad781b",
+   "max": 427.38800048828125,
+   "ground_max": 427.38800048828125,
+   "ground_max_at": {
+    "r": 100,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 427.38800048828125
+    },
+    {
+     "idx": [
+      0,
+      9,
+      33
+     ],
+     "code": 65535,
+     "value": 427.38800048828125
+    },
+    {
+     "idx": [
+      16,
+      35,
+      24
+     ],
+     "code": 4,
+     "value": 4.279289422814969e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "d1eb7898174b73a8",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:04.519-04:00",
+    "converted": "2026-10-20T20:41:16.947249+00:00 converted by aqsim.fields (converter 2) from run d1eb7898174b73a8"
+   },
+   "log10_min": -9.369177675421556,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND25",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND25__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 442594,
+   "sha256": "07a38e8f7bd10ba81cae31c494f4541acc7009382e63bc7d27feac9df92af96d",
+   "max": 1822.1600341796875,
+   "ground_max": 2.9629199504852295,
+   "ground_max_at": {
+    "r": 350,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      8,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1822.1600341796875
+    },
+    {
+     "idx": [
+      0,
+      23,
+      33
+     ],
+     "code": 50305,
+     "value": 2.963501214981079
+    },
+    {
+     "idx": [
+      51,
+      28,
+      21
+     ],
+     "code": 1,
+     "value": 1.8221600894818835e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "bd8168849c2e2d03",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:50.982-04:00",
+    "converted": "2026-10-20T20:40:55.031494+00:00 converted by aqsim.fields (converter 2) from run bd8168849c2e2d03"
+   },
+   "log10_min": -8.739413483066093,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND25",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND25__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 431270,
+   "sha256": "ddf1a35ebe380248d3573dec7b918643f31895d6454f722f38a8fdcea34611ef",
+   "max": 1677.9200439453125,
+   "ground_max": 4.4811601638793945,
+   "ground_max_at": {
+    "r": 300,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      8,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1677.9200439453125
+    },
+    {
+     "idx": [
+      0,
+      21,
+      33
+     ],
+     "code": 51481,
+     "value": 4.480520725250244
+    },
+    {
+     "idx": [
+      51,
+      18,
+      18
+     ],
+     "code": 3,
+     "value": 1.6793355595012827e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "81be78b524585f61",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:51.477-04:00",
+    "converted": "2026-10-20T20:40:55.603939+00:00 converted by aqsim.fields (converter 2) from run 81be78b524585f61"
+   },
+   "log10_min": -8.77522873796541,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND25",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND25__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 449300,
+   "sha256": "1a6afaca8b7ed992c415e8ec0e67f0b3ed0ffa217cc778c646166a93a45f4418",
+   "max": 1744.949951171875,
+   "ground_max": 6.690130233764648,
+   "ground_max_at": {
+    "r": 150,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      9,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1744.949951171875
+    },
+    {
+     "idx": [
+      0,
+      15,
+      33
+     ],
+     "code": 52339,
+     "value": 6.690359592437744
+    },
+    {
+     "idx": [
+      60,
+      64,
+      25
+     ],
+     "code": 4,
+     "value": 1.7471585289641212e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "dc88daca1548021e",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:54.370-04:00",
+    "converted": "2026-10-20T20:40:56.181601+00:00 converted by aqsim.fields (converter 2) from run dc88daca1548021e"
+   },
+   "log10_min": -8.75821702500371,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND25",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND25__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 285927,
+   "sha256": "1d23af915df448e45bea1d4982460474ef30d1251c12b61b1d6afb4027c5f20b",
+   "max": 5030.169921875,
+   "ground_max": 7.408279895782471,
+   "ground_max_at": {
+    "r": 300,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      7,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 5030.169921875
+    },
+    {
+     "idx": [
+      0,
+      21,
+      33
+     ],
+     "code": 50070,
+     "value": 7.409180164337158
+    },
+    {
+     "idx": [
+      10,
+      4,
+      28
+     ],
+     "code": 2,
+     "value": 5.032291028328473e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "d234ed7883881976",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:50.425-04:00",
+    "converted": "2026-10-20T20:40:54.471723+00:00 converted by aqsim.fields (converter 2) from run d234ed7883881976"
+   },
+   "log10_min": -8.298417343992538,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND25",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND25__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 274309,
+   "sha256": "01ddcc453d5c293e3eabd795c5c1277a79914aef04097c48ed899d40e1e26f47",
+   "max": 2017.8800048828125,
+   "ground_max": 0.7740899920463562,
+   "ground_max_at": {
+    "r": 2900,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      9,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2017.8800048828125
+    },
+    {
+     "idx": [
+      0,
+      53,
+      33
+     ],
+     "code": 46879,
+     "value": 0.7740615010261536
+    },
+    {
+     "idx": [
+      25,
+      17,
+      24
+     ],
+     "code": 1,
+     "value": 2.0178800852477252e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "ff6a9dd1f5366933",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:49.699-04:00",
+    "converted": "2026-10-20T20:40:53.930916+00:00 converted by aqsim.fields (converter 2) from run ff6a9dd1f5366933"
+   },
+   "log10_min": -8.69510466305783,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND45",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND45__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 450242,
+   "sha256": "945a8f7048373682703b1ab1896c306c3ff4f5034dbefc2c2fa350a4e2e18f7f",
+   "max": 2164.56005859375,
+   "ground_max": 1.785599946975708,
+   "ground_max_at": {
+    "r": 500,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      10,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2164.56005859375
+    },
+    {
+     "idx": [
+      0,
+      29,
+      33
+     ],
+     "code": 48695,
+     "value": 1.7855805158615112
+    },
+    {
+     "idx": [
+      45,
+      23,
+      15
+     ],
+     "code": 11,
+     "value": 2.173705659913594e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "5e29d8111a0b9289",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:56.513-04:00",
+    "converted": "2026-10-20T20:40:57.885495+00:00 converted by aqsim.fields (converter 2) from run 5e29d8111a0b9289"
+   },
+   "log10_min": -8.664630359606427,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND45",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND45__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 437528,
+   "sha256": "94f6e543108ce8bd296c83a85c0ca933770fb2c8de0a74b85ce8da4d2fe2ec63",
+   "max": 2024.5400390625,
+   "ground_max": 2.6406500339508057,
+   "ground_max_at": {
+    "r": 400,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      10,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2024.5400390625
+    },
+    {
+     "idx": [
+      0,
+      25,
+      33
+     ],
+     "code": 49782,
+     "value": 2.6410577297210693
+    },
+    {
+     "idx": [
+      22,
+      6,
+      23
+     ],
+     "code": 4,
+     "value": 2.0271024858686815e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "6c96d343bbe6e455",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:57.073-04:00",
+    "converted": "2026-10-20T20:40:58.451351+00:00 converted by aqsim.fields (converter 2) from run 6c96d343bbe6e455"
+   },
+   "log10_min": -8.693673629825696,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND45",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND45__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 450356,
+   "sha256": "f4bfa3abd42c875468426e0bb1879aaf12543ab294bf3158aa69342f81637ea8",
+   "max": 1626.5400390625,
+   "ground_max": 3.540839910507202,
+   "ground_max_at": {
+    "r": 250,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      11,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1626.5400390625
+    },
+    {
+     "idx": [
+      0,
+      19,
+      33
+     ],
+     "code": 50997,
+     "value": 3.5415730476379395
+    },
+    {
+     "idx": [
+      57,
+      53,
+      22
+     ],
+     "code": 3,
+     "value": 1.6279122494466947e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "aec4e86e9751c84c",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:57.579-04:00",
+    "converted": "2026-10-20T20:40:59.023870+00:00 converted by aqsim.fields (converter 2) from run aec4e86e9751c84c"
+   },
+   "log10_min": -8.788735241616752,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND45",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND45__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 295409,
+   "sha256": "50b9e84830f56580510b6fc742e86f6f6840f1e171ab6055578c2e80f85d7b9c",
+   "max": 249.2220001220703,
+   "ground_max": 2.134690046310425,
+   "ground_max_at": {
+    "r": 600,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      10,
+      4,
+      33
+     ],
+     "code": 65535,
+     "value": 249.2220001220703
+    },
+    {
+     "idx": [
+      0,
+      30,
+      33
+     ],
+     "code": 54245,
+     "value": 2.1343348026275635
+    },
+    {
+     "idx": [
+      54,
+      55,
+      26
+     ],
+     "code": 3,
+     "value": 2.4943225263029944e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "98f5747e78351438",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:56.064-04:00",
+    "converted": "2026-10-20T20:40:57.330600+00:00 converted by aqsim.fields (converter 2) from run 98f5747e78351438"
+   },
+   "log10_min": -9.603413622888109,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND45",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND45__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 268132,
+   "sha256": "2ae91d5069bf04f87a05bc890adbeb5a8214b63e4b43b04ceab518dc370f6a9f",
+   "max": 1741.199951171875,
+   "ground_max": 0.6861820220947266,
+   "ground_max_at": {
+    "r": 3250,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      11,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 1741.199951171875
+    },
+    {
+     "idx": [
+      0,
+      55,
+      33
+     ],
+     "code": 46943,
+     "value": 0.6861954927444458
+    },
+    {
+     "idx": [
+      45,
+      52,
+      22
+     ],
+     "code": 1,
+     "value": 1.741199961990958e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "52da03178923fdc2",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:55.624-04:00",
+    "converted": "2026-10-20T20:40:56.739039+00:00 converted by aqsim.fields (converter 2) from run 52da03178923fdc2"
+   },
+   "log10_min": -8.759151353693474,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND65",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND65__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 454545,
+   "sha256": "064c38a330a8ae3ca3af541cfc97b2732dff23b50108c1f77d56f56fcbc265ea",
+   "max": 2336.510009765625,
+   "ground_max": 1.2429300546646118,
+   "ground_max_at": {
+    "r": 600,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      12,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2336.510009765625
+    },
+    {
+     "idx": [
+      0,
+      30,
+      33
+     ],
+     "code": 47654,
+     "value": 1.2426786422729492
+    },
+    {
+     "idx": [
+      47,
+      22,
+      27
+     ],
+     "code": 4,
+     "value": 2.339467286560648e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "0bb775da68430cf5",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:02.266-04:00",
+    "converted": "2026-10-20T20:41:00.748360+00:00 converted by aqsim.fields (converter 2) from run 0bb775da68430cf5"
+   },
+   "log10_min": -8.631432354088988,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND65",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND65__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 440272,
+   "sha256": "68b97708626946b6985302ce5602fd74163bb398b9f1ba8d390651065527ffb9",
+   "max": 2209.27001953125,
+   "ground_max": 1.7255100011825562,
+   "ground_max_at": {
+    "r": 500,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      12,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2209.27001953125
+    },
+    {
+     "idx": [
+      0,
+      29,
+      33
+     ],
+     "code": 48565,
+     "value": 1.725258469581604
+    },
+    {
+     "idx": [
+      58,
+      29,
+      31
+     ],
+     "code": 1,
+     "value": 2.2092701001952264e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "7227c9ca48a0a9f5",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:02.561-04:00",
+    "converted": "2026-10-20T20:41:01.315374+00:00 converted by aqsim.fields (converter 2) from run 7227c9ca48a0a9f5"
+   },
+   "log10_min": -8.655751200911805,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND65",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND65__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 451001,
+   "sha256": "c0feebc9384dc60582f8baff10b7adbb3e4ad61b06c8bc863589163f596196fa",
+   "max": 1537.1700439453125,
+   "ground_max": 2.220449924468994,
+   "ground_max_at": {
+    "r": 325,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      13,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1537.1700439453125
+    },
+    {
+     "idx": [
+      0,
+      22,
+      33
+     ],
+     "code": 50024,
+     "value": 2.220681667327881
+    },
+    {
+     "idx": [
+      2,
+      3,
+      27
+     ],
+     "code": 3,
+     "value": 1.5384667984008615e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "353c9347f047bd64",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:03.228-04:00",
+    "converted": "2026-10-20T20:41:01.885057+00:00 converted by aqsim.fields (converter 2) from run 353c9347f047bd64"
+   },
+   "log10_min": -8.813278087567053,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND65",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND65__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 295323,
+   "sha256": "a9034b3d4d6bea97c5e6d70c25738ae6091b7a3ce801295f78e629d8c41bc744",
+   "max": 211.4720001220703,
+   "ground_max": 0.9618740081787109,
+   "ground_max_at": {
+    "r": 900,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      12,
+      4,
+      33
+     ],
+     "code": 65535,
+     "value": 211.4720001220703
+    },
+    {
+     "idx": [
+      0,
+      33,
+      33
+     ],
+     "code": 52744,
+     "value": 0.9617879986763
+    },
+    {
+     "idx": [
+      39,
+      36,
+      19
+     ],
+     "code": 5,
+     "value": 2.1182895715288197e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "a9e7093ae0e99118",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:01.979-04:00",
+    "converted": "2026-10-20T20:41:00.173460+00:00 converted by aqsim.fields (converter 2) from run a9e7093ae0e99118"
+   },
+   "log10_min": -9.674747127094975,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "IND65",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "IND65__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 264627,
+   "sha256": "283dea0a1e21665e6346ca62b1ffc04900b7d494ac35a0368f0e30994c08c5db",
+   "max": 2208.489990234375,
+   "ground_max": 0.5831220149993896,
+   "ground_max_at": {
+    "r": 3500,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      12,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 2208.489990234375
+    },
+    {
+     "idx": [
+      0,
+      56,
+      33
+     ],
+     "code": 45993,
+     "value": 0.5830947756767273
+    },
+    {
+     "idx": [
+      29,
+      23,
+      0
+     ],
+     "code": 1,
+     "value": 2.2084900574981248e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "06f4c1f4712a36eb",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:00.606-04:00",
+    "converted": "2026-10-20T20:40:59.581394+00:00 converted by aqsim.fields (converter 2) from run 06f4c1f4712a36eb"
+   },
+   "log10_min": -8.65590456479854,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP100",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP100__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 480544,
+   "sha256": "f64cc150947fed542e15d21f20250412f29a844bc31ebaa89d0f513386dd86ea",
+   "max": 688.7730102539062,
+   "ground_max": 0.2714349925518036,
+   "ground_max_at": {
+    "r": 900,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      17,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 688.7730102539062
+    },
+    {
+     "idx": [
+      0,
+      33,
+      33
+     ],
+     "code": 46943,
+     "value": 0.27144095301628113
+    },
+    {
+     "idx": [
+      35,
+      7,
+      23
+     ],
+     "code": 28,
+     "value": 6.966587862144991e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "21c6e9a034098e45",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:30.939-04:00",
+    "converted": "2026-10-20T20:40:46.693826+00:00 converted by aqsim.fields (converter 2) from run 21c6e9a034098e45"
+   },
+   "log10_min": -9.161923879161034,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP100",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP100__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 461803,
+   "sha256": "b364279eca283277ee70cafcd4ccd2d2fdadf6cb5973bbd68fd8c32efaf16003",
+   "max": 683.3770141601562,
+   "ground_max": 0.17975999414920807,
+   "ground_max_at": {
+    "r": 1100,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      17,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 683.3770141601562
+    },
+    {
+     "idx": [
+      0,
+      35,
+      33
+     ],
+     "code": 45984,
+     "value": 0.17974470555782318
+    },
+    {
+     "idx": [
+      62,
+      44,
+      23
+     ],
+     "code": 6,
+     "value": 6.848192013464427e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "dca9fabb6babf2d7",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:31.368-04:00",
+    "converted": "2026-10-20T20:40:47.254550+00:00 converted by aqsim.fields (converter 2) from run dca9fabb6babf2d7"
+   },
+   "log10_min": -9.165339633074995,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP100",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP100__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 495770,
+   "sha256": "ef58c220a4e5511908ae49f062cd96041502b63eec191d07de4c87398cc92275",
+   "max": 270.406005859375,
+   "ground_max": 0.16823799908161163,
+   "ground_max_at": {
+    "r": 2800,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      18,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 270.406005859375
+    },
+    {
+     "idx": [
+      0,
+      52,
+      33
+     ],
+     "code": 48026,
+     "value": 0.16823828220367432
+    },
+    {
+     "idx": [
+      64,
+      77,
+      21
+     ],
+     "code": 3,
+     "value": 2.7063412622041483e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "aa54f42e2c2f1deb",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:32.471-04:00",
+    "converted": "2026-10-20T20:40:47.828074+00:00 converted by aqsim.fields (converter 2) from run aa54f42e2c2f1deb"
+   },
+   "log10_min": -9.567983666714797,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP100",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP100__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 300792,
+   "sha256": "1eed2874e57f727cbe81fcba7c356acf5a19e22e23c1d65dbd0fc75e9b364db8",
+   "max": 1205.1199951171875,
+   "ground_max": 0.21166999638080597,
+   "ground_max_at": {
+    "r": 2200,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      15,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1205.1199951171875
+    },
+    {
+     "idx": [
+      0,
+      46,
+      33
+     ],
+     "code": 45026,
+     "value": 0.21164382994174957
+    },
+    {
+     "idx": [
+      65,
+      86,
+      31
+     ],
+     "code": 9,
+     "value": 1.2091917467316193e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "a1d6368745624f46",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:30.590-04:00",
+    "converted": "2026-10-20T20:40:46.120636+00:00 converted by aqsim.fields (converter 2) from run a1d6368745624f46"
+   },
+   "log10_min": -8.91896970775909,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP100",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP100__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 358513,
+   "sha256": "e62c9ed40ac599742190d3a0f2f1548629d8bac29ff3dae568ebb61debd12309",
+   "max": 808.5889892578125,
+   "ground_max": 0.13966499269008636,
+   "ground_max_at": {
+    "r": 4500,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      17,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 808.5889892578125
+    },
+    {
+     "idx": [
+      0,
+      60,
+      33
+     ],
+     "code": 44987,
+     "value": 0.1396888792514801
+    },
+    {
+     "idx": [
+      60,
+      60,
+      29
+     ],
+     "code": 6,
+     "value": 8.102953863442508e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "b79e06d80b80f0db",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:24.925-04:00",
+    "converted": "2026-10-20T20:40:44.938298+00:00 converted by aqsim.fields (converter 2) from run b79e06d80b80f0db"
+   },
+   "log10_min": -9.092272176849898,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP150",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP150__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 481644,
+   "sha256": "1e393c0301a91a4a842e1f2f860ee7a449ad879a4f1c5c268b4dbfab1e3dbac3",
+   "max": 683.7680053710938,
+   "ground_max": 0.18294499814510345,
+   "ground_max_at": {
+    "r": 1200,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      22,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 683.7680053710938
+    },
+    {
+     "idx": [
+      0,
+      36,
+      33
+     ],
+     "code": 46025,
+     "value": 0.18298354744911194
+    },
+    {
+     "idx": [
+      63,
+      17,
+      17
+     ],
+     "code": 4,
+     "value": 6.846334610344229e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "d92ebe6cd4ff6147",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:37.330-04:00",
+    "converted": "2026-10-20T20:40:49.455520+00:00 converted by aqsim.fields (converter 2) from run d92ebe6cd4ff6147"
+   },
+   "log10_min": -9.165091224416678,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP150",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP150__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 457309,
+   "sha256": "ee61670fe1f3e00cc49797cb09e6edf69c304ceff271e4f1a4af11e468c0d256",
+   "max": 700.9329833984375,
+   "ground_max": 0.11925999820232391,
+   "ground_max_at": {
+    "r": 1600,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      22,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 700.9329833984375
+    },
+    {
+     "idx": [
+      0,
+      40,
+      33
+     ],
+     "code": 44951,
+     "value": 0.11926651000976562
+    },
+    {
+     "idx": [
+      45,
+      15,
+      22
+     ],
+     "code": 19,
+     "value": 7.062728180073918e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "e55c6eb68b104207",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:38.249-04:00",
+    "converted": "2026-10-20T20:40:50.009389+00:00 converted by aqsim.fields (converter 2) from run e55c6eb68b104207"
+   },
+   "log10_min": -9.154323503191087,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP150",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP150__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 491306,
+   "sha256": "339fa79a4080522a5f485177d3f63906268583ca202843ad69b1d27f292a3373",
+   "max": 202.2480010986328,
+   "ground_max": 0.1596910059452057,
+   "ground_max_at": {
+    "r": 2900,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      23,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 202.2480010986328
+    },
+    {
+     "idx": [
+      0,
+      53,
+      33
+     ],
+     "code": 48591,
+     "value": 0.15967999398708344
+    },
+    {
+     "idx": [
+      7,
+      8,
+      24
+     ],
+     "code": 7,
+     "value": 2.027602946652607e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "5c2281fdbd8683de",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:42.361-04:00",
+    "converted": "2026-10-20T20:40:50.568955+00:00 converted by aqsim.fields (converter 2) from run 5c2281fdbd8683de"
+   },
+   "log10_min": -9.69411576200802,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP150",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP150__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 297696,
+   "sha256": "48388b189faf6c1545434051922a46b3e62144a4910879dfaf91d0a6f261bf44",
+   "max": 1322.8499755859375,
+   "ground_max": 0.09659130126237869,
+   "ground_max_at": {
+    "r": 3250,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      20,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1322.8499755859375
+    },
+    {
+     "idx": [
+      0,
+      55,
+      33
+     ],
+     "code": 42944,
+     "value": 0.0965714380145073
+    },
+    {
+     "idx": [
+      41,
+      31,
+      23
+     ],
+     "code": 9,
+     "value": 1.327319476551736e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "aecf41ec628515c3",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:37.258-04:00",
+    "converted": "2026-10-20T20:40:48.908199+00:00 converted by aqsim.fields (converter 2) from run aecf41ec628515c3"
+   },
+   "log10_min": -8.878489406356444,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP150",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP150__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 349265,
+   "sha256": "507d4fae54b31c57975434a1d2a8fbbab39af14007e924d5f9c792765d1de0f4",
+   "max": 863.4019775390625,
+   "ground_max": 0.13144099712371826,
+   "ground_max_at": {
+    "r": 4750,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      22,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 863.4019775390625
+    },
+    {
+     "idx": [
+      0,
+      61,
+      33
+     ],
+     "code": 44687,
+     "value": 0.1314358115196228
+    },
+    {
+     "idx": [
+      43,
+      20,
+      0
+     ],
+     "code": 2,
+     "value": 8.637661141897013e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "ab8fae850e352483",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:37.022-04:00",
+    "converted": "2026-10-20T20:40:48.364008+00:00 converted by aqsim.fields (converter 2) from run ab8fae850e352483"
+   },
+   "log10_min": -9.063786960968935,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP200",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP200__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 476435,
+   "sha256": "46954053cf96fff1a804815c6df2342a3f75a37cf20e62ce9b35f392987039e6",
+   "max": 679.927978515625,
+   "ground_max": 0.1315149962902069,
+   "ground_max_at": {
+    "r": 1500,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      27,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 679.927978515625
+    },
+    {
+     "idx": [
+      0,
+      39,
+      33
+     ],
+     "code": 45255,
+     "value": 0.13151361048221588
+    },
+    {
+     "idx": [
+      52,
+      18,
+      17
+     ],
+     "code": 6,
+     "value": 6.813628550261797e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "a1978418fbdf8bfc",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:43.719-04:00",
+    "converted": "2026-10-20T20:40:52.240121+00:00 converted by aqsim.fields (converter 2) from run a1978418fbdf8bfc"
+   },
+   "log10_min": -9.167537087572846,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP200",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP200__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 451949,
+   "sha256": "29b8d67398fcfbc3dbc4ba16464bbaaabc5c109543bd6d76fca321c8fdeddd26",
+   "max": 707.3519897460938,
+   "ground_max": 0.08854039758443832,
+   "ground_max_at": {
+    "r": 2200,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      27,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 707.3519897460938
+    },
+    {
+     "idx": [
+      0,
+      46,
+      33
+     ],
+     "code": 44223,
+     "value": 0.08854677528142929
+    },
+    {
+     "idx": [
+      20,
+      3,
+      21
+     ],
+     "code": 1,
+     "value": 7.073520102984787e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "b9e153a7e4fc2573",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:48.306-04:00",
+    "converted": "2026-10-20T20:40:52.811157+00:00 converted by aqsim.fields (converter 2) from run b9e153a7e4fc2573"
+   },
+   "log10_min": -9.150364420483847,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP200",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP200__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 498286,
+   "sha256": "8a4d4fab184f7a067c6d3c95a00a39ee9ae7ae1562e61e459bda99647c667f3c",
+   "max": 112.35600280761719,
+   "ground_max": 0.14698299765586853,
+   "ground_max_at": {
+    "r": 3250,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      28,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 112.35600280761719
+    },
+    {
+     "idx": [
+      0,
+      55,
+      33
+     ],
+     "code": 49789,
+     "value": 0.1470041424036026
+    },
+    {
+     "idx": [
+      5,
+      10,
+      31
+     ],
+     "code": 3,
+     "value": 1.1245078479493742e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "12d69f161987a1c0",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:49.278-04:00",
+    "converted": "2026-10-20T20:40:53.373528+00:00 converted by aqsim.fields (converter 2) from run 12d69f161987a1c0"
+   },
+   "log10_min": -9.949403719714976,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP200",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP200__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 294299,
+   "sha256": "530f573b7e5e9a87c584946f222df94f901ca2041186a5524d114d70750448d1",
+   "max": 1220.0999755859375,
+   "ground_max": 0.05384330078959465,
+   "ground_max_at": {
+    "r": 4750,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      25,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 1220.0999755859375
+    },
+    {
+     "idx": [
+      0,
+      61,
+      33
+     ],
+     "code": 41750,
+     "value": 0.05383924022316933
+    },
+    {
+     "idx": [
+      15,
+      26,
+      24
+     ],
+     "code": 5,
+     "value": 1.222159373703846e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "ad87a950d6ef6edc",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:43.227-04:00",
+    "converted": "2026-10-20T20:40:51.681494+00:00 converted by aqsim.fields (converter 2) from run ad87a950d6ef6edc"
+   },
+   "log10_min": -8.913604581565934,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "PP200",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "PP200__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 345105,
+   "sha256": "a2799d5b73e40941c42b668be4f93a74ad1b2ba882f0ac22bc79dccdf329214e",
+   "max": 862.3300170898438,
+   "ground_max": 0.12161300331354141,
+   "ground_max_at": {
+    "r": 5500,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      27,
+      0,
+      33
+     ],
+     "code": 65535,
+     "value": 862.3300170898438
+    },
+    {
+     "idx": [
+      0,
+      63,
+      33
+     ],
+     "code": 44506,
+     "value": 0.1216273084282875
+    },
+    {
+     "idx": [
+      34,
+      2,
+      33
+     ],
+     "code": 5,
+     "value": 8.637855986037835e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "ad1930b99b7e6b2a",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:39:43.070-04:00",
+    "converted": "2026-10-20T20:40:51.124091+00:00 converted by aqsim.fields (converter 2) from run ad1930b99b7e6b2a"
+   },
+   "log10_min": -9.0643264961566,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "VOL30",
+   "scenario_id": "convective_deep",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "VOL30__convective_deep.bin",
+   "bytes": 807840,
+   "gzip_bytes": 397630,
+   "sha256": "b239f26a3a30340e91baed5be9e937c5ccd24b75a02569ce2dc31c1316ce5c26",
+   "max": 478.4960021972656,
+   "ground_max": 472.1520080566406,
+   "ground_max_at": {
+    "r": 20,
+    "phi": 0
+   },
+   "wd_deg": 220,
+   "zi_m": 1934,
+   "L_m": -47.9,
+   "checks": [
+    {
+     "idx": [
+      1,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 478.4960021972656
+    },
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65503,
+     "value": 472.08343505859375
+    },
+    {
+     "idx": [
+      14,
+      8,
+      13
+     ],
+     "code": 12,
+     "value": 4.807204079249061e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "e67eb4b110ca52b2",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:15.047-04:00",
+    "converted": "2026-10-20T20:41:20.840666+00:00 converted by aqsim.fields (converter 2) from run e67eb4b110ca52b2"
+   },
+   "log10_min": -9.32012168637391,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "VOL30",
+   "scenario_id": "convective_winter",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "VOL30__convective_winter.bin",
+   "bytes": 807840,
+   "gzip_bytes": 332178,
+   "sha256": "8f02a5cfe0c9d169b788d9228648664916f1b004c4884936c01b36f93342cf8b",
+   "max": 671.5609741210938,
+   "ground_max": 671.5609741210938,
+   "ground_max_at": {
+    "r": 20,
+    "phi": 0
+   },
+   "wd_deg": 26,
+   "zi_m": 793,
+   "L_m": -37,
+   "checks": [
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 671.5609741210938
+    },
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 671.5609741210938
+    },
+    {
+     "idx": [
+      47,
+      29,
+      20
+     ],
+     "code": 9,
+     "value": 6.73829991804098e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "347e655f47d1d4a8",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:15.245-04:00",
+    "converted": "2026-10-20T20:41:21.392977+00:00 converted by aqsim.fields (converter 2) from run 347e655f47d1d4a8"
+   },
+   "log10_min": -9.172914549604142,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "VOL30",
+   "scenario_id": "morning_transition",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "VOL30__morning_transition.bin",
+   "bytes": 807840,
+   "gzip_bytes": 277183,
+   "sha256": "e36a49b4796be0b333bc63232b888b24b4392d547df7db1f1711344b3c5244ed",
+   "max": 807.5029907226562,
+   "ground_max": 789.656005859375,
+   "ground_max_at": {
+    "r": 20,
+    "phi": 0
+   },
+   "wd_deg": 91,
+   "zi_m": 378.5,
+   "L_m": -23,
+   "checks": [
+    {
+     "idx": [
+      1,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 807.5029907226562
+    },
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65482,
+     "value": 789.6583862304688
+    },
+    {
+     "idx": [
+      16,
+      6,
+      15
+     ],
+     "code": 17,
+     "value": 8.129688588986994e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "34bc90bbf2302bd8",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:16.432-04:00",
+    "converted": "2026-10-20T20:41:21.946233+00:00 converted by aqsim.fields (converter 2) from run 34bc90bbf2302bd8"
+   },
+   "log10_min": -9.092855860511484,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "VOL30",
+   "scenario_id": "neutral_windy",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "VOL30__neutral_windy.bin",
+   "bytes": 807840,
+   "gzip_bytes": 284005,
+   "sha256": "add47089399baaad7dd61331cbbf6dcb4f5e626c732c93eb732f710f4dc261fa",
+   "max": 257.1180114746094,
+   "ground_max": 257.1180114746094,
+   "ground_max_at": {
+    "r": 20,
+    "phi": 0
+   },
+   "wd_deg": 161,
+   "zi_m": 3139,
+   "L_m": 2382.1,
+   "checks": [
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 257.1180114746094
+    },
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 257.1180114746094
+    },
+    {
+     "idx": [
+      57,
+      65,
+      25
+     ],
+     "code": 2,
+     "value": 2.572264345968023e-10
+    }
+   ],
+   "provenance": {
+    "run_id": "e65ff9a163595beb",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:10.849-04:00",
+    "converted": "2026-10-20T20:41:20.279097+00:00 converted by aqsim.fields (converter 2) from run e65ff9a163595beb"
+   },
+   "log10_min": -9.589867499358515,
+   "log10_step": 0.00018311105685598315
+  },
+  {
+   "source_id": "VOL30",
+   "scenario_id": "stable_night",
+   "frame": "polar",
+   "orientation_deg": null,
+   "file": "VOL30__stable_night.bin",
+   "bytes": 807840,
+   "gzip_bytes": 145272,
+   "sha256": "06b25aa30598fa9b1c47b2b120b65634fcebbbb930d1bae375b4edc5c9979d80",
+   "max": 1260.8699951171875,
+   "ground_max": 1195.1800537109375,
+   "ground_max_at": {
+    "r": 20,
+    "phi": 0
+   },
+   "wd_deg": 298,
+   "zi_m": 378.5,
+   "L_m": 24.8,
+   "checks": [
+    {
+     "idx": [
+      2,
+      1,
+      33
+     ],
+     "code": 65535,
+     "value": 1260.8699951171875
+    },
+    {
+     "idx": [
+      0,
+      1,
+      33
+     ],
+     "code": 65408,
+     "value": 1195.130126953125
+    },
+    {
+     "idx": [
+      12,
+      10,
+      33
+     ],
+     "code": 6,
+     "value": 1.2635309465380828e-9
+    }
+   ],
+   "provenance": {
+    "run_id": "386acfdbb2beebd9",
+    "generator": "aqsim.runner",
+    "aermod_version": "24142",
+    "aermod_sha256": "29617501574e3c6873cc3f91e92e6dc7158dfd6fcb505c076186aa3a010da10d",
+    "pyaermod_commit": "a58833b391f6dedc997c90c3e722ddee99fcc52a",
+    "pyaermod_dirty": false,
+    "grid_version": "v2",
+    "finished": "2026-10-20T16:40:09.132-04:00",
+    "converted": "2026-10-20T20:41:19.722393+00:00 converted by aqsim.fields (converter 2) from run 386acfdbb2beebd9"
+   },
+   "log10_min": -8.899329690043782,
+   "log10_step": 0.00018311105685598315
+  }
+ ],
+ "totals": {
+  "n_fields": 40,
+  "bytes": 32313600,
+  "gzip_bytes": 14607343
+ },
+ "road_baselines": {
+  "description": "Ground-level concentration of the road network (tiers 1 and 2) at the observed wind and the scenario hour's traffic, computed offline with aqsim.engine (Python reference) from the stored highway unit fields. Multiply by the traffic scale (0-2) and add to the total; hide when the wind is rotated.",
+  "units": "µg/m³ at 100 % traffic (NOx counted as NOx; the app treats it as the NO2 upper limit)",
+  "pollutants": {
+   "NOx": {
+    "emission_key": "NOx",
+    "app_pollutant": "NO2"
+   },
+   "CO": {
+    "emission_key": "CO",
+    "app_pollutant": "CO"
+   },
+   "PM25": {
+    "emission_key": "PM2.5",
+    "app_pollutant": "PM25"
+   }
+  },
+  "grid": {
+   "crs": "EPSG:32618",
+   "xmin": 471000,
+   "ymin": 4407000,
+   "dx_m": 100,
+   "nx": 300,
+   "ny": 300,
+   "order": "C order (j, i): row j from the south edge, x (i) fastest",
+   "cell_centre": "x = xmin + dx_m (i + 0.5), y = ymin + dx_m (j + 0.5)",
+   "z_m": 0
+  },
+  "encoding": {
+   "name": "log10-u16",
+   "dtype": "<u2",
+   "endianness": "little",
+   "decades": 12,
+   "decode": "k == 0 ? 0 : 10 ** (log10_min + (k - 1) * log10_step)"
+  },
+  "vertical": {
+   "crs": "EPSG:32618",
+   "xmin": 471000,
+   "ymin": 4407000,
+   "dx_m": 200,
+   "nx": 150,
+   "ny": 150,
+   "z_m": [
+    0,
+    10,
+    25,
+    50,
+    100,
+    150,
+    200,
+    300,
+    400,
+    500
+   ],
+   "order": "C order (k, j, i): level k, row j from the south edge, x fastest",
+   "cell_centre": "x = xmin + dx_m (i + 0.5), y = ymin + dx_m (j + 0.5)",
+   "note": "coarse companion for the cross-section; 200 m cells smooth the near-road structure, so values within about 200 m of a road are approximate"
+  },
+  "maps": [
+   {
+    "file": "roads/stable_night__tier1__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163112,
+    "sha256": "627c5cb8332aeb89f72175aaa36e05b78775cc696599e278ea046be9b57f4140",
+    "max": 47.2465555698784,
+    "log10_min": -10.325629847504384,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 28641,
+      "code": 65535,
+      "value": 47.24655532836914
+     },
+     {
+      "index": 59969,
+      "code": 52972,
+      "value": 0.23656252026557922
+     },
+     {
+      "index": 76665,
+      "code": 43263,
+      "value": 0.003945669624954462
+     },
+     {
+      "index": 19886,
+      "code": 55102,
+      "value": 0.5807276368141174
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 1,
+    "pollutant": "NOx",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 288,
+    "total_rate_g_s": 11.587455298540842,
+    "vertical": {
+     "file": "roads/stable_night__tier1__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 375498,
+     "sha256": "e182abf1187cf3fbf91aad84ae56bcaa0829635f286a9f64bad36d5d67608ff7",
+     "max": 50.8670472622232,
+     "log10_min": -10.29356347162639,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6055,
+       "code": 65535,
+       "value": 50.86704635620117
+      },
+      {
+       "index": 23786,
+       "code": 56608,
+       "value": 1.17978835105896
+      },
+      {
+       "index": 53054,
+       "code": 54075,
+       "value": 0.40549343824386597
+      },
+      {
+       "index": 169734,
+       "code": 28033,
+       "value": 0.00000690884871801245
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/stable_night__tier1__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163036,
+    "sha256": "3e6d0318e326b622dddabd40aa837e63d3b95a322f348b398b191f9cee9efabb",
+    "max": 148.28011222598025,
+    "log10_min": -9.828917093946052,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 46969,
+      "code": 65535,
+      "value": 148.2801055908203
+     },
+     {
+      "index": 231,
+      "code": 56120,
+      "value": 2.7995762825012207
+     },
+     {
+      "index": 62796,
+      "code": 49518,
+      "value": 0.17305856943130493
+     },
+     {
+      "index": 19204,
+      "code": 52505,
+      "value": 0.6097416281700134
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 1,
+    "pollutant": "CO",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 288,
+    "total_rate_g_s": 55.16683129270252,
+    "vertical": {
+     "file": "roads/stable_night__tier1__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 378727,
+     "sha256": "a8bba58c9686a96f59acba8fcb014e2d167d77d003f69c58e038cf61cd3cacdb",
+     "max": 156.95168558284507,
+     "log10_min": -9.804234015832701,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 4901,
+       "code": 65535,
+       "value": 156.95169067382812
+      },
+      {
+       "index": 210286,
+       "code": 0,
+       "value": 0
+      },
+      {
+       "index": 11260,
+       "code": 54340,
+       "value": 1.3990644216537476
+      },
+      {
+       "index": 134982,
+       "code": 33898,
+       "value": 0.00025274435756728053
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/stable_night__tier1__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163152,
+    "sha256": "d7502dadb53504ba2968082ccea7fc8e533bab0ca3584f9d36f881340dcad1a1",
+    "max": 1.2805920339461387,
+    "log10_min": -11.892589204076739,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 28641,
+      "code": 65535,
+      "value": 1.2805920839309692
+     },
+     {
+      "index": 84114,
+      "code": 41518,
+      "value": 0.00005124276503920555
+     },
+     {
+      "index": 4504,
+      "code": 40231,
+      "value": 0.00002978301199618727
+     },
+     {
+      "index": 53993,
+      "code": 52755,
+      "value": 0.005851288326084614
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 1,
+    "pollutant": "PM25",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 288,
+    "total_rate_g_s": 0.38599832597842737,
+    "vertical": {
+     "file": "roads/stable_night__tier1__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 376867,
+     "sha256": "41fc81a9834d2d2ecaf301728c7b7f893793ea11b28516d42dacf36017599680",
+     "max": 1.3779871931627652,
+     "log10_min": -11.860754818687164,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6055,
+       "code": 65535,
+       "value": 1.3779871463775635
+      },
+      {
+       "index": 123394,
+       "code": 44133,
+       "value": 0.00016607427096460015
+      },
+      {
+       "index": 203213,
+       "code": 7006,
+       "value": 2.6420324261700046e-11
+      },
+      {
+       "index": 110997,
+       "code": 36186,
+       "value": 0.000005822624189022463
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/stable_night__tier2__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162724,
+    "sha256": "60b72f8d6ba5f2da0fbd7adc43b05511ab223c362f80635a7d15ba004b031542",
+    "max": 9.194289576714125,
+    "log10_min": -11.036481822144491,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40420,
+      "code": 65535,
+      "value": 9.194289207458496
+     },
+     {
+      "index": 59969,
+      "code": 59690,
+      "value": 0.7820491790771484
+     },
+     {
+      "index": 76665,
+      "code": 43762,
+      "value": 0.000947635096963495
+     },
+     {
+      "index": 19886,
+      "code": 41841,
+      "value": 0.0004215846711304039
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 2,
+    "pollutant": "NOx",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 180,
+    "total_rate_g_s": 2.154619559099191,
+    "vertical": {
+     "file": "roads/stable_night__tier2__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 369166,
+     "sha256": "611fb7fe4544fe26b4325bd8d74a4deeb5ef0fc21ff61812004fadac790538c6",
+     "max": 8.949562688412168,
+     "log10_min": -11.048198185538789,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 8.949563026428223
+      },
+      {
+       "index": 23786,
+       "code": 42921,
+       "value": 0.0006470358930528164
+      },
+      {
+       "index": 53054,
+       "code": 52448,
+       "value": 0.035927534103393555
+      },
+      {
+       "index": 169734,
+       "code": 28683,
+       "value": 0.0000015987963024599594
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/stable_night__tier2__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162483,
+    "sha256": "a5c28dfe079a6eca7dc614fea39b29a13b3cc7d26715ae03398cb281efd49f4d",
+    "max": 57.17226802590814,
+    "log10_min": -10.242814578966431,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40420,
+      "code": 65535,
+      "value": 57.17226791381836
+     },
+     {
+      "index": 231,
+      "code": 48576,
+      "value": 0.04485439509153366
+     },
+     {
+      "index": 62796,
+      "code": 56718,
+      "value": 1.3889775276184082
+     },
+     {
+      "index": 19204,
+      "code": 38356,
+      "value": 0.0006031286902725697
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 2,
+    "pollutant": "CO",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 180,
+    "total_rate_g_s": 14.334575518797449,
+    "vertical": {
+     "file": "roads/stable_night__tier2__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 369619,
+     "sha256": "6529644801296c8b06695544e884a10d8adc32ed7a0a85623f0a78c5f7a6d22b",
+     "max": 55.6472470857471,
+     "log10_min": -10.2545563156966,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 55.647247314453125
+      },
+      {
+       "index": 210286,
+       "code": 0,
+       "value": 0
+      },
+      {
+       "index": 11260,
+       "code": 55635,
+       "value": 0.8563360571861267
+      },
+      {
+       "index": 134982,
+       "code": 33236,
+       "value": 0.00006778594251954928
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/stable_night__tier2__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162568,
+    "sha256": "6105430ebda5efd72e734ca78dcbdb5f772ea777a3605070a010a79525c345ce",
+    "max": 0.34104588620594584,
+    "log10_min": -12.467187184686807,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40420,
+      "code": 65535,
+      "value": 0.34104588627815247
+     },
+     {
+      "index": 84114,
+      "code": 40562,
+      "value": 0.000009119697097048629
+     },
+     {
+      "index": 4504,
+      "code": 37169,
+      "value": 0.0000021811451915709767
+     },
+     {
+      "index": 53993,
+      "code": 58048,
+      "value": 0.014516446739435196
+     }
+    ],
+    "scenario_id": "stable_night",
+    "tier": 2,
+    "pollutant": "PM25",
+    "wd_deg": 298,
+    "hour": 5,
+    "traffic_factor": 0.222222,
+    "n_segments": 180,
+    "total_rate_g_s": 0.08235220268458714,
+    "vertical": {
+     "file": "roads/stable_night__tier2__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 369293,
+     "sha256": "51e88fdad90ff8f003018c33b7a38ddd2b1bf38f9b40d1892233fa2c94afcf8d",
+     "max": 0.33195973940079665,
+     "log10_min": -12.47891458501985,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 0.3319597542285919
+      },
+      {
+       "index": 123394,
+       "code": 47175,
+       "value": 0.00014426679990720004
+      },
+      {
+       "index": 203213,
+       "code": 0,
+       "value": 0
+      },
+      {
+       "index": 110997,
+       "code": 43069,
+       "value": 0.000025545383323333226
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier1__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 161057,
+    "sha256": "6b39fa2d8ed274ca6ee5382f60a54ff3450fc68b01539cc110de6c5a19123ded",
+    "max": 35.522740767255534,
+    "log10_min": -10.449493533485354,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 12507,
+      "code": 65535,
+      "value": 35.52273941040039
+     },
+     {
+      "index": 84114,
+      "code": 52718,
+      "value": 0.159798264503479
+     },
+     {
+      "index": 4504,
+      "code": 37879,
+      "value": 0.00030646935920231044
+     },
+     {
+      "index": 53993,
+      "code": 39466,
+      "value": 0.0005983900045976043
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 1,
+    "pollutant": "NOx",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 288,
+    "total_rate_g_s": 55.36228642636172,
+    "vertical": {
+     "file": "roads/neutral_windy__tier1__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 400243,
+     "sha256": "78b4d28ddecce8fa3eccdb680c6d6ee893b710b1f05c75f1eb1f14fc538140b4",
+     "max": 32.69866230908961,
+     "log10_min": -10.485470013812618,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 3253,
+       "code": 65535,
+       "value": 32.69866180419922
+      },
+      {
+       "index": 123394,
+       "code": 51212,
+       "value": 0.0779525488615036
+      },
+      {
+       "index": 203213,
+       "code": 32138,
+       "value": 0.0000250709053943865
+      },
+      {
+       "index": 110997,
+       "code": 46344,
+       "value": 0.010010267607867718
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier1__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 160798,
+    "sha256": "b1e9229e336bf1b8021ac9b9be764c10290f369bdf8f32257cd179e98a5278cf",
+    "max": 168.0054001050675,
+    "log10_min": -9.774676758761391,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 12507,
+      "code": 65535,
+      "value": 168.00540161132812
+     },
+     {
+      "index": 59969,
+      "code": 49564,
+      "value": 0.1999201476573944
+     },
+     {
+      "index": 76665,
+      "code": 51996,
+      "value": 0.5574201345443726
+     },
+     {
+      "index": 19886,
+      "code": 49986,
+      "value": 0.23885229229927063
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 1,
+    "pollutant": "CO",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 288,
+    "total_rate_g_s": 263.5748606206901,
+    "vertical": {
+     "file": "roads/neutral_windy__tier1__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 399389,
+     "sha256": "61d444d03cf3271a9ac584fe9661aafbe5600acab7c92903f228bdb54d5f706f",
+     "max": 154.64885599437227,
+     "log10_min": -9.810653288316276,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 3253,
+       "code": 65535,
+       "value": 154.6488494873047
+      },
+      {
+       "index": 23786,
+       "code": 49757,
+       "value": 0.19962753355503082
+      },
+      {
+       "index": 53054,
+       "code": 52871,
+       "value": 0.7420416474342346
+      },
+      {
+       "index": 169734,
+       "code": 51751,
+       "value": 0.4627473056316376
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier1__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 161081,
+    "sha256": "058b0db859ebaeb78ef8e8d38662be032f19b8453564904b21973812ba331593",
+    "max": 1.18043073491571,
+    "log10_min": -11.92795949128448,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 12507,
+      "code": 65535,
+      "value": 1.1804307699203491
+     },
+     {
+      "index": 9514,
+      "code": 54453,
+      "value": 0.011035799048841
+     },
+     {
+      "index": 21221,
+      "code": 57200,
+      "value": 0.03514065593481064
+     },
+     {
+      "index": 67893,
+      "code": 52379,
+      "value": 0.004602898843586445
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 1,
+    "pollutant": "PM25",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 288,
+    "total_rate_g_s": 1.8442142241191513,
+    "vertical": {
+     "file": "roads/neutral_windy__tier1__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 400218,
+     "sha256": "0a008f86945a3f49b77af61457418ecb97c442681e47dcda83ba65ad98599628",
+     "max": 1.0865857625511472,
+     "log10_min": -11.963935989791882,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 3253,
+       "code": 65535,
+       "value": 1.0865857601165771
+      },
+      {
+       "index": 197573,
+       "code": 46842,
+       "value": 0.00041036377660930157
+      },
+      {
+       "index": 36054,
+       "code": 53671,
+       "value": 0.007305238861590624
+      },
+      {
+       "index": 193315,
+       "code": 46087,
+       "value": 0.00029848338454030454
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier2__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162208,
+    "sha256": "071e6e81e05a099045ab8cf4af297aae09eb0c182e0579a2c0461fc5fd741052",
+    "max": 6.945607840051155,
+    "log10_min": -11.158289741282928,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 35614,
+      "code": 65535,
+      "value": 6.945607662200928
+     },
+     {
+      "index": 84114,
+      "code": 46465,
+      "value": 0.0022375998087227345
+     },
+     {
+      "index": 4504,
+      "code": 35296,
+      "value": 0.000020165778551017866
+     },
+     {
+      "index": 53993,
+      "code": 55006,
+      "value": 0.08198491483926773
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 2,
+    "pollutant": "NOx",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 180,
+    "total_rate_g_s": 10.29429344902947,
+    "vertical": {
+     "file": "roads/neutral_windy__tier2__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 398708,
+     "sha256": "0d90d65ce752807b7f3f69921acbc9568522e6cb4bbe00a53bd869fcde3da972",
+     "max": 6.356475418785067,
+     "log10_min": -11.19678362813655,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 15729,
+       "code": 65535,
+       "value": 6.356475353240967
+      },
+      {
+       "index": 123394,
+       "code": 49751,
+       "value": 0.008184487000107765
+      },
+      {
+       "index": 203213,
+       "code": 32512,
+       "value": 0.00000570610745853628
+      },
+      {
+       "index": 110997,
+       "code": 38990,
+       "value": 0.00008760590571910143
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier2__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162114,
+    "sha256": "d5eac6bc6d8dc0519b3452b56857e60a2a4a108404bbafb2e4b20b74a3edde9f",
+    "max": 43.165822937809715,
+    "log10_min": -10.364859975036783,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 35614,
+      "code": 65535,
+      "value": 43.16582107543945
+     },
+     {
+      "index": 59969,
+      "code": 59165,
+      "value": 2.9425413608551025
+     },
+     {
+      "index": 76665,
+      "code": 54533,
+      "value": 0.41739973425865173
+     },
+     {
+      "index": 19886,
+      "code": 39804,
+      "value": 0.000838512263726443
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 2,
+    "pollutant": "CO",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 180,
+    "total_rate_g_s": 68.48741636758781,
+    "vertical": {
+     "file": "roads/neutral_windy__tier2__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 397649,
+     "sha256": "78ed2b81c046e43397159b04d24b942f21cb1b5159f98dcba1ef88d7405a9fce",
+     "max": 39.504508460226866,
+     "log10_min": -10.403353337597196,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 15729,
+       "code": 65535,
+       "value": 39.50450897216797
+      },
+      {
+       "index": 23786,
+       "code": 38658,
+       "value": 0.00047333736438304186
+      },
+      {
+       "index": 53054,
+       "code": 54508,
+       "value": 0.37799063324928284
+      },
+      {
+       "index": 169734,
+       "code": 46008,
+       "value": 0.010496320202946663
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/neutral_windy__tier2__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 162134,
+    "sha256": "5f5997f9ffcbb6b5ac45ed606ead8193292dd018262990e6846bad8b82ca28cc",
+    "max": 0.2575737567658478,
+    "log10_min": -12.589098387711193,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 35614,
+      "code": 65535,
+      "value": 0.2575737535953522
+     },
+     {
+      "index": 9514,
+      "code": 39624,
+      "value": 0.000004637789515982149
+     },
+     {
+      "index": 21221,
+      "code": 42490,
+      "value": 0.000015527706636930816
+     },
+     {
+      "index": 67893,
+      "code": 54022,
+      "value": 0.0020079088862985373
+     }
+    ],
+    "scenario_id": "neutral_windy",
+    "tier": 2,
+    "pollutant": "PM25",
+    "wd_deg": 161,
+    "hour": 20,
+    "traffic_factor": 1.061728,
+    "n_segments": 180,
+    "total_rate_g_s": 0.3934605239374723,
+    "vertical": {
+     "file": "roads/neutral_windy__tier2__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 398041,
+     "sha256": "0147d767ad09940338dba178aabb51b53ac1649cd5ff1bc0746ffaecaeee7650",
+     "max": 0.23572625328450722,
+     "log10_min": -12.627592046573438,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 15729,
+       "code": 65535,
+       "value": 0.2357262521982193
+      },
+      {
+       "index": 197573,
+       "code": 45732,
+       "value": 0.00005575190152740106
+      },
+      {
+       "index": 36054,
+       "code": 56528,
+       "value": 0.005285994149744511
+      },
+      {
+       "index": 193315,
+       "code": 47788,
+       "value": 0.00013265879533719271
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier1__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 167008,
+    "sha256": "4da145f8b0783fe546587c48ade00a69bd168dd3320adfa416fb9640951eb0dd",
+    "max": 190.7718321793311,
+    "log10_min": -9.719485749297341,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 24412,
+      "code": 65535,
+      "value": 190.77183532714844
+     },
+     {
+      "index": 49357,
+      "code": 53309,
+      "value": 1.101028323173523
+     },
+     {
+      "index": 81285,
+      "code": 48049,
+      "value": 0.11984897404909134
+     },
+     {
+      "index": 44398,
+      "code": 44585,
+      "value": 0.027818750590085983
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 1,
+    "pollutant": "NOx",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 288,
+    "total_rate_g_s": 77.24970199027227,
+    "vertical": {
+     "file": "roads/convective_deep__tier1__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418024,
+     "sha256": "3bb479884c4b9a6cf971badebc9f27bcb9ebcc1067f95049417cd7c2b238391b",
+     "max": 201.04339995353,
+     "log10_min": -9.696710179764809,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6207,
+       "code": 65535,
+       "value": 201.04339599609375
+      },
+      {
+       "index": 197760,
+       "code": 46502,
+       "value": 0.06578654795885086
+      },
+      {
+       "index": 99819,
+       "code": 49030,
+       "value": 0.1910037249326706
+      },
+      {
+       "index": 85506,
+       "code": 38491,
+       "value": 0.0022450932301580906
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier1__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 167030,
+    "sha256": "31af2680ab9ed294f35c71fa13d9cd67c067db6b72dc3ed4cba8d8c56d562a30",
+    "max": 505.50498811054075,
+    "log10_min": -9.29627455461661,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 55397,
+      "code": 65535,
+      "value": 505.5049743652344
+     },
+     {
+      "index": 9514,
+      "code": 55376,
+      "value": 6.9742937088012695
+     },
+     {
+      "index": 21221,
+      "code": 55731,
+      "value": 8.10036563873291
+     },
+     {
+      "index": 67893,
+      "code": 45772,
+      "value": 0.12159105390310287
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 1,
+    "pollutant": "CO",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 288,
+    "total_rate_g_s": 367.77887528468415,
+    "vertical": {
+     "file": "roads/convective_deep__tier1__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418220,
+     "sha256": "9887a7cc72d2334df4f74e8104e9cb095401e44e8926db8f2dc5609272053bf6",
+     "max": 578.8541585952512,
+     "log10_min": -9.237430842309896,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 12990,
+       "code": 65535,
+       "value": 578.8541870117188
+      },
+      {
+       "index": 197573,
+       "code": 42426,
+       "value": 0.03396688774228096
+      },
+      {
+       "index": 36054,
+       "code": 46449,
+       "value": 0.18523009121418
+      },
+      {
+       "index": 193315,
+       "code": 47337,
+       "value": 0.26934823393821716
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier1__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166982,
+    "sha256": "80f1851a83c1d4fb555f9e8c813844f17ac989dd7c35160f01c50c61b353d73b",
+    "max": 5.1093860876963015,
+    "log10_min": -11.29163127887563,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 24412,
+      "code": 65535,
+      "value": 5.109385967254639
+     },
+     {
+      "index": 79029,
+      "code": 45394,
+      "value": 0.0010479219490662217
+     },
+     {
+      "index": 14421,
+      "code": 42736,
+      "value": 0.00034168013371527195
+     },
+     {
+      "index": 77326,
+      "code": 44594,
+      "value": 0.0007478940533474088
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 1,
+    "pollutant": "PM25",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 288,
+    "total_rate_g_s": 2.5733221731895126,
+    "vertical": {
+     "file": "roads/convective_deep__tier1__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418114,
+     "sha256": "e89c69c5417a5964e3823d9569dfc98562ed90f168a621af227f5a55d5f07247",
+     "max": 5.384406875469476,
+     "log10_min": -11.268862129858617,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6207,
+       "code": 65535,
+       "value": 5.384407043457031
+      },
+      {
+       "index": 14163,
+       "code": 52123,
+       "value": 0.01884743943810463
+      },
+      {
+       "index": 906,
+       "code": 36915,
+       "value": 0.00003093851046287455
+      },
+      {
+       "index": 26589,
+       "code": 41778,
+       "value": 0.00024041884171310812
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier2__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 165169,
+    "sha256": "0992963bdffddab88880c6ded2a18a93968b6fa1f195c751adce490a79ba333f",
+    "max": 33.10042036263121,
+    "log10_min": -10.480166490816067,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 58481,
+      "code": 65535,
+      "value": 33.10042190551758
+     },
+     {
+      "index": 49357,
+      "code": 45642,
+      "value": 0.007537116762250662
+     },
+     {
+      "index": 81285,
+      "code": 45870,
+      "value": 0.008297639898955822
+     },
+     {
+      "index": 44398,
+      "code": 55452,
+      "value": 0.4715467095375061
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 2,
+    "pollutant": "NOx",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 180,
+    "total_rate_g_s": 14.3641303939946,
+    "vertical": {
+     "file": "roads/convective_deep__tier2__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418847,
+     "sha256": "c6b14191fa4f739f7bdcf877dff43b266fc1b53c373f507722fe8c61086e9bf4",
+     "max": 29.46758081909145,
+     "log10_min": -10.530655516679591,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10163,
+       "code": 65535,
+       "value": 29.467580795288086
+      },
+      {
+       "index": 197760,
+       "code": 48295,
+       "value": 0.02053571678698063
+      },
+      {
+       "index": 99819,
+       "code": 51811,
+       "value": 0.09043329209089279
+      },
+      {
+       "index": 85506,
+       "code": 53748,
+       "value": 0.20465128123760223
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier2__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 164976,
+    "sha256": "2dc901b83bddaec4d78a72b1340384e64e14211b28f86dc271a64b02bfda3f9e",
+    "max": 210.78589146919143,
+    "log10_min": -9.67615846111666,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 28007,
+      "code": 65535,
+      "value": 210.785888671875
+     },
+     {
+      "index": 9514,
+      "code": 38571,
+      "value": 0.002434641355648637
+     },
+     {
+      "index": 21221,
+      "code": 42448,
+      "value": 0.012484081089496613
+     },
+     {
+      "index": 67893,
+      "code": 48341,
+      "value": 0.1497717946767807
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 2,
+    "pollutant": "CO",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 180,
+    "total_rate_g_s": 95.56383679198296,
+    "vertical": {
+     "file": "roads/convective_deep__tier2__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418825,
+     "sha256": "b2476ce113325813da8308d32593545adbf6238fa5dfc72b818401e7fa6652ef",
+     "max": 183.13617561606486,
+     "log10_min": -9.737225859310435,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10163,
+       "code": 65535,
+       "value": 183.13616943359375
+      },
+      {
+       "index": 197573,
+       "code": 47569,
+       "value": 0.09397252649068832
+      },
+      {
+       "index": 36054,
+       "code": 54736,
+       "value": 1.929113745689392
+      },
+      {
+       "index": 193315,
+       "code": 46502,
+       "value": 0.0599268414080143
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_deep__tier2__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 165242,
+    "sha256": "27b6d2cb102059aed187e65088e10656174de13836cbec8c7c6be645144b1bb2",
+    "max": 1.2275094918168976,
+    "log10_min": -11.910975140974637,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 58481,
+      "code": 65535,
+      "value": 1.2275094985961914
+     },
+     {
+      "index": 79029,
+      "code": 45115,
+      "value": 0.00022381906455848366
+     },
+     {
+      "index": 14421,
+      "code": 34131,
+      "value": 0.0000021807468328916
+     },
+     {
+      "index": 77326,
+      "code": 50766,
+      "value": 0.0024246980901807547
+     }
+    ],
+    "scenario_id": "convective_deep",
+    "tier": 2,
+    "pollutant": "PM25",
+    "wd_deg": 220,
+    "hour": 15,
+    "traffic_factor": 1.481481,
+    "n_segments": 180,
+    "total_rate_g_s": 0.5490146845639149,
+    "vertical": {
+     "file": "roads/convective_deep__tier2__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418739,
+     "sha256": "0b11a9bbfd6ce87dccfa40b8f7c91a52cc0acfbdf1231bfdcc1c5e4972c748d6",
+     "max": 1.0927876784457995,
+     "log10_min": -11.961464210453506,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10163,
+       "code": 65535,
+       "value": 1.0927876234054565
+      },
+      {
+       "index": 14163,
+       "code": 51550,
+       "value": 0.0030041919089853764
+      },
+      {
+       "index": 906,
+       "code": 32979,
+       "value": 0.00000119446167445858
+      },
+      {
+       "index": 26589,
+       "code": 37455,
+       "value": 0.000007884556907811202
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier1__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166696,
+    "sha256": "46e84d9945c0018f308911de77da3c6bb28cdda8e9fe1cae3e7964103015e46a",
+    "max": 156.79261676366008,
+    "log10_min": -9.80467439174275,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 29559,
+      "code": 65535,
+      "value": 156.79261779785156
+     },
+     {
+      "index": 79104,
+      "code": 36254,
+      "value": 0.000681790173985064
+     },
+     {
+      "index": 39927,
+      "code": 40933,
+      "value": 0.004902610555291176
+     },
+     {
+      "index": 34202,
+      "code": 40306,
+      "value": 0.0037637152709066868
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 1,
+    "pollutant": "NOx",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 288,
+    "total_rate_g_s": 66.94974172490257,
+    "vertical": {
+     "file": "roads/convective_winter__tier1__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419495,
+     "sha256": "9ee8952f3a6d2db808eb0543e8c2c5b18e94ea1fe67302c07691545894e18a10",
+     "max": 166.28208306079543,
+     "log10_min": -9.779154543606872,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6207,
+       "code": 65535,
+       "value": 166.28208923339844
+      },
+      {
+       "index": 23225,
+       "code": 46235,
+       "value": 0.04861855506896973
+      },
+      {
+       "index": 76038,
+       "code": 39217,
+       "value": 0.0025219046510756016
+      },
+      {
+       "index": 185677,
+       "code": 41772,
+       "value": 0.007405892480164766
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier1__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166569,
+    "sha256": "b8d7f5179f3291c1dc839e8665f175231ecb3a781694b81f2023fb1988a3c1f7",
+    "max": 529.9811322367141,
+    "log10_min": -9.275739591364001,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 49370,
+      "code": 65535,
+      "value": 529.9811401367188
+     },
+     {
+      "index": 79029,
+      "code": 38365,
+      "value": 0.0056121982634067535
+     },
+     {
+      "index": 14421,
+      "code": 51497,
+      "value": 1.4247785806655884
+     },
+     {
+      "index": 77326,
+      "code": 38911,
+      "value": 0.0070649911649525166
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 1,
+    "pollutant": "CO",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 288,
+    "total_rate_g_s": 318.7416919133927,
+    "vertical": {
+     "file": "roads/convective_winter__tier1__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419246,
+     "sha256": "12f04972d26fc963f2f5ad3cf1ee7747c6af69eec7f034625b0cb3af6ea1e9b5",
+     "max": 440.73164104945226,
+     "log10_min": -9.35582576945854,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 11484,
+       "code": 65535,
+       "value": 440.73162841796875
+      },
+      {
+       "index": 14163,
+       "code": 48044,
+       "value": 0.2762986421585083
+      },
+      {
+       "index": 906,
+       "code": 46671,
+       "value": 0.15486998856067657
+      },
+      {
+       "index": 26589,
+       "code": 47936,
+       "value": 0.2639992833137512
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier1__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166543,
+    "sha256": "616d3ee395e2dacdb7786a29b8c069e282e6657c50252df3c384148d288df7b5",
+    "max": 4.263593871505594,
+    "log10_min": -11.370224170717952,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 29559,
+      "code": 65535,
+      "value": 4.263593673706055
+     },
+     {
+      "index": 5665,
+      "code": 46005,
+      "value": 0.001131401862949133
+     },
+     {
+      "index": 362,
+      "code": 53317,
+      "value": 0.02469021826982498
+     },
+     {
+      "index": 10635,
+      "code": 56296,
+      "value": 0.0866987407207489
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 1,
+    "pollutant": "PM25",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 288,
+    "total_rate_g_s": 2.23021255009758,
+    "vertical": {
+     "file": "roads/convective_winter__tier1__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419377,
+     "sha256": "c9e0aa5441431b0ab0a3033aa3d8e64e164e0c1940c4d64ff55bc8b51d6ff6c5",
+     "max": 4.45383803336961,
+     "log10_min": -11.351265580407688,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6207,
+       "code": 65535,
+       "value": 4.453837871551514
+      },
+      {
+       "index": 86218,
+       "code": 39990,
+       "value": 0.00009357556700706482
+      },
+      {
+       "index": 40642,
+       "code": 49790,
+       "value": 0.005829762201756239
+      },
+      {
+       "index": 95551,
+       "code": 42484,
+       "value": 0.00026781903579831123
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier2__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163981,
+    "sha256": "e665b9f50c4cc186a534cd3c45f3b67f04565b25968ae2f2d19832461e99dde7",
+    "max": 30.526320209449516,
+    "log10_min": -10.515325544507395,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 30.52631950378418
+     },
+     {
+      "index": 79104,
+      "code": 41648,
+      "value": 0.0012903294991701841
+     },
+     {
+      "index": 39927,
+      "code": 46575,
+      "value": 0.010301223956048489
+     },
+     {
+      "index": 34202,
+      "code": 46902,
+      "value": 0.0118240462616086
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 2,
+    "pollutant": "NOx",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 180,
+    "total_rate_g_s": 12.44891300812865,
+    "vertical": {
+     "file": "roads/convective_winter__tier2__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 416228,
+     "sha256": "9c3e0d39dd9d5dc1f91e15881204efaef162382e95ed2fea74c4091c8b3b8ec6",
+     "max": 30.105519846045173,
+     "log10_min": -10.521353869226816,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6550,
+       "code": 65535,
+       "value": 30.105520248413086
+      },
+      {
+       "index": 23225,
+       "code": 46786,
+       "value": 0.011104446835815907
+      },
+      {
+       "index": 76038,
+       "code": 49465,
+       "value": 0.03435986489057541
+      },
+      {
+       "index": 185677,
+       "code": 47775,
+       "value": 0.016849761828780174
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier2__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163785,
+    "sha256": "0384b14a8d5795a9a359f83283a8e5da5d5a4043261ddf41b8e93f14b6ed5f5b",
+    "max": 189.71625077371615,
+    "log10_min": -9.721895466585924,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 189.71624755859375
+     },
+     {
+      "index": 79029,
+      "code": 43687,
+      "value": 0.018944980576634407
+     },
+     {
+      "index": 14421,
+      "code": 41638,
+      "value": 0.007985454052686691
+     },
+     {
+      "index": 77326,
+      "code": 44495,
+      "value": 0.026634706184267998
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 2,
+    "pollutant": "CO",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 180,
+    "total_rate_g_s": 82.82199188638525,
+    "vertical": {
+     "file": "roads/convective_winter__tier2__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 415650,
+     "sha256": "04037a9bd88b528019999f6de83d456a52d2c784de753bb92ba94abe77c722de",
+     "max": 187.10094712245962,
+     "log10_min": -9.727924014055219,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6550,
+       "code": 65535,
+       "value": 187.1009521484375
+      },
+      {
+       "index": 14163,
+       "code": 44153,
+       "value": 0.022740257903933525
+      },
+      {
+       "index": 906,
+       "code": 40702,
+       "value": 0.005307367071509361
+      },
+      {
+       "index": 26589,
+       "code": 47031,
+       "value": 0.07652246952056885
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/convective_winter__tier2__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 163831,
+    "sha256": "7681194c89ecca11f349e615fa74a6ce9283eb298198985a060275411c90afde",
+    "max": 1.1320508746607811,
+    "log10_min": -11.94613405540219,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 1.13205087184906
+     },
+     {
+      "index": 5665,
+      "code": 49500,
+      "value": 0.0013112338492646813
+     },
+     {
+      "index": 362,
+      "code": 44196,
+      "value": 0.00014010677114129066
+     },
+     {
+      "index": 10635,
+      "code": 42440,
+      "value": 0.0000668214779580012
+     }
+    ],
+    "scenario_id": "convective_winter",
+    "tier": 2,
+    "pollutant": "PM25",
+    "wd_deg": 26,
+    "hour": 12,
+    "traffic_factor": 1.283951,
+    "n_segments": 180,
+    "total_rate_g_s": 0.4758127266220594,
+    "vertical": {
+     "file": "roads/convective_winter__tier2__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 415818,
+     "sha256": "afe32b0a85d94bd06232b266e06ad049ce3f3b8560764d5d365b654968751187",
+     "max": 1.1164454883087271,
+     "log10_min": -11.952162476985439,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 6550,
+       "code": 65535,
+       "value": 1.116445541381836
+      },
+      {
+       "index": 86218,
+       "code": 54008,
+       "value": 0.008651996962726116
+      },
+      {
+       "index": 40642,
+       "code": 39534,
+       "value": 0.00001935383079398889
+      },
+      {
+       "index": 95551,
+       "code": 43248,
+       "value": 0.00009264914115192369
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier1__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166308,
+    "sha256": "e298b4cec27e30c4ae340cd27b95341606aceeff482b3461bdd8e642392c99e1",
+    "max": 215.3058443578745,
+    "log10_min": -9.666944181333381,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 28638,
+      "code": 65535,
+      "value": 215.30584716796875
+     },
+     {
+      "index": 5665,
+      "code": 37314,
+      "value": 0.001463789725676179
+     },
+     {
+      "index": 362,
+      "code": 57691,
+      "value": 7.883747100830078
+     },
+     {
+      "index": 10635,
+      "code": 50199,
+      "value": 0.33486106991767883
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 1,
+    "pollutant": "NOx",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 288,
+    "total_rate_g_s": 83.68717715612827,
+    "vertical": {
+     "file": "roads/morning_transition__tier1__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 420136,
+     "sha256": "9b756f9ba4c2de9f7021573127004b9751ec0082d917db4a27d2f3c2bfbb1620",
+     "max": 178.89867061125324,
+     "log10_min": -9.747392886645272,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 7117,
+       "code": 65535,
+       "value": 178.89866638183594
+      },
+      {
+       "index": 86218,
+       "code": 46348,
+       "value": 0.05485993251204491
+      },
+      {
+       "index": 40642,
+       "code": 43691,
+       "value": 0.017894895747303963
+      },
+      {
+       "index": 95551,
+       "code": 47757,
+       "value": 0.0993707925081253
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier1__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166306,
+    "sha256": "5fe9beaa3a78b61e1f29eba309506782f6decac2a7a20430af5f772c24a97006",
+    "max": 667.8566607288019,
+    "log10_min": -9.175316738324495,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 29891,
+      "code": 65535,
+      "value": 667.856689453125
+     },
+     {
+      "index": 79104,
+      "code": 43538,
+      "value": 0.06263099610805511
+     },
+     {
+      "index": 39927,
+      "code": 44326,
+      "value": 0.08731339126825333
+     },
+     {
+      "index": 34202,
+      "code": 45882,
+      "value": 0.16826805472373962
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 1,
+    "pollutant": "CO",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 288,
+    "total_rate_g_s": 398.4271148917406,
+    "vertical": {
+     "file": "roads/morning_transition__tier1__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419943,
+     "sha256": "1e13007732e8fc4c86117e08b6cc38fb9fce46c70dbb6ef3dec2993f7fb932a1",
+     "max": 609.71035804582,
+     "log10_min": -9.21487642691685,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 13747,
+       "code": 65535,
+       "value": 609.7103881835938
+      },
+      {
+       "index": 23225,
+       "code": 39861,
+       "value": 0.012131941504776478
+      },
+      {
+       "index": 76038,
+       "code": 39565,
+       "value": 0.010708519257605076
+      },
+      {
+       "index": 185677,
+       "code": 49571,
+       "value": 0.727677047252655
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier1__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166409,
+    "sha256": "d5f1dd4c233381df3e64322f3a82dc24efc417686b7effbdff50b71503bf33db",
+    "max": 5.806456605764682,
+    "log10_min": -11.236088815289252,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 28638,
+      "code": 65535,
+      "value": 5.806456565856934
+     },
+     {
+      "index": 9290,
+      "code": 37271,
+      "value": 0.00003876682967529632
+     },
+     {
+      "index": 30415,
+      "code": 49809,
+      "value": 0.007661374751478434
+     },
+     {
+      "index": 74271,
+      "code": 43240,
+      "value": 0.0004802309849765152
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 1,
+    "pollutant": "PM25",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 288,
+    "total_rate_g_s": 2.787765687621971,
+    "vertical": {
+     "file": "roads/morning_transition__tier1__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 420056,
+     "sha256": "7ba420b46614b8597ae6d3fd1fbfd83d81f2c4f9b723dff5ec16dbf9ffb9d420",
+     "max": 4.810956810738233,
+     "log10_min": -11.317768541859078,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 7117,
+       "code": 65535,
+       "value": 4.810956954956055
+      },
+      {
+       "index": 35895,
+       "code": 48259,
+       "value": 0.0033022111747413874
+      },
+      {
+       "index": 158434,
+       "code": 48810,
+       "value": 0.004165805876255035
+      },
+      {
+       "index": 142375,
+       "code": 47809,
+       "value": 0.002731523010879755
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier2__NOx.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166806,
+    "sha256": "27ee4b0dd454c7e60012f62bc80c7889779ab4488ab15edc0cd7cc0640db7980",
+    "max": 45.906646040902324,
+    "log10_min": -10.338124435814626,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 45.906646728515625
+     },
+     {
+      "index": 5665,
+      "code": 47602,
+      "value": 0.02388608455657959
+     },
+     {
+      "index": 362,
+      "code": 34436,
+      "value": 0.00009274805779568851
+     },
+     {
+      "index": 10635,
+      "code": 40933,
+      "value": 0.00143541453871876
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 2,
+    "pollutant": "NOx",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 180,
+    "total_rate_g_s": 15.561141260160815,
+    "vertical": {
+     "file": "roads/morning_transition__tier2__NOx_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 418868,
+     "sha256": "e62603beacb70745519373ef3230cccb82c71c0bff880f5c38a498a94315c873",
+     "max": 44.677226461808374,
+     "log10_min": -10.349913795487485,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 44.67722702026367
+      },
+      {
+       "index": 86218,
+       "code": 49042,
+       "value": 0.04266144335269928
+      },
+      {
+       "index": 40642,
+       "code": 38205,
+       "value": 0.0004422430647537112
+      },
+      {
+       "index": 95551,
+       "code": 39677,
+       "value": 0.0008226223289966583
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier2__CO.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166778,
+    "sha256": "ef47daa43210c5963003d8ce632cf68f2f5f9098c10818ac305eb9baf1fb529c",
+    "max": 285.3021879742106,
+    "log10_min": -9.544694897738358,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 285.30218505859375
+     },
+     {
+      "index": 79104,
+      "code": 45605,
+      "value": 0.06395900994539261
+     },
+     {
+      "index": 39927,
+      "code": 44399,
+      "value": 0.038465362042188644
+     },
+     {
+      "index": 34202,
+      "code": 43998,
+      "value": 0.03248196467757225
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 2,
+    "pollutant": "CO",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 180,
+    "total_rate_g_s": 103.52748985798156,
+    "vertical": {
+     "file": "roads/morning_transition__tier2__CO_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419016,
+     "sha256": "4904e43e2044158a0eae783b7b2fa8e8fad8a0d467a40a3a2ba9de6de194f6a4",
+     "max": 277.6615479839959,
+     "log10_min": -9.556484259445392,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 277.66156005859375
+      },
+      {
+       "index": 23225,
+       "code": 44839,
+       "value": 0.04506602883338928
+      },
+      {
+       "index": 76038,
+       "code": 55953,
+       "value": 4.885911464691162
+      },
+      {
+       "index": 185677,
+       "code": 42023,
+       "value": 0.013747020624577999
+      }
+     ]
+    }
+   },
+   {
+    "file": "roads/morning_transition__tier2__PM25.bin",
+    "bytes": 180000,
+    "gzip_bytes": 166820,
+    "sha256": "3b22b2eb9a1f35d589b645caf9424e0f4cf6c6ecfa39dc3cbebb6e714e36aced",
+    "max": 1.702420414762373,
+    "log10_min": -11.768933181463588,
+    "log10_step": 0.00018311105685598315,
+    "checks": [
+     {
+      "index": 40419,
+      "code": 65535,
+      "value": 1.7024204730987549
+     },
+     {
+      "index": 9290,
+      "code": 43631,
+      "value": 0.0001660359848756343
+     },
+     {
+      "index": 30415,
+      "code": 55205,
+      "value": 0.021853933110833168
+     },
+     {
+      "index": 74271,
+      "code": 48055,
+      "value": 0.0010722239967435598
+     }
+    ],
+    "scenario_id": "morning_transition",
+    "tier": 2,
+    "pollutant": "PM25",
+    "wd_deg": 91,
+    "hour": 8,
+    "traffic_factor": 1.604938,
+    "n_segments": 180,
+    "total_rate_g_s": 0.5947659082775743,
+    "vertical": {
+     "file": "roads/morning_transition__tier2__PM25_z.bin",
+     "bytes": 450000,
+     "gzip_bytes": 419103,
+     "sha256": "8a6180a2bbcfa84ffade0cad103fba22c55a397be8e8320f5933fd1606b0cee0",
+     "max": 1.6568281242079497,
+     "log10_min": -11.780722542021017,
+     "log10_step": 0.00018311105685598315,
+     "checks": [
+      {
+       "index": 10164,
+       "code": 65535,
+       "value": 1.6568281650543213
+      },
+      {
+       "index": 35895,
+       "code": 50203,
+       "value": 0.002581182634457946
+      },
+      {
+       "index": 158434,
+       "code": 33551,
+       "value": 0.0000023049069568514824
+      },
+      {
+       "index": 142375,
+       "code": 45627,
+       "value": 0.00037488885573111475
+      }
+     ]
+    }
+   }
+  ],
+  "inputs": {
+   "roads_yaml": "config/roads.yaml",
+   "roads_yaml_sha256": "754e749029721041fbaa2741bffaad8945cc434aaec46ad23500fdf156cdf818",
+   "roads_version": "r1",
+   "store": "/Users/sc3623/aqsim-data/store",
+   "field_grid_version": "v2",
+   "stored_angles_deg": [
+    0,
+    11.25,
+    22.5,
+    33.75,
+    45,
+    56.25,
+    67.5,
+    78.75,
+    90
+   ]
+  },
+  "created": "2026-10-21T04:36:57.636674+00:00",
+  "compute_s": 225.8,
+  "timing": {
+   "stable_night__tier1": {
+    "load_s": 3.3,
+    "ground_s": 15.62,
+    "vertical_s": 14.43
+   },
+   "stable_night__tier2": {
+    "load_s": 0.41,
+    "ground_s": 10.32,
+    "vertical_s": 8.16
+   },
+   "neutral_windy__tier1": {
+    "load_s": 0.68,
+    "ground_s": 13.56,
+    "vertical_s": 13.84
+   },
+   "neutral_windy__tier2": {
+    "load_s": 0.39,
+    "ground_s": 9.52,
+    "vertical_s": 8.26
+   },
+   "convective_deep__tier1": {
+    "load_s": 0.73,
+    "ground_s": 13.39,
+    "vertical_s": 11.52
+   },
+   "convective_deep__tier2": {
+    "load_s": 0.35,
+    "ground_s": 8.04,
+    "vertical_s": 7.53
+   },
+   "convective_winter__tier1": {
+    "load_s": 0.76,
+    "ground_s": 13.79,
+    "vertical_s": 11.56
+   },
+   "convective_winter__tier2": {
+    "load_s": 0.55,
+    "ground_s": 8.1,
+    "vertical_s": 7.16
+   },
+   "morning_transition__tier1": {
+    "load_s": 0.66,
+    "ground_s": 13.62,
+    "vertical_s": 12.31
+   },
+   "morning_transition__tier2": {
+    "load_s": 0.34,
+    "ground_s": 8.59,
+    "vertical_s": 8.32
+   }
+  },
+  "totals": {
+   "n_maps": 30,
+   "bytes": 18900000,
+   "gzip_bytes": 17100829
+  }
+ },
+ "side_files": {
+  "sources": {
+   "file": "sources.json",
+   "bytes": 6952,
+   "sha256": "a19bc499111ea26eb3f44d3752e858ebabd67a57c44c8fbe8464e3a8a5843e6b"
+  },
+  "backgrounds": {
+   "file": "backgrounds.json",
+   "bytes": 53251,
+   "sha256": "069c7c2cb3266a61ad61e6f1b5116b555ec5ccfcbbf1b41830065b1d515c876a"
+  },
+  "controls": {
+   "file": "controls.json",
+   "bytes": 19245,
+   "sha256": "b07115b8c283e43862df1bdb188ff80e309bad69a44258472825b4ee38d11e3d"
+  },
+  "roads": {
+   "file": "roads.json",
+   "bytes": 99778,
+   "sha256": "9626adb51ad625e41af5b8c9aca309cc027daf8eaffb56ae1d05440642d4d2a3"
+  }
+ },
+ "site_build": {
+  "note": "Trimmed by app/scripts/build-site.mjs: only the placeable-source fields are shipped; the highway-segment fields reach the app through the road baselines.",
+  "source_manifest_sha256": "7881e91fb0ff1c60ab0336126f70edfd47df6f0e4872b1a72a723fedb02ee983",
+  "export_totals": {
+   "n_fields": 175,
+   "bytes": 144205380,
+   "gzip_bytes": 52360001
+  },
+  "fields_in_export": 175,
+  "fields_shipped": 40
+ }
+}

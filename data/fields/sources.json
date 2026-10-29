@@ -1,0 +1,298 @@
+{
+ "format": "aqsim-sources",
+ "version": 1,
+ "created": "2026-10-29T06:44:53.346396+00:00",
+ "source": "config/sources.yaml",
+ "source_sha256": "3ba989e02890b0d8904cf92440ac9e0ac81db2316082b5b5c1906777003d9a04",
+ "catalogue_version": "a1",
+ "geometry_convention": "Every source is centred on the field origin. POINT and VOLUME are at (0, 0). AREA is a square of side `side` centred on (0, 0) with edges along and across the wind (the runner writes the SW corner at (-side/2, -side/2) in the wind-aligned frame). RLINE is a straight segment of length `length` centred on (0, 0) whose axis makes `orientation_deg` (clockwise, viewed from above) with the downwind direction; 0 = road along the wind, 90 = road across the wind. Segments at -theta or 180-theta are mirror images (phi -> -phi) of the stored theta field.",
+ "units": {
+  "params": "m, m/s, K",
+  "fields": "µg/m³ per g/s of total emission"
+ },
+ "pollutants": [
+  "SO2",
+  "CO",
+  "NO2",
+  "PM25"
+ ],
+ "note": "Every placed source has its own rate and control for SO2, CO, NO2 (as NOx) and PM25; the unit field is the same for all four (conserved tracer).",
+ "families": {
+  "power_plant_stack": {
+   "label": "Power plant stack",
+   "control": "stack_height_m",
+   "control_label": "Stack height",
+   "options": [
+    {
+     "source_id": "PP100",
+     "value": 100.0,
+     "label": "100 m"
+    },
+    {
+     "source_id": "PP150",
+     "value": 150.0,
+     "label": "150 m"
+    },
+    {
+     "source_id": "PP200",
+     "value": 200.0,
+     "label": "200 m"
+    }
+   ],
+   "default": "PP150"
+  },
+  "industrial_stack": {
+   "label": "Industrial stack",
+   "control": "stack_height_m",
+   "control_label": "Stack height",
+   "options": [
+    {
+     "source_id": "IND25",
+     "value": 25.0,
+     "label": "25 m"
+    },
+    {
+     "source_id": "IND45",
+     "value": 45.0,
+     "label": "45 m"
+    },
+    {
+     "source_id": "IND65",
+     "value": 65.0,
+     "label": "65 m"
+    }
+   ],
+   "default": "IND45"
+  },
+  "area": {
+   "label": "Ground-level area source",
+   "control": null,
+   "control_label": null,
+   "options": [
+    {
+     "source_id": "AREA200",
+     "value": null,
+     "label": "Ground-level area source, 200 m x 200 m"
+    }
+   ],
+   "default": "AREA200"
+  },
+  "volume": {
+   "label": "Building vent / fugitive volume source",
+   "control": null,
+   "control_label": null,
+   "options": [
+    {
+     "source_id": "VOL30",
+     "value": null,
+     "label": "Building fugitive (volume) source, 30 m x 30 m x 15 m"
+    }
+   ],
+   "default": "VOL30"
+  }
+ },
+ "sources": [
+  {
+   "id": "PP100",
+   "label": "Power plant stack, 100 m",
+   "family": "power_plant_stack",
+   "family_label": "Power plant stack",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 100.0
+   },
+   "params": {
+    "stack_height": 100.0,
+    "stack_diameter": 6.0,
+    "exit_velocity": 20.0,
+    "stack_temp": 405.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "PP150",
+   "label": "Power plant stack, 150 m",
+   "family": "power_plant_stack",
+   "family_label": "Power plant stack",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 150.0
+   },
+   "params": {
+    "stack_height": 150.0,
+    "stack_diameter": 6.0,
+    "exit_velocity": 20.0,
+    "stack_temp": 405.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "PP200",
+   "label": "Power plant stack, 200 m",
+   "family": "power_plant_stack",
+   "family_label": "Power plant stack",
+   "category": "power_plant_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 200.0
+   },
+   "params": {
+    "stack_height": 200.0,
+    "stack_diameter": 6.0,
+    "exit_velocity": 20.0,
+    "stack_temp": 405.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "IND25",
+   "label": "Industrial stack, 25 m",
+   "family": "industrial_stack",
+   "family_label": "Industrial stack",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 25.0
+   },
+   "params": {
+    "stack_height": 25.0,
+    "stack_diameter": 2.0,
+    "exit_velocity": 12.0,
+    "stack_temp": 450.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "IND45",
+   "label": "Industrial stack, 45 m",
+   "family": "industrial_stack",
+   "family_label": "Industrial stack",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 45.0
+   },
+   "params": {
+    "stack_height": 45.0,
+    "stack_diameter": 2.0,
+    "exit_velocity": 12.0,
+    "stack_temp": 450.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "IND65",
+   "label": "Industrial stack, 65 m",
+   "family": "industrial_stack",
+   "family_label": "Industrial stack",
+   "category": "industrial_stack",
+   "aermod_type": "POINT",
+   "control": {
+    "stack_height_m": 65.0
+   },
+   "params": {
+    "stack_height": 65.0,
+    "stack_diameter": 2.0,
+    "exit_velocity": 12.0,
+    "stack_temp": 450.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "AREA200",
+   "label": "Ground-level area source, 200 m x 200 m",
+   "family": "area",
+   "family_label": "Ground-level area source",
+   "category": "area",
+   "aermod_type": "AREA",
+   "control": {},
+   "params": {
+    "side": 200.0,
+    "release_height": 2.0,
+    "szinit": 2.0
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  },
+  {
+   "id": "VOL30",
+   "label": "Building fugitive (volume) source, 30 m x 30 m x 15 m",
+   "family": "volume",
+   "family_label": "Building vent / fugitive volume source",
+   "category": "volume",
+   "aermod_type": "VOLUME",
+   "control": {},
+   "params": {
+    "release_height": 7.5,
+    "sigma_y0": 6.98,
+    "sigma_z0": 6.98
+   },
+   "unit_emission_g_s": 1.0,
+   "frame": "polar",
+   "scenarios": [
+    "convective_deep",
+    "convective_winter",
+    "morning_transition",
+    "neutral_windy",
+    "stable_night"
+   ]
+  }
+ ]
+}

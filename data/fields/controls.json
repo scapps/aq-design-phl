@@ -1,0 +1,798 @@
+{
+ "format": "aqsim-controls",
+ "version": 1,
+ "created": "2026-10-29T06:44:53.438228+00:00",
+ "source": "config/controls.yaml",
+ "source_sha256": "a64108f0e91cc6b581c01e247b6f949d85d2e19b3f9301dd0bad1881f9a04054",
+ "controls_version": "c1",
+ "approximate_note": "All costs and efficiencies are approximate teaching values of the right order of magnitude (see references); not a cost estimate for any facility.",
+ "cost_model": {
+  "capital_usd": "usd_per_unit * ref_size * (S / ref_size) ** exponent, S = the source's capacity in the technology's basis (capacity[source_id][basis])",
+  "annual_fixed_usd": "capital_usd * (crf + fixed_om_fraction)",
+  "crf": "i (1 + i)^n / ((1 + i)^n - 1), i = annualisation.interest_rate, n = life_years",
+  "annual_variable_usd": "variable_usd_per_ton.typical * tonnes_removed_per_year",
+  "tonnes_removed_per_year": "rate_g_s * efficiency * tonnes_per_year_per_g_s",
+  "annual_total_usd": "annual_fixed_usd + annual_variable_usd"
+ },
+ "pollutant_keys": "canonical (SO2, CO, NO2, PM25); the NOx entries of controls.yaml are listed under NO2 (the app's NO2 is the NOx tracer)",
+ "approximate": true,
+ "cost_year": 2023,
+ "currency": "USD",
+ "ton_unit": "metric tonne",
+ "tonnes_per_year_per_g_s": 31.536,
+ "annualisation": {
+  "interest_rate": 0.075,
+  "basis": "The Cost Manual (Section 1, Chapter 2, 2017) recommends the bank prime rate for private firms; the US prime rate was 7.5-8.5 % in 2023-2025. The capital recovery factor (crf) of each technology follows from this rate and its equipment life and is checked by aqsim.config.",
+  "crf_formula": "i (1 + i)^n / ((1 + i)^n - 1)"
+ },
+ "capacity": {
+  "basis_notes": {
+   "kW_net": "Net electrical capacity. A coal unit at a heat rate of 10,000 Btu/kWh, 6 % O2 and 405 K produces about 1.62 m3/s of flue gas per MW (EPA Method 19 F-factor 9,780 dscf/MMBtu, about 8 % moisture), so the 565 m3/s of the PP stacks corresponds to about 350 MW.",
+   "MMBtu_per_h": "Heat input. An oil- or refinery-gas-fired heater or boiler at 3 % O2 and 450 K produces about 0.145 m3/s per MMBtu/h, so the 37.7 m3/s of the IND stacks corresponds to about 250 MMBtu/h (73 MW thermal). The IND default SO2 rate (15 g/s, about 0.5 lb/MMBtu) implies a sulfur-bearing fuel such as residual oil.",
+   "m3_per_s": "Actual flue-gas (or ventilation) flow at the control device, m3/s.",
+   "m2": "Ground area of the source, m2."
+  },
+  "PP100": {
+   "kW_net": 350000,
+   "MMBtu_per_h": 3500,
+   "m3_per_s": 565.5
+  },
+  "PP150": {
+   "kW_net": 350000,
+   "MMBtu_per_h": 3500,
+   "m3_per_s": 565.5
+  },
+  "PP200": {
+   "kW_net": 350000,
+   "MMBtu_per_h": 3500,
+   "m3_per_s": 565.5
+  },
+  "IND25": {
+   "MMBtu_per_h": 250,
+   "m3_per_s": 37.7
+  },
+  "IND45": {
+   "MMBtu_per_h": 250,
+   "m3_per_s": 37.7
+  },
+  "IND65": {
+   "MMBtu_per_h": 250,
+   "m3_per_s": 37.7
+  },
+  "AREA200": {
+   "m2": 40000
+  },
+  "VOL30": {
+   "m3_per_s": 15.0
+  }
+ },
+ "technologies": {
+  "SO2": [
+   {
+    "id": "dsi",
+    "name": "Dry sorbent injection (DSI)",
+    "efficiency": {
+     "typical": 0.5,
+     "range": [
+      0.4,
+      0.7
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 50,
+      "range": [
+       30,
+       90
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 12000,
+      "range": [
+       6000,
+       25000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.02,
+    "variable_usd_per_ton": {
+     "typical": 1200,
+     "range": [
+      700,
+      2000
+     ]
+    },
+    "note": "Trona or hydrated lime injected into the duct; low capital, cost dominated by sorbent and waste.",
+    "references": [
+     "ccm_scrubbers",
+     "ipm_retrofit"
+    ]
+   },
+   {
+    "id": "sda",
+    "name": "Spray dryer absorber (dry FGD)",
+    "efficiency": {
+     "typical": 0.9,
+     "range": [
+      0.85,
+      0.95
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 500,
+      "range": [
+       350,
+       700
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 70000,
+      "range": [
+       40000,
+       200000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 30,
+    "crf": 0.0847,
+    "fixed_om_fraction": 0.03,
+    "variable_usd_per_ton": {
+     "typical": 400,
+     "range": [
+      250,
+      700
+     ]
+    },
+    "note": "Lime slurry sprayed into a vessel; needs a downstream particle collector.",
+    "references": [
+     "ccm_scrubbers",
+     "fs_fgd",
+     "ipm_retrofit"
+    ]
+   },
+   {
+    "id": "wfgd",
+    "name": "Wet limestone FGD",
+    "efficiency": {
+     "typical": 0.95,
+     "range": [
+      0.9,
+      0.98
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 600,
+      "range": [
+       400,
+       900
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 80000,
+      "range": [
+       50000,
+       300000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 30,
+    "crf": 0.0847,
+    "fixed_om_fraction": 0.03,
+    "variable_usd_per_ton": {
+     "typical": 250,
+     "range": [
+      150,
+      500
+     ]
+    },
+    "note": "Limestone slurry scrubber; high capital, cools the gas (less plume rise, not modelled).",
+    "references": [
+     "ccm_scrubbers",
+     "fs_fgd",
+     "ipm_retrofit"
+    ]
+   }
+  ],
+  "NO2": [
+   {
+    "id": "lnb",
+    "name": "Low-NOx burners",
+    "efficiency": {
+     "typical": 0.4,
+     "range": [
+      0.3,
+      0.5
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 25,
+      "range": [
+       15,
+       40
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 3000,
+      "range": [
+       1500,
+       6000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.01,
+    "variable_usd_per_ton": {
+     "typical": 50,
+     "range": [
+      0,
+      200
+     ]
+    },
+    "note": "Staged combustion; no reagent (small efficiency penalty only).",
+    "references": [
+     "epa_nox_bulletin",
+     "ipm_retrofit"
+    ]
+   },
+   {
+    "id": "sncr",
+    "name": "SNCR (urea or ammonia, no catalyst)",
+    "efficiency": {
+     "typical": 0.35,
+     "range": [
+      0.25,
+      0.5
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 25,
+      "range": [
+       15,
+       45
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 4000,
+      "range": [
+       2000,
+       8000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.02,
+    "variable_usd_per_ton": {
+     "typical": 1500,
+     "range": [
+      1000,
+      2500
+     ]
+    },
+    "note": "Reagent injected in the furnace; some ammonia slip.",
+    "references": [
+     "ccm_sncr",
+     "ipm_retrofit"
+    ]
+   },
+   {
+    "id": "scr",
+    "name": "SCR (catalyst)",
+    "efficiency": {
+     "typical": 0.85,
+     "range": [
+      0.7,
+      0.9
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 300,
+      "range": [
+       200,
+       450
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 12000,
+      "range": [
+       8000,
+       30000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 25,
+    "crf": 0.0897,
+    "fixed_om_fraction": 0.015,
+    "variable_usd_per_ton": {
+     "typical": 600,
+     "range": [
+      400,
+      1000
+     ]
+    },
+    "note": "Catalyst bed with ammonia; highest removal and cost; catalyst replacement is in the variable cost.",
+    "references": [
+     "ccm_scr",
+     "fs_scr",
+     "ipm_retrofit"
+    ]
+   }
+  ],
+  "PM25": [
+   {
+    "id": "cyc",
+    "name": "Cyclone",
+    "efficiency": {
+     "typical": 0.3,
+     "range": [
+      0.1,
+      0.4
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 10000,
+      "range": [
+       6000,
+       15000
+      ],
+      "ref_size": 565.5,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 15000,
+      "range": [
+       9000,
+       25000
+      ],
+      "ref_size": 37.7,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.1,
+    "variable_usd_per_ton": {
+     "typical": 50,
+     "range": [
+      20,
+      150
+     ]
+    },
+    "note": "Cheap pre-cleaner; poor for particles under 2.5 um; fan power for its pressure drop is in the fixed O&M.",
+    "references": [
+     "fs_cyclone"
+    ]
+   },
+   {
+    "id": "esp",
+    "name": "Electrostatic precipitator (ESP)",
+    "efficiency": {
+     "typical": 0.95,
+     "range": [
+      0.9,
+      0.98
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 60000,
+      "range": [
+       40000,
+       130000
+      ],
+      "ref_size": 565.5,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 90000,
+      "range": [
+       50000,
+       180000
+      ],
+      "ref_size": 37.7,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.04,
+    "variable_usd_per_ton": {
+     "typical": 150,
+     "range": [
+      50,
+      400
+     ]
+    },
+    "note": "Charged plates; fine-particle efficiency depends on ash resistivity. Sized by gas flow, so its cost per tonne of PM2.5 is high (most of the dust it collects is coarser).",
+    "references": [
+     "ccm_esp",
+     "fs_esp"
+    ]
+   },
+   {
+    "id": "bag",
+    "name": "Fabric filter (baghouse)",
+    "efficiency": {
+     "typical": 0.99,
+     "range": [
+      0.99,
+      0.999
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 50000,
+      "range": [
+       30000,
+       110000
+      ],
+      "ref_size": 565.5,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 80000,
+      "range": [
+       40000,
+       160000
+      ],
+      "ref_size": 37.7,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.06,
+    "variable_usd_per_ton": {
+     "typical": 300,
+     "range": [
+      100,
+      600
+     ]
+    },
+    "note": "Filter bags (replaced every few years, in the fixed O&M); highest fine-particle removal.",
+    "references": [
+     "ccm_baghouse",
+     "fs_baghouse"
+    ]
+   },
+   {
+    "id": "water",
+    "name": "Water spray or chemical dust suppressant",
+    "efficiency": {
+     "typical": 0.5,
+     "range": [
+      0.4,
+      0.7
+     ]
+    },
+    "applies_to": [
+     "area"
+    ],
+    "capital": {
+     "area": {
+      "basis": "m2",
+      "usd_per_unit": 1.0,
+      "range": [
+       0.5,
+       3.0
+      ],
+      "ref_size": 40000,
+      "exponent": 1.0
+     }
+    },
+    "life_years": 10,
+    "crf": 0.1457,
+    "fixed_om_fraction": 0.1,
+    "variable_usd_per_ton": {
+     "typical": 8000,
+     "range": [
+      3000,
+      20000
+     ]
+    },
+    "note": "Fugitive dust on yards and unpaved surfaces; water, chemical and truck time are variable costs. Per tonne of PM2.5 it is costly because PM2.5 is a small part of fugitive dust.",
+    "references": [
+     "wrap_fdh",
+     "ap42_13_2"
+    ]
+   },
+   {
+    "id": "fence",
+    "name": "Wind fence plus paving",
+    "efficiency": {
+     "typical": 0.7,
+     "range": [
+      0.5,
+      0.8
+     ]
+    },
+    "applies_to": [
+     "area"
+    ],
+    "capital": {
+     "area": {
+      "basis": "m2",
+      "usd_per_unit": 40.0,
+      "range": [
+       20.0,
+       70.0
+      ],
+      "ref_size": 40000,
+      "exponent": 1.0
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.02,
+    "variable_usd_per_ton": {
+     "typical": 0,
+     "range": [
+      0,
+      500
+     ]
+    },
+    "note": "Paving and wind fences reduce wind erosion and track-out; almost all capital.",
+    "references": [
+     "wrap_fdh",
+     "ap42_13_2"
+    ]
+   },
+   {
+    "id": "encl",
+    "name": "Enclosure vented to a baghouse",
+    "efficiency": {
+     "typical": 0.9,
+     "range": [
+      0.8,
+      0.97
+     ]
+    },
+    "applies_to": [
+     "volume"
+    ],
+    "capital": {
+     "volume": {
+      "basis": "m3_per_s",
+      "usd_per_unit": 120000,
+      "range": [
+       70000,
+       200000
+      ],
+      "ref_size": 15.0,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.06,
+    "variable_usd_per_ton": {
+     "typical": 500,
+     "range": [
+      200,
+      1000
+     ]
+    },
+    "note": "Hoods, ducts and a baghouse on the building's vents; overall efficiency = capture (about 95 %) x filter (about 99 %).",
+    "references": [
+     "ccm_baghouse",
+     "fs_baghouse"
+    ]
+   }
+  ],
+  "CO": [
+   {
+    "id": "gcp",
+    "name": "Good combustion practice (tuning)",
+    "efficiency": {
+     "typical": 0.3,
+     "range": [
+      0.2,
+      0.5
+     ]
+    },
+    "applies_to": [
+     "power_plant_stack",
+     "industrial_stack"
+    ],
+    "capital": {
+     "power_plant_stack": {
+      "basis": "kW_net",
+      "usd_per_unit": 3,
+      "range": [
+       1,
+       5
+      ],
+      "ref_size": 350000,
+      "exponent": 0.6
+     },
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 400,
+      "range": [
+       200,
+       1000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 10,
+    "crf": 0.1457,
+    "fixed_om_fraction": 0.05,
+    "variable_usd_per_ton": {
+     "typical": 0,
+     "range": [
+      0,
+      100
+     ]
+    },
+    "note": "Air-fuel tuning and combustion monitoring; can raise NOx.",
+    "references": [
+     "ccm_oxidizers"
+    ]
+   },
+   {
+    "id": "oxcat",
+    "name": "Oxidation catalyst",
+    "efficiency": {
+     "typical": 0.8,
+     "range": [
+      0.7,
+      0.9
+     ]
+    },
+    "applies_to": [
+     "industrial_stack"
+    ],
+    "capital": {
+     "industrial_stack": {
+      "basis": "MMBtu_per_h",
+      "usd_per_unit": 6000,
+      "range": [
+       3000,
+       12000
+      ],
+      "ref_size": 250,
+      "exponent": 0.6
+     }
+    },
+    "life_years": 20,
+    "crf": 0.0981,
+    "fixed_om_fraction": 0.03,
+    "variable_usd_per_ton": {
+     "typical": 150,
+     "range": [
+      50,
+      400
+     ]
+    },
+    "note": "Precious-metal catalyst in the flue gas of gas- or oil-fired units and engines.",
+    "references": [
+     "ccm_oxidizers",
+     "fs_catalytic"
+    ]
+   }
+  ]
+ },
+ "not_offered": {
+  "CO": {
+   "power_plant_stack": "An oxidation catalyst is not used on coal-fired boilers: fly ash fouls and erodes the catalyst and SO2 poisons it. Only good combustion practice is offered.",
+   "area": "CO from yard equipment exhaust has no add-on control (fleet replacement or electrification is outside the model).",
+   "volume": "As for the area source."
+  },
+  "NO2": {
+   "area": "NOx from yard equipment exhaust has no add-on control in this model.",
+   "volume": "Building vents carry little combustion NOx; no add-on control in this model."
+  },
+  "SO2": {
+   "area": "The area and volume sources emit no SO2 by default; no control is offered.",
+   "volume": "As for the area source."
+  }
+ },
+ "references": {
+  "ccm_concepts": "US EPA, Air Pollution Control Cost Manual, 7th ed., Section 1, Chapter 2: Cost Estimation: Concepts and Methodology (2017).",
+  "ccm_scrubbers": "US EPA, Air Pollution Control Cost Manual, Section 5, SO2 and Acid Gas Controls, Chapter 1: Wet and Dry Scrubbers for Acid Gas Control (2021).",
+  "ccm_sncr": "US EPA, Air Pollution Control Cost Manual, Section 4, NOx Controls, Chapter 1: Selective Noncatalytic Reduction (2019).",
+  "ccm_scr": "US EPA, Air Pollution Control Cost Manual, Section 4, NOx Controls, Chapter 2: Selective Catalytic Reduction (2019).",
+  "ccm_baghouse": "US EPA, Air Pollution Control Cost Manual, Section 6, Particulate Matter Controls, Chapter 1: Baghouses and Filters.",
+  "ccm_esp": "US EPA, Air Pollution Control Cost Manual, Section 6, Particulate Matter Controls, Chapter 3: Electrostatic Precipitators.",
+  "ccm_oxidizers": "US EPA, Air Pollution Control Cost Manual, Section 3.2, VOC Destruction Controls, Chapter 2: Incinerators and Oxidizers (2017).",
+  "fs_fgd": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Flue Gas Desulfurization (FGD) - Wet, Spray-Dry, and Dry Scrubbers, EPA-452/F-03-034 (2003): wet scrubbers > 400 MW 100-250 $/kW, spray dry > 200 MW 40-150 $/kW, 150-500 $/ton (2001 $).",
+  "fs_scr": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Selective Catalytic Reduction (SCR), EPA-452/F-03-032 (2003): industrial oil/gas boilers 4,000-6,000 $ per MMBtu/h, coal 10,000-15,000; 1,000-5,000 $/ton (1999 $).",
+  "fs_cyclone": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Cyclones (2003).",
+  "fs_esp": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Dry Electrostatic Precipitator, Wire-Plate Type (2003).",
+  "fs_baghouse": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Fabric Filter, Pulse-Jet Cleaned Type (2003).",
+  "fs_catalytic": "US EPA CICA, Air Pollution Control Technology Fact Sheet: Catalytic Incinerator (2003).",
+  "epa_nox_bulletin": "US EPA, Technical Bulletin: Nitrogen Oxides (NOx), Why and How They Are Controlled, EPA-456/F-99-006R (1999).",
+  "ipm_retrofit": "US EPA Clean Air Markets Division, Power Sector Modeling Platform (IPM) documentation, retrofit emission control cost modules for wet FGD, SDA, DSI, SCR and SNCR (Sargent & Lundy), used for the order of magnitude of utility $/kW at a few hundred MW.",
+  "wrap_fdh": "Countess Environmental for the Western Governors' Association, WRAP Fugitive Dust Handbook (2006): control efficiencies and cost-effectiveness of dust controls.",
+  "ap42_13_2": "US EPA, AP-42, Section 13.2: Fugitive Dust Sources."
+ }
+}

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Quality Sandbox</title>
+  <script type="module" crossorigin src="./assets/index-BHPVnuSY.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BSIYml-N.css">
+</head>
+<body>
+<a class="skip" href="#mapCanvas">Skip to the map</a>
+<header class="topbar">
+  <div class="brand">
+    <strong>Air Quality Sandbox</strong>
+    <span class="muted">Philadelphia, 30 × 30 km · ENVE 460/560</span>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Screens">
+    <button data-screen="sandbox" class="active" aria-current="page">Sandbox</button>
+    <button data-screen="linearity">Linearity edge</button>
+    <button data-screen="about">About &amp; model limits</button>
+  </nav>
+  <div class="topbar-right">
+    <span class="title-chip hidden" id="configTitle"></span>
+    <button class="btn" id="shareBtn" title="Copy a link that reopens this configuration">Share link</button>
+    <button class="btn" id="saveBtn" title="Download this configuration as a JSON file">Save file</button>
+    <button class="btn" id="loadBtn" title="Open a configuration file">Open file</button>
+    <input type="file" id="loadInput" accept=".json,application/json" class="hidden" aria-label="Configuration file">
+    <span class="instr-badge hidden" id="instrBadge" title="Instructor view: teaching and artifact notes are shown">Instructor view</span>
+  </div>
+</header>
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============================== SANDBOX ============================== -->
+<main id="screen-sandbox" class="screen active">
+  <section class="contextbar" aria-label="Weather hour, pollutant and reference level">
+    <button class="chip chip-scenario" id="scenarioChip" title="Choose the weather hour">
+      <span class="chip-label">Weather hour</span><span id="scenarioChipText">…</span><span class="chev" aria-hidden="true">▾</span>
+    </button>
+    <div class="seg" id="pollutantSeg" role="radiogroup" aria-label="Pollutant">
+      <span class="seg-label">Pollutant</span>
+      <button role="radio" data-pol="SO2">SO₂</button>
+      <button role="radio" data-pol="CO">CO</button>
+      <button role="radio" data-pol="NO2">NO₂ <span class="flag-dot amber" title="Tracer upper limit: all NOx counted as NO₂">!</span></button>
+      <button role="radio" data-pol="PM25">PM₂.₅ <span class="flag-dot grey" title="Primary part only">·</span></button>
+      <button role="radio" data-pol="O3">O₃ <span class="flag-dot red" title="Secondary pollutant">!</span></button>
+    </div>
+    <button class="chip" id="standardChip" title="Choose a reference level to show beside the values">
+      <span class="chip-label">Reference level</span><span id="standardChipText">…</span><span class="chev" aria-hidden="true">▾</span>
+    </button>
+    <div class="seg small" id="unitSeg" role="radiogroup" aria-label="Units for gases (PM₂.₅ is always in µg/m³)" title="SO₂, NO₂, CO and O₃ in ppb or µg/m³ (25 °C, 1 atm). PM₂.₅ is always in µg/m³.">
+      <span class="seg-label">Gases in</span>
+      <button role="radio" data-unit="ppb">ppb</button>
+      <button role="radio" data-unit="ug">µg/m³</button>
+    </div>
+    <span class="steady-badge" title="Every field is one hour of AERMOD steady-state output.">1-hour steady-state values</span>
+  </section>
+
+  <div id="polBanner" class="banner" role="status"></div>
+  <div id="dataBanner" class="banner amber hidden" role="status"></div>
+
+  <div class="sandbox-grid" id="sandboxGrid">
+    <aside class="col col-left" aria-label="Sources, roads and weather">
+      <section class="panel" id="palettePanel">
+        <h2>Source palette</h2>
+        <p class="hint">Pick a type, then click a 500 m cell on the map (or use the arrow keys and Enter on the map). <span id="countText">0 of 12 placed.</span></p>
+        <div class="palette" id="palette"></div>
+      </section>
+      <section class="panel" id="placedPanel">
+        <h2>Placed sources</h2>
+        <ol class="placed" id="placedList"></ol>
+        <p class="hint" id="placedEmpty">None yet. The map shows the background and the road network.</p>
+      </section>
+      <section class="panel" id="roadsPanel">
+        <h2>Existing roads (baseline)</h2>
+        <p class="hint">Fixed road network from OpenStreetMap, precomputed for each weather hour at the observed wind. Emits NOx, CO and PM₂.₅.</p>
+        <div class="tiers">
+          <label><input type="checkbox" id="tier1"> Tier 1 · motorways <span class="muted" id="tier1n"></span></label>
+          <label><input type="checkbox" id="tier2"> Tier 2 · trunk roads <span class="muted" id="tier2n"></span></label>
+        </div>
+        <label class="field" for="trafficScale">Traffic scale (all roads) <output id="trafficOut">100 %</output></label>
+        <input type="range" id="trafficScale" min="0" max="200" step="5" value="100" aria-describedby="trafficHint">
+        <p class="hint" id="trafficHint"></p>
+      </section>
+      <section class="panel" id="metPanel">
+        <h2>This hour <button class="linkbtn" id="metChange">change</button></h2>
+        <dl class="met" id="metCard"></dl>
+        <div class="rotate hidden" id="rotateWrap">
+          <label class="switch"><input type="checkbox" id="rotateToggle"> Rotate the wind direction</label>
+          <div id="rotateBox" class="hidden">
+            <label class="field" for="rotateSlider">Wind from <output id="rotateOut"></output></label>
+            <input type="range" id="rotateSlider" min="0" max="359" step="1">
+            <p class="hint">Flat terrain: the stored fields rotate exactly. The road baseline is precomputed for the observed wind only, so it is hidden while the wind is rotated.</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <section class="col col-centre" aria-label="Map and cross-section">
+      <div class="panel map-panel">
+        <div class="maptools" role="toolbar" aria-label="Map tools">
+          <div class="seg small" id="modeSeg" role="radiogroup" aria-label="Map mode">
+            <button role="radio" data-mode="select" title="Select and drag sources and the section ends">Select / move</button>
+            <button role="radio" data-mode="probe" title="Click the map to read point values">Probe</button>
+          </div>
+          <div class="layers" id="layerToggles">
+            <label><input type="checkbox" data-layer="conc"> Concentration</label>
+            <label><input type="checkbox" data-layer="roads"> Roads</label>
+            <label><input type="checkbox" data-layer="grid"> Placement grid</label>
+            <label><input type="checkbox" data-layer="section"> Section line</label>
+          </div>
+          <button class="limits-btn" id="limitsBtn" aria-pressed="false" title="Show where the model is less reliable"><span class="lim-ico" aria-hidden="true"></span> Model limits</button>
+        </div>
+        <div class="place-hint hidden" id="placeHint" role="status"></div>
+        <div class="map-wrap" id="mapWrap">
+          <canvas id="mapCanvas" tabindex="0" role="application" aria-roledescription="map" aria-label="Map of the 30 by 30 km domain. Arrow keys move the selected source or the placement cursor; Enter places; Delete removes the selected source." aria-describedby="mapStatus"></canvas>
+          <div class="map-overlay-msg hidden" id="mapMsg" role="alert"></div>
+          <div class="busy hidden" id="mapBusy" role="status" aria-live="polite">Computing…</div>
+          <div class="tooltip hidden" id="mapTip" aria-hidden="true"></div>
+          <div class="map-attrib" id="mapAttrib">Roads © OpenStreetMap contributors (ODbL) · AADT: PennDOT, NJDOT · UTM 18N</div>
+        </div>
+        <p class="sr-only" id="mapStatus" aria-live="polite"></p>
+        <div class="map-legend" id="mapLegend"></div>
+        <div class="limits-legend hidden" id="limitsLegend"></div>
+      </div>
+
+      <div class="panel section-panel" id="sectionPanel">
+        <div class="panel-head">
+          <h2>Vertical cross-section <span class="muted" id="sectionMeta"></span></h2>
+          <div class="panel-actions">
+            <div class="seg small" id="zSeg" role="radiogroup" aria-label="Height range">
+              <button role="radio" data-ztop="2500">0–2.5 km</button>
+              <button role="radio" data-ztop="600">0–600 m</button>
+            </div>
+            <button id="sectionExpand" class="btn">Expand</button>
+          </div>
+        </div>
+        <div class="section-body">
+          <canvas id="sectionCanvas" role="img" aria-label="Vertical cross-section along the line A to B on the map"></canvas>
+          <div class="section-side" id="sectionSide"></div>
+        </div>
+        <p class="hint">Drag the line ends (A, B) on the map. The section shows the plume increment only (placed sources and roads); the regional background, measured at ground level, is not included aloft.</p>
+      </div>
+    </section>
+
+    <aside class="col col-right" aria-label="Selected source, probe and summary">
+      <section class="panel" id="controlsPanel">
+        <h2>Selected source</h2>
+        <div id="controlsBody"></div>
+      </section>
+      <section class="panel" id="probePanel">
+        <h2>Receptor probe</h2>
+        <div id="probeBody"></div>
+      </section>
+      <section class="panel" id="summaryPanel">
+        <h2>Summary</h2>
+        <div id="summaryBody"></div>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<!-- ============================== LINEARITY ============================== -->
+<main id="screen-linearity" class="screen">
+  <div class="lin-host" id="linHost"></div>
+</main>
+
+<!-- ============================== ABOUT ============================== -->
+<main id="screen-about" class="screen">
+  <div class="about-wrap" id="aboutBody"></div>
+</main>
+
+<!-- ============================== MODALS ============================== -->
+<div class="modal hidden" id="scenarioModal" role="dialog" aria-modal="true" aria-labelledby="scenarioModalTitle">
+  <div class="modal-box wide">
+    <div class="modal-head"><h2 id="scenarioModalTitle">Choose a weather hour</h2><button class="x" data-close aria-label="Close">×</button></div>
+    <p class="hint">Five single hours of 2024 Philadelphia weather (PHL surface station, Sterling VA upper air, AERMET 24142). Each comes with a regional background for every pollutant.</p>
+    <div class="scn-grid" id="scenarioCards"></div>
+  </div>
+</div>
+
+<div class="modal hidden" id="standardModal" role="dialog" aria-modal="true" aria-labelledby="standardModalTitle">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="standardModalTitle">Reference level</h2><button class="x" data-close aria-label="Close">×</button></div>
+    <p class="hint">The map shows <b>one hour</b> of steady-state concentration. Air-quality standards are statistics over months to years (for example the 99th percentile of daily 1-hour maxima, averaged over 3 years), so one modelled hour is too short to show an exceedance or compliance. The sandbox therefore shows a standard only as a reference level: a mark on the colour scale and a value in the summary.</p>
+    <div id="standardList"></div>
+    <div class="modal-foot"><button class="btn primary" data-close>Done</button></div>
+  </div>
+</div>
+
+<div class="popover hidden" id="limitPop" role="dialog" aria-label="Model limit"></div>
+</body>
+</html>
