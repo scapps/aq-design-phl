@@ -1,10 +1,10 @@
 {
- "built": "2026-10-29T23:02:11.965Z",
+ "built": "2026-11-11T19:04:54.255Z",
  "export_dir": "export",
- "source_commit": "a53dbce",
+ "source_commit": "15a18b4",
  "n_files": 115,
- "bytes": 52365156,
- "gzip_bytes": 32701063,
+ "bytes": 52388995,
+ "gzip_bytes": 32708216,
  "unit_field_tiles": 40,
  "road_files": 60,
  "largest": {
@@ -20,16 +20,16 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   {
-   "path": "assets/field.worker-eGIs3U9R.js",
-   "bytes": 7143,
-   "gzip_bytes": 3062,
-   "sha256": "0cd1e31f881271680f300bc594829c609f460caf88683813b70a324c6f662135"
+   "path": "assets/field.worker-BDlMtSoS.js",
+   "bytes": 7221,
+   "gzip_bytes": 3098,
+   "sha256": "3d12028863f62d35fec20af43cd418bcad4cbd9f873edad8cc621140b9779b4f"
   },
   {
-   "path": "assets/field.worker-eGIs3U9R.js.map",
-   "bytes": 34102,
-   "gzip_bytes": 11236,
-   "sha256": "4af7ecdede0fef75c189d7109fa737e31f85adf1092e556389aca30524f457f4"
+   "path": "assets/field.worker-BDlMtSoS.js.map",
+   "bytes": 37455,
+   "gzip_bytes": 12112,
+   "sha256": "ea09507126f1925b346f9ec891b5f1dc0696adab67ed0d25a586be4c34fe3f35"
   },
   {
    "path": "assets/index-B9mlpLVU.css",
@@ -38,16 +38,16 @@
    "sha256": "69b9c4d983ac2c2a61493018c03d5c081ea79fe4132348e6d9132fcef24fc9e6"
   },
   {
-   "path": "assets/index-Bo-WiIk2.js",
-   "bytes": 120397,
-   "gzip_bytes": 42086,
-   "sha256": "2b2091b05987cfd63d1cfb1bef5fa9ee154c3aed88362fe7304d4673b6e570dd"
+   "path": "assets/index-DRlF0r_9.js",
+   "bytes": 124364,
+   "gzip_bytes": 43415,
+   "sha256": "0fc219fc485ab08f9c47e1f877b30e3c8d0d89654bed8e3426fbc32877b9fded"
   },
   {
-   "path": "assets/index-Bo-WiIk2.js.map",
-   "bytes": 326678,
-   "gzip_bytes": 95146,
-   "sha256": "28fa756d60811d146d787c7abe8ccc551a9052a1515766c6d0fd3a10240fff8e"
+   "path": "assets/index-DRlF0r_9.js.map",
+   "bytes": 343119,
+   "gzip_bytes": 100055,
+   "sha256": "10de80cf92d042bafa50a31197cc40061a03e1b310a339426876066e429df604"
   },
   {
    "path": "assets/linearity-B9bzoP-R.js",
@@ -700,8 +700,8 @@
   {
    "path": "index.html",
    "bytes": 12064,
-   "gzip_bytes": 3849,
-   "sha256": "1d471c089b3eac70eb53f0202a144f74083a281ee0d7c0e249947ae06b14493d"
+   "gzip_bytes": 3852,
+   "sha256": "7fbd35df919b04d9f903d2279acf2ca71be30d041fbf24cd878ef1a12e14fad9"
   }
  ]
 }
