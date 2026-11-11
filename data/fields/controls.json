@@ -1,9 +1,9 @@
 {
  "format": "aqsim-controls",
  "version": 1,
- "created": "2026-10-29T06:44:53.438228+00:00",
+ "created": "2026-11-11T19:38:36.038500+00:00",
  "source": "config/controls.yaml",
- "source_sha256": "a64108f0e91cc6b581c01e247b6f949d85d2e19b3f9301dd0bad1881f9a04054",
+ "source_sha256": "241927edfbc88be827a6673feb2c81c30f36ae1e75027b1358247777cfca3583",
  "controls_version": "c1",
  "approximate_note": "All costs and efficiencies are approximate teaching values of the right order of magnitude (see references); not a cost estimate for any facility.",
  "cost_model": {

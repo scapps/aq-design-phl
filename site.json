@@ -1,10 +1,10 @@
 {
- "built": "2026-11-11T19:04:54.255Z",
+ "built": "2026-11-11T20:24:48.333Z",
  "export_dir": "export",
- "source_commit": "15a18b4",
+ "source_commit": "5567bd0",
  "n_files": 115,
- "bytes": 52388995,
- "gzip_bytes": 32708216,
+ "bytes": 52389070,
+ "gzip_bytes": 32708295,
  "unit_field_tiles": 40,
  "road_files": 60,
  "largest": {
@@ -95,13 +95,13 @@
    "path": "data/fields/backgrounds.json",
    "bytes": 53234,
    "gzip_bytes": 5403,
-   "sha256": "03b25858512c2b038d43c9a964236128a3b68269f36248a0a6d6fa48c94ab143"
+   "sha256": "ecb5c99e0ae8615d07eea3ee6cc06f039713afa27ebe9829f131055b7f12109b"
   },
   {
    "path": "data/fields/controls.json",
    "bytes": 19247,
    "gzip_bytes": 4378,
-   "sha256": "3e9112d91c73772bd441b25132b8fbf170a51f399c4ee4086a98a2e3772b6e77"
+   "sha256": "457f561ed5eeffc5a782c695c9d0e320fe16627135b18b5c1edd4172869c387b"
   },
   {
    "path": "data/fields/IND25__convective_deep.bin",
@@ -195,9 +195,9 @@
   },
   {
    "path": "data/fields/manifest.json",
-   "bytes": 128108,
-   "gzip_bytes": 21953,
-   "sha256": "8485bd0ecc61e755cd07bf250aeebed5a5d10d2932ee5a1cc886295942070710"
+   "bytes": 128104,
+   "gzip_bytes": 21971,
+   "sha256": "7e6937122c1ddfdb9c2f182c84a865a9fefdf685047c39304dafbeff5cb09971"
   },
   {
    "path": "data/fields/PP100__convective_deep.bin",
@@ -291,9 +291,9 @@
   },
   {
    "path": "data/fields/roads.json",
-   "bytes": 99778,
-   "gzip_bytes": 19903,
-   "sha256": "9626adb51ad625e41af5b8c9aca309cc027daf8eaffb56ae1d05440642d4d2a3"
+   "bytes": 99857,
+   "gzip_bytes": 19964,
+   "sha256": "065b004d4142947243515ffc5c989ffcfda82046b8074a081239dfa714697a4c"
   },
   {
    "path": "data/fields/roads/convective_deep__tier1__CO_z.bin",
@@ -659,7 +659,7 @@
    "path": "data/fields/sources.json",
    "bytes": 6952,
    "gzip_bytes": 1429,
-   "sha256": "a19bc499111ea26eb3f44d3752e858ebabd67a57c44c8fbe8464e3a8a5843e6b"
+   "sha256": "ff08def4f17e29d93fc03ed80df927db390e4080f20f628cda8704af48278614"
   },
   {
    "path": "data/fields/VOL30__convective_deep.bin",

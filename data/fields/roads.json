@@ -1,9 +1,9 @@
 {
  "format": "aqsim-roads",
  "version": 1,
- "created": "2026-10-29T06:44:54.050983+00:00",
+ "created": "2026-11-11T19:38:36.608457+00:00",
  "source": "config/roads.yaml",
- "source_sha256": "754e749029721041fbaa2741bffaad8945cc434aaec46ad23500fdf156cdf818",
+ "source_sha256": "d22b076896c0fad154977021fab5533759cfd038e66026e9aaf45c7324affdec",
  "roads_version": "r1",
  "crs": "EPSG:32618",
  "attribution": "Road geometry (c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
@@ -31,7 +31,7 @@
  },
  "rate_formula": "rate_g_s = AADT x [(1 - f_trk) EF_ldv + f_trk EF_hdv] x covered_m / 1000 / 86400",
  "hourly_traffic": {
-  "basis": "generic urban weekday profile (approximate), % of daily traffic, hour-ending 1-24 LST, normalised",
+  "basis": "generic urban weekday profile (approximate), % of daily traffic, hour-ending 1-24 local clock time (EDT in summer), normalised; scenario hours (LST) are converted to clock time",
   "hour_pct": [
    1.235,
    0.823,
@@ -59,11 +59,11 @@
    1.955
   ],
   "scenario_factor": {
-   "stable_night": 0.222,
+   "stable_night": 0.494,
    "neutral_windy": 1.062,
-   "convective_deep": 1.481,
+   "convective_deep": 1.679,
    "convective_winter": 1.284,
-   "morning_transition": 1.605
+   "morning_transition": 1.481
   }
  },
  "tiers_shown": [
@@ -76,11 +76,11 @@
  },
  "note": "Tier 3 (numbered primary roads) is not shown in the app. Emission totals are g/s per pollutant at 100 % traffic; NOx feeds the NO2 tracer (upper limit).",
  "scenario_traffic_factor": {
-  "stable_night": 0.222222,
+  "stable_night": 0.493827,
   "neutral_windy": 1.061728,
-  "convective_deep": 1.481481,
+  "convective_deep": 1.679012,
   "convective_winter": 1.283951,
-  "morning_transition": 1.604938
+  "morning_transition": 1.481481
  },
  "tier_totals": {
   "1": {
@@ -94,9 +94,9 @@
    "n_segments": 288,
    "hourly_g_s": {
     "stable_night": {
-     "NOx": 11.5874,
-     "CO": 55.1668,
-     "PM25": 0.386
+     "NOx": 25.7499,
+     "CO": 122.5929,
+     "PM25": 0.8578
     },
     "neutral_windy": {
      "NOx": 55.3622,
@@ -104,9 +104,9 @@
      "PM25": 1.8442
     },
     "convective_deep": {
-     "NOx": 77.2496,
-     "CO": 367.7788,
-     "PM25": 2.5733
+     "NOx": 87.5496,
+     "CO": 416.816,
+     "PM25": 2.9164
     },
     "convective_winter": {
      "NOx": 66.9497,
@@ -114,9 +114,9 @@
      "PM25": 2.2302
     },
     "morning_transition": {
-     "NOx": 83.6871,
-     "CO": 398.427,
-     "PM25": 2.7878
+     "NOx": 77.2496,
+     "CO": 367.7788,
+     "PM25": 2.5733
     }
    }
   },
@@ -131,9 +131,9 @@
    "n_segments": 180,
    "hourly_g_s": {
     "stable_night": {
-     "NOx": 2.1546,
-     "CO": 14.3346,
-     "PM25": 0.0824
+     "NOx": 4.788,
+     "CO": 31.8546,
+     "PM25": 0.183
     },
     "neutral_windy": {
      "NOx": 10.2943,
@@ -141,9 +141,9 @@
      "PM25": 0.3935
     },
     "convective_deep": {
-     "NOx": 14.3641,
-     "CO": 95.5639,
-     "PM25": 0.549
+     "NOx": 16.2794,
+     "CO": 108.3057,
+     "PM25": 0.6222
     },
     "convective_winter": {
      "NOx": 12.4489,
@@ -151,9 +151,9 @@
      "PM25": 0.4758
     },
     "morning_transition": {
-     "NOx": 15.5612,
-     "CO": 103.5275,
-     "PM25": 0.5948
+     "NOx": 14.3641,
+     "CO": 95.5639,
+     "PM25": 0.549
     }
    }
   }
