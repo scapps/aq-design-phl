@@ -1,10 +1,10 @@
 {
- "built": "2026-11-11T20:24:48.333Z",
+ "built": "2026-11-11T20:49:13.278Z",
  "export_dir": "export",
- "source_commit": "5567bd0",
+ "source_commit": "22c36b3",
  "n_files": 115,
- "bytes": 52389070,
- "gzip_bytes": 32708295,
+ "bytes": 52394043,
+ "gzip_bytes": 32709966,
  "unit_field_tiles": 40,
  "road_files": 60,
  "largest": {
@@ -38,28 +38,28 @@
    "sha256": "69b9c4d983ac2c2a61493018c03d5c081ea79fe4132348e6d9132fcef24fc9e6"
   },
   {
-   "path": "assets/index-DRlF0r_9.js",
-   "bytes": 124364,
-   "gzip_bytes": 43415,
-   "sha256": "0fc219fc485ab08f9c47e1f877b30e3c8d0d89654bed8e3426fbc32877b9fded"
+   "path": "assets/index-BkLwUESQ.js",
+   "bytes": 124639,
+   "gzip_bytes": 43517,
+   "sha256": "352500e2094ef8ce567f01ef4acd44c8b6f2368ada43ac95bca939c49fa00361"
   },
   {
-   "path": "assets/index-DRlF0r_9.js.map",
-   "bytes": 343119,
-   "gzip_bytes": 100055,
-   "sha256": "10de80cf92d042bafa50a31197cc40061a03e1b310a339426876066e429df604"
+   "path": "assets/index-BkLwUESQ.js.map",
+   "bytes": 344278,
+   "gzip_bytes": 100458,
+   "sha256": "16c1cc542b7b6b4a91771ebd477dd59d4b2a1dd5187313d229a8b2ae03ae9b06"
   },
   {
-   "path": "assets/linearity-B9bzoP-R.js",
-   "bytes": 89014,
-   "gzip_bytes": 29644,
-   "sha256": "bcc34628902f83e8afbad84aa88e07cd7d17b511b3d7c8a1fad3d4ffeae8450b"
+   "path": "assets/linearity-OECC_AtB.js",
+   "bytes": 89915,
+   "gzip_bytes": 29932,
+   "sha256": "feb5b21c26738c03d3b1b96d66b940542b195b5bf1795b5d21b376476e762c59"
   },
   {
-   "path": "assets/linearity-B9bzoP-R.js.map",
-   "bytes": 207513,
-   "gzip_bytes": 50617,
-   "sha256": "17bd4b2ef5b7db769ed30c66207ef90bab1565094be4079ad8ce00e8bf8fce5a"
+   "path": "assets/linearity-OECC_AtB.js.map",
+   "bytes": 210151,
+   "gzip_bytes": 51497,
+   "sha256": "409aab773213dd75d97f0138bc3597e05beda9773c2183d0425a404b74de1872"
   },
   {
    "path": "data/fields/AREA200__convective_deep.bin",
@@ -700,8 +700,8 @@
   {
    "path": "index.html",
    "bytes": 12064,
-   "gzip_bytes": 3852,
-   "sha256": "7fbd35df919b04d9f903d2279acf2ca71be30d041fbf24cd878ef1a12e14fad9"
+   "gzip_bytes": 3850,
+   "sha256": "703bddb49bcc666274b4173afdadee55ec6cabc788b6bee1a1eb6acdfc642ee1"
   }
  ]
 }
